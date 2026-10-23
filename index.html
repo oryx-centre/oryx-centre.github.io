@@ -5,90 +5,387 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Oryx Centre for Strategic Futures</title>
 <meta name="description" content="Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#14202e; --muted:#4c5a68; --accent:#8a6d2f; --line:#d9dee3; --bg:#fdfcf9; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; color:var(--ink); background:var(--bg); line-height:1.65; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 64px; }
-  header { border-bottom: 3px double var(--ink); padding-bottom: 28px; margin-bottom: 36px; }
-  .kicker { font-family: Helvetica, Arial, sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-  h1 { font-size: 40px; line-height: 1.15; font-weight: normal; }
-  .tagline { font-size: 19px; font-style: italic; color: var(--muted); margin-top: 14px; }
-  h2 { font-family: Helvetica, Arial, sans-serif; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin: 40px 0 14px; }
-  p { margin-bottom: 14px; font-size: 17px; }
-  ul { margin: 0 0 14px 22px; font-size: 17px; }
-  li { margin-bottom: 6px; }
-  .paper { border: 1px solid var(--line); border-left: 4px solid var(--accent); padding: 20px 22px; background: #fff; }
-  .paper .title { font-size: 19px; font-style: italic; }
-  .paper .meta { font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: var(--muted); margin-top: 8px; }
-  .people { display: flex; gap: 32px; flex-wrap: wrap; }
-  .person { flex: 1 1 240px; }
-  .person .name { font-size: 18px; }
-  .person .role { font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent); }
-  footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 20px; font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: var(--muted); }
+  :root{
+    --bg:#0A0D15; --band:#0E1420; --card:#0D1320; --ink:#F4F6FA; --mut:#9AA3B2;
+    --mono:#8B94A7; --blue:#5B7CFF; --blue2:#4F6DF5; --line:rgba(255,255,255,.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Space Grotesk',Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.15em;font-size:11px;color:var(--mono)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  a{color:var(--ink);text-decoration:none}
+  .grad{background:linear-gradient(92deg,#7D95FF 0%,#4F6DF5 55%,#8FA8FF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,13,21,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.28em;font-size:17px}
+  .brand .ai{color:var(--blue);letter-spacing:.28em}
+  .brand svg{display:block}
+  .nav-links{display:flex;gap:36px}
+  .nav-links a{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--mut);text-transform:uppercase}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-block;background:var(--blue);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:15px 26px;border-radius:3px;border:1px solid var(--blue)}
+  .btn:hover{background:var(--blue2)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid rgba(255,255,255,.35)}
+  .btn.ghost:hover{border-color:var(--blue);color:var(--blue)}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{padding:190px 0 90px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+  .kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--mono);text-transform:uppercase;margin-bottom:28px}
+  h1{font-size:clamp(2.9rem,6.2vw,5.4rem);line-height:1.02;font-weight:600;letter-spacing:-.01em}
+  .hero p.sub{color:var(--mut);font-size:19px;max-width:520px;margin:30px 0 38px;line-height:1.65}
+  .hero-cta{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+  .textlink{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink)}
+  .textlink:hover{color:var(--blue)}
+  .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+  .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(91,124,255,.30),rgba(91,124,255,.06) 55%,transparent 72%)}
+  .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+  .orbit .tag{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.15em;color:var(--mono);text-transform:uppercase;line-height:1.7}
+  .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center}
+  .hero-meta .rule{flex:0 0 120px;height:1px;background:rgba(255,255,255,.25)}
+
+  /* STATEMENT */
+  .band{background:var(--band);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .statement{padding:130px 0}
+  .statement h2{font-size:clamp(2rem,4.4vw,3.6rem);line-height:1.12;font-weight:500;max-width:980px}
+
+  /* SECTIONS */
+  section{padding:130px 0}
+  .sec-head{margin-bottom:64px}
+  .sec-head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.05;font-weight:600;margin-top:20px}
+  .sec-head p{color:var(--mut);font-size:18px;max-width:640px;margin-top:22px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:36px 30px 42px;position:relative;overflow:hidden}
+  .card:before{content:"";position:absolute;top:-70px;left:10%;right:10%;height:120px;background:radial-gradient(ellipse at center,rgba(91,124,255,.22),transparent 70%)}
+  .card .num{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.15em;color:var(--blue);margin-bottom:52px;position:relative}
+  .card h3{font-size:23px;font-weight:600;margin-bottom:14px;position:relative}
+  .card p{color:var(--mut);font-size:16px;position:relative}
+
+  /* FRAMEWORK */
+  .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+  .diagram{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:34px;position:relative;overflow:hidden}
+  .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+  .steps{border-top:1px solid var(--line)}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline}
+  .step .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--mono);letter-spacing:.1em}
+  .step h3{font-size:20px;font-weight:600;margin-bottom:6px}
+  .step p{color:var(--mut);font-size:15.5px}
+  .step.active{background:rgba(91,124,255,.08);border-left:2px solid var(--blue)}
+  .step.active .n{color:var(--blue)}
+
+  /* PAPER */
+  .paper-panel{border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(91,124,255,.07),rgba(91,124,255,0) 45%),var(--card);padding:52px}
+  @media(max-width:700px){.paper-panel{padding:32px 24px}}
+  .paper-panel .title{font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;max-width:820px}
+  .paper-panel .meta{margin:16px 0 22px}
+  .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 14px}
+
+  /* PHILOSOPHY */
+  .philosophy{position:relative;overflow:hidden}
+  .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.035);white-space:nowrap;pointer-events:none;line-height:1}
+  .philosophy h2{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.08;font-weight:600;position:relative}
+  .philosophy p{color:var(--mut);font-size:18px;max-width:720px;margin-top:26px;position:relative}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+  @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+  .col3{padding:6px 34px 6px 0;border-left:1px solid var(--line);padding-left:30px}
+  .col3 h3{font-size:21px;font-weight:600;margin:16px 0 12px}
+  .col3 p{color:var(--mut);font-size:16px;margin:0 0 18px}
+
+  /* BOOK */
+  .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  @media(max-width:900px){.book{grid-template-columns:1fr}}
+  .book-cover{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:52px 40px;position:relative;overflow:hidden}
+  .book-cover:before{content:"";position:absolute;top:-80px;left:15%;right:15%;height:150px;background:radial-gradient(ellipse at center,rgba(201,162,39,.20),transparent 70%)}
+  .book-cover .bt{font-size:30px;line-height:1.25;font-weight:600;position:relative}
+  .book h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600}
+  .book p{color:var(--mut);font-size:17px;margin-top:20px}
+
+  /* FOUNDERS */
+  .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+  .fcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:42px 38px 46px;position:relative;overflow:hidden}
+  .fcard:before{content:"";position:absolute;top:-80px;left:12%;right:12%;height:140px;background:radial-gradient(ellipse at center,rgba(91,124,255,.20),transparent 70%)}
+  .medallion{width:92px;height:92px;border-radius:50%;border:1px solid rgba(91,124,255,.55);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(91,124,255,.22),rgba(91,124,255,.04) 68%)}
+  .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid rgba(255,255,255,.10)}
+  .medallion span{font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--ink)}
+  .fcard h3{font-size:26px;font-weight:600;position:relative}
+  .fcard h3 span{color:var(--blue)}
+  .fcard .role{margin:6px 0 14px;position:relative}
+  .fcard p{color:var(--mut);font-size:16.5px;position:relative}
+  .fcard .flink{margin-top:20px;position:relative}
+
+  /* CTA + FOOTER */
+  .cta{text-align:center;padding:150px 0 130px;position:relative}
+  .cta h2{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.06;font-weight:600;margin:24px 0 44px}
+  footer{border-top:1px solid var(--line);position:relative;overflow:hidden}
+  .foot-links{display:flex;gap:34px;padding:44px 0 10px;flex-wrap:wrap}
+  .foot-mark{font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.01em;white-space:nowrap;text-align:center;padding:26px 0 0}
+  .foot-bar{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-bar .small{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:var(--mono);text-transform:uppercase}
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<header>
-  <div class="kicker">Delhi · India</div>
-  <h1>Oryx Centre for Strategic Futures</h1>
-  <p class="tagline">Independent research on artificial intelligence, geopolitics and strategic foresight — from the Global South.</p>
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+        <circle cx="13" cy="13" r="3.2" fill="#5B7CFF"/>
+        <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#5B7CFF" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+        <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#8FA8FF" stroke-width="1" opacity=".65" transform="rotate(38 13 13)"/>
+      </svg>
+      ORYX<span class="ai">CENTRE</span>
+    </a>
+    <div class="nav-links">
+      <a href="#research">Research</a>
+      <a href="#framework">Framework</a>
+      <a href="#paper">Working Paper</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="btn ghost" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="kicker">&mdash; Oryx Centre for Strategic Futures</div>
+        <h1>Research you<br>can <span class="grad">audit</span>,<br>for a complex world.</h1>
+        <p class="sub">Oryx is an independent non-profit research centre building governance-first methods for agentic AI in strategic research &mdash; where every material claim stays traceable to its evidence, and every consequential judgement stays with a human.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://oryxcentre.dpdns.org/Oryx_Working_Paper_v2.pdf">Read the working paper &#8599;</a>
+          <a class="textlink" href="#framework">Explore the framework &#8964;</a>
+        </div>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <div class="glow"></div>
+        <svg viewBox="0 0 400 400" fill="none">
+          <circle cx="200" cy="200" r="52" stroke="rgba(255,255,255,.14)"/>
+          <ellipse cx="200" cy="200" rx="178" ry="72" stroke="#5B7CFF" stroke-width="1.2" transform="rotate(-22 200 200)"/>
+          <ellipse cx="200" cy="200" rx="178" ry="72" stroke="#8FA8FF" stroke-width=".9" opacity=".6" transform="rotate(34 200 200)"/>
+          <ellipse cx="200" cy="200" rx="140" ry="118" stroke="rgba(255,255,255,.22)" stroke-width=".9" transform="rotate(80 200 200)"/>
+          <circle cx="200" cy="200" r="15" fill="#5B7CFF"/>
+          <circle cx="200" cy="200" r="27" stroke="#5B7CFF" opacity=".55"/>
+          <circle cx="88" cy="128" r="4.5" fill="#F4F6FA"/>
+          <circle cx="318" cy="238" r="4.5" fill="#8FA8FF"/>
+          <circle cx="262" cy="92" r="3.5" fill="#F4F6FA" opacity=".8"/>
+          <circle cx="120" cy="292" r="3.5" fill="#5B7CFF"/>
+        </svg>
+        <div class="tag" style="top:6%;right:2%">Metric 01<br>Sourced-claim rate</div>
+        <div class="tag" style="bottom:4%;left:0">Systems that<br>show their work</div>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span class="mono">01</span><span class="rule"></span>
+      <span class="mono">Governance&ensp;/&ensp;Evaluation&ensp;/&ensp;Foresight</span>
+    </div>
+  </div>
 </header>
 
-<h2>About</h2>
-<p>The Oryx Centre for Strategic Futures is a non-profit research and policy initiative working on artificial intelligence, geopolitics, emerging technologies and strategic foresight. We study how AI systems are reshaping research, policy and statecraft, and we build methods for using them accountably — with a particular focus on the perspectives and priorities of the Global South.</p>
-<p>Oryx is an early-stage initiative, founded in Delhi, India. We are building our first research programmes and partnerships with research institutions, funders and public bodies internationally.</p>
-
-<h2>Research focus</h2>
-<ul>
-  <li>Governance and evaluation of agentic AI systems</li>
-  <li>AI, geopolitics and technology competition</li>
-  <li>Emerging technologies and strategic foresight</li>
-  <li>AI policy for the Global South</li>
-</ul>
-
-<h2>Working paper</h2>
-<div class="paper">
-  <div class="title">From Answers to Auditable Intelligence: A Governance-First Framework for Agentic AI in Strategic Research and Public Policy</div>
-  <div class="meta">Oryx Centre for Strategic Futures · Working Paper · October 2026</div>
-  <p style="margin-top:12px;">The paper proposes a six-layer framework for making AI-assisted research verifiable rather than merely plausible: question framing; evidence acquisition; claim-level traceability; adversarial review; human decision gates; and post-hoc monitoring. It defines measurable dimensions for agentic research systems — sourced-claim rate, citation precision and recall, evidence coverage, fabrication rate, calibration and selective-prediction behaviour, and human-override outcomes — and sets out an evaluation protocol for testing them.</p>
-  <p style="margin-top:12px;"><a href="Oryx_Working_Paper_v2.pdf">Download the working paper (PDF, 20 pages)</a></p>
-</div>
-
-<h2>Book</h2>
-<div class="paper">
-  <div class="title">INDIA: From Me to We — The Quiet Work of Nation-Building: A Modern Indian's Guide to Civic Sense &amp; Social Etiquette</div>
-  <div class="meta">Amartya Kumar · Amazon Kindle · August 2025 · 371 pages</div>
-  <p style="margin-top:12px;">A public-engagement book on civic behaviour, public etiquette and social responsibility in contemporary India — how everyday actions, from traffic discipline to digital civility, quietly build a nation. Available on <a href="https://www.amazon.in/dp/B0FMPL5G3J">Amazon</a>.</p>
-</div>
-
-<h2>Our approach</h2>
-<p>We believe AI systems used in research and policy should be <em>auditable by design</em>: every material claim traceable to its evidence, uncertainty measured rather than hidden, and consequential judgements reserved for accountable humans. Our work is methodological and empirical — frameworks, evaluations and open publications that other institutions can test, reuse and challenge.</p>
-
-<h2>People</h2>
-<div class="people">
-  <div class="person">
-    <div class="name">Amartya Kumar</div>
-    <div class="role">Founder</div>
-  </div>
-  <div class="person">
-    <div class="name">Riya Nalwa</div>
-    <div class="role">Co-founder</div>
+<div class="band">
+  <div class="wrap statement">
+    <div class="kicker">[ 00 / Position ]</div>
+    <h2>Move beyond plausible answers to research whose claims can be <span class="grad">traced, checked, and defended</span>.</h2>
   </div>
 </div>
 
-<h2>Contact</h2>
-<p>For research collaboration, partnerships and enquiries:<br>
-<a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a> · <a href="mailto:amartya@oryxcentre.dpdns.org">amartya@oryxcentre.dpdns.org</a> · <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a></p>
-<p>We welcome conversations with research institutions, funders, technology assessment bodies and public agencies working on the governance of advanced AI.</p>
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="mono">Research &mdash; 01</div>
+      <h2>From question to consequence.</h2>
+      <p>The Centre studies how AI systems are reshaping research, policy and statecraft &mdash; and builds methods for using them accountably, with a particular focus on the perspectives and priorities of the Global South.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">/ 01</div>
+        <h3>Governance &amp; evaluation of agentic AI</h3>
+        <p>How agentic systems should be governed, and how their research outputs can be measured &mdash; sourced-claim rate, citation precision and recall, fabrication rate, calibration.</p>
+      </div>
+      <div class="card">
+        <div class="num">/ 02</div>
+        <h3>AI, geopolitics &amp; technology competition</h3>
+        <p>Strategic research on how advanced AI is redistributing capability and influence between states, institutions and regions.</p>
+      </div>
+      <div class="card">
+        <div class="num">/ 03</div>
+        <h3>Emerging tech &amp; strategic foresight</h3>
+        <p>Foresight and policy research for the Global South on the technologies &mdash; and the rules &mdash; that will shape the next decade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="framework" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="mono">Framework &mdash; 02</div>
+      <h2>Built to think in systems.</h2>
+      <p>Our founding framework makes AI-assisted research verifiable rather than merely plausible: a six-layer process in which evidence is acquired, claims are traced, and humans keep the decisions.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="diagram" aria-hidden="true">
+        <svg viewBox="0 0 400 340" fill="none" style="width:100%">
+          <ellipse cx="200" cy="170" rx="168" ry="66" stroke="#5B7CFF" stroke-width="1.1" transform="rotate(-20 200 170)"/>
+          <ellipse cx="200" cy="170" rx="168" ry="66" stroke="#8FA8FF" stroke-width=".8" opacity=".55" transform="rotate(32 200 170)"/>
+          <circle cx="200" cy="170" r="46" stroke="rgba(255,255,255,.18)"/>
+          <circle cx="200" cy="170" r="13" fill="#5B7CFF"/>
+          <circle cx="82" cy="100" r="4" fill="#F4F6FA"/><circle cx="322" cy="212" r="4" fill="#8FA8FF"/>
+          <circle cx="268" cy="76" r="3.2" fill="#F4F6FA" opacity=".8"/><circle cx="118" cy="258" r="3.2" fill="#5B7CFF"/>
+          <line x1="200" y1="170" x2="82" y2="100" stroke="rgba(255,255,255,.14)"/>
+          <line x1="200" y1="170" x2="322" y2="212" stroke="rgba(255,255,255,.14)"/>
+          <line x1="200" y1="170" x2="268" y2="76" stroke="rgba(255,255,255,.14)"/>
+        </svg>
+        <div class="cap">
+          <span class="mono">Oryx Core</span>
+          <span class="mono">Six-layer architecture &middot; V1.0</span>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step active"><div class="n">01</div><div><h3>Question framing</h3><p>The research question is scoped and made answerable before any system runs.</p></div></div>
+        <div class="step"><div class="n">02</div><div><h3>Evidence acquisition</h3><p>Sources are gathered deliberately, with provenance recorded from the start.</p></div></div>
+        <div class="step"><div class="n">03</div><div><h3>Claim-level traceability</h3><p>Every material claim is tied to the specific evidence that supports it.</p></div></div>
+        <div class="step"><div class="n">04</div><div><h3>Adversarial review</h3><p>Outputs are challenged &mdash; counter-evidence and weak sourcing are hunted down.</p></div></div>
+        <div class="step"><div class="n">05</div><div><h3>Human decision gates</h3><p>Consequential judgements pause for an accountable human to decide.</p></div></div>
+        <div class="step"><div class="n">06</div><div><h3>Monitoring against drift</h3><p>Systems are re-checked over time as models, sources and contexts change.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="paper" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="mono">Working Paper &mdash; 03</div>
+      <h2>The founding paper.</h2>
+    </div>
+    <div class="paper-panel">
+      <div class="mono" style="color:var(--blue)">Oryx Centre for Strategic Futures &middot; Working Paper &middot; October 2026</div>
+      <div class="title" style="margin-top:18px">From Answers to Auditable Intelligence: A Governance-First Framework for Agentic AI in Strategic Research and Public Policy</div>
+      <p style="margin-top:18px">The paper proposes a six-layer framework for making AI-assisted research verifiable rather than merely plausible, and defines measurable dimensions for agentic research systems &mdash; with an evaluation protocol for testing them. It is a conceptual framework with protocol targets, published openly for other institutions to test, reuse and challenge.</p>
+      <div class="chips">
+        <span class="chip">Sourced-claim rate</span>
+        <span class="chip">Citation precision &amp; recall</span>
+        <span class="chip">Evidence coverage</span>
+        <span class="chip">Fabrication rate</span>
+        <span class="chip">Calibration</span>
+        <span class="chip">Human-override outcomes</span>
+      </div>
+      <a class="btn" href="https://oryxcentre.dpdns.org/Oryx_Working_Paper_v2.pdf">Download the paper (PDF, 20 pages) &#8599;</a>
+    </div>
+  </div>
+</section>
+
+<div class="band philosophy">
+  <div class="watermark">ORYX</div>
+  <section id="about">
+    <div class="wrap">
+      <div class="mono">Philosophy &mdash; 04</div>
+      <h2 style="margin-top:22px">Auditable by design.<br><span class="grad">Accountable by default.</span></h2>
+      <p>We believe AI systems used in research and policy should be auditable by design: every material claim traceable to its evidence, uncertainty measured rather than hidden, and consequential judgements reserved for accountable humans. Our work is methodological and empirical &mdash; frameworks, evaluations and open publications.</p>
+      <div class="cols3">
+        <div class="col3">
+          <div class="mono" style="color:var(--blue)">Research institutions</div>
+          <h3>Test the method with us.</h3>
+          <p>Partnerships to pilot, score and improve auditable research workflows on real questions.</p>
+          <a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">Discuss a collaboration &#8599;</a>
+        </div>
+        <div class="col3">
+          <div class="mono" style="color:var(--blue)">Funders</div>
+          <h3>Back evidence, not hype.</h3>
+          <p>Grant-funded research programmes on AI governance and evaluation for developing and emerging economies.</p>
+          <a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">Discuss funding &#8599;</a>
+        </div>
+        <div class="col3">
+          <div class="mono" style="color:var(--blue)">Public agencies</div>
+          <h3>Adopt AI with assurance.</h3>
+          <p>Evaluation and assurance for institutions bringing agentic AI into research and policy work.</p>
+          <a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">Discuss a use case &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section>
+  <div class="wrap book">
+    <div class="book-cover">
+      <div class="mono" style="color:#C9A227">The Book</div>
+      <div class="bt" style="margin-top:20px">INDIA: From Me to We &mdash; The Quiet Work of Nation-Building</div>
+      <div class="mono" style="margin-top:22px">Amartya Kumar &middot; Kindle &middot; Aug 2025 &middot; 371 pages</div>
+    </div>
+    <div>
+      <div class="mono">Public engagement</div>
+      <h2 style="margin-top:18px">A modern Indian&rsquo;s guide to civic sense &amp; social etiquette.</h2>
+      <p>How everyday actions &mdash; from traffic discipline to digital civility &mdash; quietly build a nation. The founder&rsquo;s public-engagement book on civic behaviour and social responsibility in contemporary India.</p>
+      <p style="margin-top:26px"><a class="textlink" href="https://www.amazon.in/dp/B0FMPL5G3J">Read it on Amazon &#8599;</a></p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="mono">People &mdash; 05</div>
+      <h2>The founders.</h2>
+    </div>
+    <div class="founder-cards">
+      <div class="fcard">
+        <div class="medallion"><span>AK</span></div>
+        <h3>Amartya <span>Kumar</span></h3>
+        <div class="role mono">Founder</div>
+        <p>Founded the Oryx Centre for Strategic Futures in Delhi to work on the governance of advanced AI from a Global South vantage point. Author of the founding working paper and of <em>INDIA: From Me to We</em> (2025).</p>
+        <p class="flink"><a class="textlink" href="https://www.linkedin.com/in/amartya-kumar-oryx/">Connect with Amartya &#8599;</a></p>
+      </div>
+      <div class="fcard">
+        <div class="medallion"><span>RN</span></div>
+        <h3>Riya <span>Nalwa</span></h3>
+        <div class="role mono">Co-founder</div>
+        <p>Co-founded the Centre with Amartya and co-leads its research and partnerships &mdash; building the collaborations through which the framework will be piloted and tested.</p>
+        <p class="flink"><a class="textlink" href="mailto:riya@oryxcentre.dpdns.org">Write to Riya &#8599;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="kicker">&mdash; Start a conversation</div>
+    <h2>What should rigorous<br><span class="grad">research</span> be<br>working on?</h2>
+    <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
 
 <footer>
-  © 2026 Oryx Centre for Strategic Futures · Delhi, India
+  <div class="wrap">
+    <div class="foot-links">
+      <a class="mono" href="#research">Research</a>
+      <a class="mono" href="#framework">Framework</a>
+      <a class="mono" href="#paper">Working Paper</a>
+      <a class="mono" href="#about">About</a>
+      <a class="mono" href="mailto:contact@oryxcentre.dpdns.org">Contact</a>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Delhi, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>
