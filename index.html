@@ -175,8 +175,10 @@
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   .orbit .tag{animation:floaty 6s ease-in-out infinite}
   .orbit .tag:last-child{animation-delay:2.5s}
-  .js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+  .js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,.61,.36,1)}
   .js .rv.in{opacity:1;transform:none}
+  @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw 1.2s .9s both}
   @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
   .watermark{animation:markBreathe 9s ease-in-out infinite}
   @media (prefers-reduced-motion:reduce){
@@ -463,10 +465,10 @@
 <div class="progress" aria-hidden="true"></div>
 <script>
 (function(){
-  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.sec-head,.statement h2,.philosophy h2,.cta h2');
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
   targets.forEach(function(el){el.classList.add('rv')});
-  ['.cards','.founder-cards','.cols3','.steps'].forEach(function(sel){
-    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*90)+'ms'});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*120)+'ms'});
   });
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
