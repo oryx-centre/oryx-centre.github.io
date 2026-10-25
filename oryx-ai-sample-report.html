@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Sample report page — condensed from the real Oryx AI v0.3 launch-test
+     report (run 20261025-082456). Every number on the page is a real
+     mechanical count from that run. Nothing here is a client delivery. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Report — Oryx AI</title>
+<meta name="description" content="A condensed sample of an Oryx AI auditable research report: every claim cited, every gap stated, verification numbers computed mechanically, human review required before delivery.">
+<style>
+  body{margin:0;background:#FAF8F2;color:#1a1a1a;font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px}
+  h1{color:#0A2240;font-size:2rem;line-height:1.25;margin:0 0 8px}
+  h2{color:#0A2240;font-size:1.3rem;margin:32px 0 8px;border-bottom:2px solid #C9A227;padding-bottom:4px}
+  .kicker{font-family:Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:.8rem;color:#C9A227;margin-bottom:12px}
+  .honesty{font-family:Arial,Helvetica,sans-serif;background:#0A2240;color:#fff;padding:14px 18px;border-left:4px solid #C9A227;margin:24px 0}
+  .metrics{font-family:Arial,Helvetica,sans-serif;background:#fff;border:1px solid #ddd;padding:16px 20px;margin:24px 0}
+  .metrics b{color:#0A2240}
+  .gap{background:#fff8e6;border:1px solid #e8d9a8;padding:14px 18px;margin:16px 0}
+  .flag{font-size:.95rem;color:#444}
+  a{color:#0A2240}
+  .cta{font-family:Arial,Helvetica,sans-serif;margin-top:36px;padding:20px;border:1px solid #C9A227;text-align:center}
+  .small{font-size:.85rem;color:#555}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Oryx AI &middot; Sample report</div>
+  <h1>What does recent evidence say about AI adoption in Indian hotels &mdash; where is it helping, and where are hotels still skeptical?</h1>
+  <p class="small">Condensed sample from our own launch test, 25 October 2026. Agent v0.3 staged run. Model: gemini-3.1-flash-lite. Sources operator-curated from verified web search results (live API retrieval was rate-limited from our shared IP at the time).</p>
+
+  <div class="honesty"><b>Read this label first:</b> this is a sample from our own launch test &mdash; <b>not a client delivery</b>. It is shown here in DRAFT status, exactly as the agent produced it, because the draft status and the audit trail are the product. A client report passes a human review gate before delivery; this sample has not.</div>
+
+  <h2>Executive answer</h2>
+  <p>AI adoption in the Indian hospitality sector is currently concentrated in cybersecurity, marketing, and operational efficiency, with 70% of hoteliers identifying AI as a key tool for fraud prevention [S1]. While AI is proven to enhance staff productivity and guest satisfaction through personalization, skepticism persists regarding its utility in manual tasks like housekeeping [S1, S3]. Successful implementation in the Indian market is heavily dependent on staff training and the ability to integrate high-tech tools without compromising the &ldquo;high-touch&rdquo; nature of luxury service [S2].</p>
+
+  <h2>What the evidence shows</h2>
+  <p><b>Where it is deployed.</b> Cybersecurity and fraud prevention, customer engagement (marketing, communications, service interfaces), operational management (housekeeping efficiency, maintenance scheduling, predictive maintenance), and service personalization in five-star properties [S1, S2, S3].</p>
+  <p><b>What benefits are reported.</b> Measurable improvements in response times to guest requests, housekeeping efficiency, and staff scheduling; staff report higher productivity and more time for personalized service; in the luxury segment, AI service quality and personalization significantly predict guest satisfaction [S2, S3].</p>
+  <p><b>Where skepticism sits.</b> 30% of hoteliers believe AI is not helpful for housekeeping and maintenance scheduling, while only 35% consider it very helpful [S1]. Effectiveness is contingent on staff receptivity &mdash; training, perceived utility, and demographic diversity [S2].</p>
+
+  <div class="gap"><b>What the evidence does NOT show.</b> No comparative data on adoption rates between luxury/chain hotels and budget/independent properties. No financial investment figures or total implementation costs. No data on which proprietary platforms major Indian chains use. No evidence on long-term workforce headcount effects. A report that hides its gaps is less trustworthy than one that states them.</div>
+
+  <h2>Sources</h2>
+  <ol>
+    <li>AI Crucial in Fraud Prevention and Cybersecurity for Indian Hotels (2025 India Accommodation Barometer) (2025). Statista; Booking.com. <a href="https://www.statista.com/chart/amp/35670/ai-crucial-for-fraud-prevention-cybersecurity-for-indian-hotels/">statista.com</a></li>
+    <li>Attitude towards Adoption of AI Service in Indian Five-Star Hotels (2025). Rawal, Anshu; Kumar, Sushil. <a href="http://jier.org/index.php/journal/article/download/3831/3034/6752">jier.org</a></li>
+    <li>Leveraging Artificial Intelligence to Optimize Staff Operational Efficiency in the Hospitality Sector (2025). Acharya, Pritilata; Mahapatra, Smita S. <a href="https://ijaas.in/wp-content/uploads/2025/11/Paper-06-2.pdf">ijaas.in</a></li>
+  </ol>
+
+  <div class="metrics">
+    <b>Verification box (mechanical counts from this run &mdash; nothing estimated):</b><br>
+    Sources retrieved: 3 &middot; Sources cited: 3 &middot; Citation markers: 15 &middot; Invalid markers: 0<br>
+    Claim sentences: 33 &middot; Cited claim sentences: 14 &middot; <b>Sourced-claim rate: 42%</b><br>
+    Adversarial review flags: 10 (for example, the draft overstated &ldquo;proven&rdquo; where a study of leading hotels cannot prove a sector-wide claim, and overstated &ldquo;critical tool&rdquo; where the source said only &ldquo;helpful&rdquo;).<br>
+    Citation precision: not mechanically computable &mdash; the human reviewer judges whether each cited source supports its claim.<br>
+    <b>Status: DRAFT &mdash; human review required before delivery.</b>
+  </div>
+
+  <h2>How this report was built</h2>
+  <p class="small">Six stages: question framing, evidence acquisition, claim-level traceability, adversarial review, human decision gates, monitoring and correction. Every material claim carries an inline citation marker; a mechanical check verifies every marker resolves to a listed source; an adversarial pass flags claims the sources do not support, uncited claims, and overstatements &mdash; as flags for the reviewer, not silent fixes. Unsourced claims are quarantined, never presented as findings.</p>
+
+  <div class="cta">
+    <b>Want one like this on your question?</b><br>
+    One report. Pay only if it passes criteria agreed upfront.<br>
+    <a href="https://oryxcentre.dpdns.org/oryx-ai.html">Oryx AI pilot offer</a> &middot; <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+  </div>
+  <p class="small">Oryx Centre for Strategic Futures. Pilot engagements are currently contracted as individual consultancy.</p>
+</div>
+</body>
+</html>
