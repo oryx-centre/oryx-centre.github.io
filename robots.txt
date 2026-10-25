@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oryxcentre.dpdns.org/sitemap.xml
