@@ -186,6 +186,16 @@
     .js .rv{opacity:1;transform:none}
     .progress{display:none}
   }
+  /* ENQUIRY FORM */
+  .enquiry-form{max-width:720px}
+  .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+  .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+  .enquiry-form textarea{min-height:130px;resize:vertical}
+  .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+  .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+  .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
 </style>
 </head>
 <body>
@@ -330,6 +340,44 @@
   </div>
 </section>
 
+<section id="pricing" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Pricing &mdash; 04</div>
+      <h2>Pay only if it passes.</h2>
+      <p>Every engagement is priced per pilot or per audit, agreed with you upfront against written criteria. No subscriptions, no seat licences, no surprises.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="num">01</div><h3>Pilot report</h3><p>One full research report on your question, verified and human-reviewed. The fee is payable only if it passes the criteria agreed upfront &mdash; otherwise you pay nothing.</p><p style="margin-top:18px"><strong>Pricing agreed per pilot.</strong></p></div>
+      <div class="card"><div class="num">02</div><h3>Draft audit</h3><p>Your draft &mdash; written by your team or by an AI tool &mdash; audited citation by citation, with a verification summary and flags for what to fix before it goes out.</p><p style="margin-top:18px"><strong>Pricing agreed per audit.</strong></p></div>
+      <div class="card"><div class="num">03</div><h3>Ongoing research</h3><p>Regular reports, standing questions, or a retainer for a research department that needs auditable output every month.</p><p style="margin-top:18px"><strong>Talk to us.</strong></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="enquire" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Enquire &mdash; 05</div>
+      <h2>Tell us what you need.</h2>
+      <p>Fill this in and it opens a pre-written email in your own mail app, addressed to us. Nothing is sent or stored by this site.</p>
+    </div>
+    <form id="oryx-enquiry" class="enquiry-form">
+      <div class="form-row">
+        <div><label for="eq-name">Your name</label><input id="eq-name" name="name" type="text" required></div>
+        <div><label for="eq-org">Organisation</label><input id="eq-org" name="org" type="text" required></div>
+      </div>
+      <div class="form-row">
+        <div><label for="eq-orgtype">Organisation type</label><select id="eq-orgtype" name="orgtype"><option>Pharmaceutical company</option><option>Automobile firm</option><option>Hospitality business</option><option>College or institute</option><option>Other</option></select></div>
+        <div><label for="eq-about">I am enquiring about</label><select id="eq-about" name="about"><option>A pilot report</option><option>A draft audit</option><option>Ongoing research</option><option>Something else</option></select></div>
+      </div>
+      <label for="eq-brief">Your question or brief</label><textarea id="eq-brief" name="brief" required placeholder="What should the research answer? One or two lines is enough to start."></textarea>
+      <p style="margin-top:26px"><button class="btn" type="submit">Send enquiry &#8599;</button></p>
+      <p class="enquiry-note">Prefer plain email? Write to <a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a> directly.</p>
+    </form>
+  </div>
+</section>
+
 <div class="band">
   <div class="wrap cta">
     <div class="eyebrow">Start a conversation</div>
@@ -415,6 +463,26 @@
     document.body.appendChild(s);
   });
   document.body.appendChild(btn);
+})();
+</script>
+
+<!-- Enquiry form: composes a pre-filled email in the visitor's own mail
+     app. The site sends and stores nothing. -->
+<script>
+(function(){
+  var form=document.getElementById('oryx-enquiry');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=form.elements['name'].value.trim();
+    var org=form.elements['org'].value.trim();
+    var type=form.elements['orgtype'].value;
+    var about=form.elements['about'].value;
+    var brief=form.elements['brief'].value.trim();
+    var subject='Oryx AI enquiry — '+about;
+    var body='Name: '+name+'\nOrganisation: '+org+'\nOrganisation type: '+type+'\nEnquiring about: '+about+'\n\nBrief:\n'+brief;
+    window.location.href='mailto:contact@oryxcentre.dpdns.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
 })();
 </script>
 
