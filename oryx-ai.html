@@ -382,5 +382,31 @@
 })();
 </script>
 
+<!-- Oryx AI guided demo widget: lazy-loaded on first click only, so it adds
+     zero weight to the initial page load. The widget itself is a scripted demo,
+     not a live agent, and sends nothing anywhere. -->
+<script>
+(function(){
+  var btn=document.createElement('button');
+  btn.id='oryx-demo-btn';
+  btn.type='button';
+  btn.textContent='Try a guided demo';
+  btn.setAttribute('aria-label','Open the Oryx AI guided demo');
+  btn.style.cssText='position:fixed;right:20px;bottom:20px;z-index:9998;background:#0A2240;color:#fff;border:1px solid #C9A227;border-bottom:3px solid #C9A227;padding:14px 22px;font-family:"Public Sans",Helvetica,Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:0 12px 28px -12px rgba(10,34,64,.45)';
+  var loaded=false, loading=false;
+  btn.addEventListener('click',function(){
+    if(window.OryxDemoWidget){window.OryxDemoWidget.open();return}
+    if(loading)return;
+    loading=true;
+    var s=document.createElement('script');
+    s.src='oryx-ai-demo-widget.js';
+    s.onload=function(){loaded=true;loading=false;if(window.OryxDemoWidget)window.OryxDemoWidget.open()};
+    s.onerror=function(){loading=false;btn.textContent='Demo unavailable — email us instead';btn.onclick=function(){window.location.href='mailto:contact@oryxcentre.dpdns.org?subject=Oryx%20AI%20pilot%20request'}};
+    document.body.appendChild(s);
+  });
+  document.body.appendChild(btn);
+})();
+</script>
+
 </body>
 </html>
