@@ -138,6 +138,26 @@
     body.appendChild(row);
     scrollDown();
   }
+  /* ---------- scroll: show the answer, not just the chips ----------
+     Blind scroll-to-bottom after every reply hid the top of long answers:
+     the menu chips re-appear below the reply, the view jumped to the very
+     bottom, and the reply scrolled up out of sight. So after chips render,
+     scroll to the bottom only when the latest reply plus chips fit in one
+     viewport; otherwise scroll to the TOP of the reply, so the answer is
+     read from the start and the chips sit just below it. */
+  function scrollToLatest() {
+    var nodes = body.children, reply = null, i;
+    for (i = nodes.length - 1; i >= 0; i--) {
+      if (nodes[i].classList && nodes[i].classList.contains('od-row') &&
+          !nodes[i].querySelector('.od-typing')) { reply = nodes[i]; break; }
+    }
+    if (!reply) { scrollDown(); return; }
+    var replyTop = reply.getBoundingClientRect().top -
+      body.getBoundingClientRect().top + body.scrollTop;
+    var tail = body.scrollHeight - replyTop;
+    if (tail <= body.clientHeight) { scrollDown(); }
+    else { body.scrollTop = Math.max(0, replyTop - 8); }
+  }
   function chips(list) {
     var d = document.createElement('div');
     d.className = 'od-chips';
@@ -150,7 +170,7 @@
       d.appendChild(b);
     });
     body.appendChild(d);
-    scrollDown();
+    scrollToLatest();
   }
 
   /* ---------- typing indicator: the chatbot feel ----------
