@@ -509,7 +509,10 @@
     if(loading)return;
     loading=true;
     var s=document.createElement('script');
-    s.src='oryx-ai-demo-widget.js';
+    /* Versioned URL: a returning visitor's browser must fetch the current
+       widget code, not a cached copy from before the last fix. Bump the
+       version whenever oryx-ai-demo-widget.js changes. */
+    s.src='oryx-ai-demo-widget.js?v=2';
     s.onload=function(){loaded=true;loading=false;if(window.OryxDemoWidget)window.OryxDemoWidget.open()};
     s.onerror=function(){loading=false;btn.textContent='Demo unavailable — email us instead';btn.onclick=function(){window.location.href='mailto:contact@oryxcentre.dpdns.org?subject=Oryx%20AI%20pilot%20request'}};
     document.body.appendChild(s);
