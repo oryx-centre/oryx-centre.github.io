@@ -315,17 +315,17 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">How it works &mdash; 01</div>
-      <h2>Six stages, one audit trail.</h2>
-      <p>Built on the Oryx governance framework for agentic AI. The same discipline we apply to our own working papers, applied to your question.</p>
+      <h2>From brief to delivery.</h2>
+      <p>Your journey as a client, from the first brief to your decision. The method behind it is the Centre&rsquo;s six-layer framework, <a class="textlink" href="index.html#framework">described on the homepage</a>.</p>
     </div>
     <div class="sys-grid">
       <div class="steps">
-        <div class="step active"><span class="n">01</span><div><h3>Question framing</h3><p>Your question is sharpened into an answerable brief before any research begins.</p></div></div>
-        <div class="step"><span class="n">02</span><div><h3>Evidence acquisition</h3><p>Real, published sources are gathered &mdash; never invented, never cited from memory.</p></div></div>
-        <div class="step"><span class="n">03</span><div><h3>Synthesis</h3><p>A draft report is written from the gathered evidence, with citation markers on its claims.</p></div></div>
-        <div class="step"><span class="n">04</span><div><h3>Claim-level verification</h3><p>Every citation is mechanically checked: does it resolve, and does it say what the claim says it says? Invalid markers are rejected.</p></div></div>
-        <div class="step"><span class="n">05</span><div><h3>Adversarial review</h3><p>Unsupported causations, unsourced material claims and overstatements are flagged &mdash; never silently fixed.</p></div></div>
-        <div class="step"><span class="n">06</span><div><h3>Human review gate</h3><p>No report becomes final until a human reviewer approves it. Until then it stays a draft.</p></div></div>
+        <div class="step active"><span class="n">01</span><div><h3>Brief agreed</h3><p>We agree your question and the pass criteria with you before any research begins.</p></div></div>
+        <div class="step"><span class="n">02</span><div><h3>Sources gathered</h3><p>Real, published sources are gathered for your question &mdash; never invented, never cited from memory.</p></div></div>
+        <div class="step"><span class="n">03</span><div><h3>Draft written</h3><p>A draft report is written from the gathered evidence, with citation markers on its claims.</p></div></div>
+        <div class="step"><span class="n">04</span><div><h3>Verification record</h3><p>Every citation is mechanically checked and counted. The model writing the report never scores its own work.</p></div></div>
+        <div class="step"><span class="n">05</span><div><h3>Flags, not silent fixes</h3><p>Overstatements and weak sourcing are flagged for a human reviewer &mdash; never quietly repaired.</p></div></div>
+        <div class="step"><span class="n">06</span><div><h3>Your decision</h3><p>You have five working days to accept the report against the agreed criteria, or decline it at no cost.</p></div></div>
       </div>
       <div>
         <div class="paper-panel">
@@ -345,11 +345,6 @@
       <h2>We hold the gate on ourselves, too.</h2>
       <p>Our launch run, on AI adoption in Indian hotels: 15 citations, none invalid, all three sources cited &mdash; and a sourced-claim rate of 42%. That report stayed a draft pending human review, exactly as the gate requires. When a draft is weak, it stays a draft. <a class="textlink" href="oryx-ai-sample-report.html">Read the condensed sample report &#8599;</a></p>
     <p style="margin-top:12px">The method behind this service is published: <a class="textlink" href="https://doi.org/10.5281/zenodo.23718472">the founding framework paper</a> and <a class="textlink" href="https://doi.org/10.5281/zenodo.23731235">the citation-audit study</a> (both open on Zenodo).</p>
-    </div>
-    <div class="cards">
-      <div class="card"><div class="num">01</div><h3>Cited, or quarantined</h3><p>Claims without a citation are shown in a separate unsourced section, not buried or dressed up.</p></div>
-      <div class="card"><div class="num">02</div><h3>Mechanical, not vibes</h3><p>Verification numbers are computed from the report itself &mdash; never written by the model writing the report.</p></div>
-      <div class="card"><div class="num">03</div><h3>Human, always</h3><p>The adversarial pass is a flagging pass. The human reviewer is the safeguard that actually counts.</p></div>
     </div>
   </div>
 </section>
@@ -495,9 +490,11 @@
 })();
 </script>
 
-<!-- Oryx AI guided demo widget: lazy-loaded on first click only, so it adds
+<!-- Oryx AI guided demo widget: lazy-loaded on first open only, so it adds
      zero weight to the initial page load. The widget itself is a scripted demo,
-     not a live agent, and sends nothing anywhere. -->
+     not a live agent, and sends nothing anywhere. It opens by itself ONLY
+     when the visitor arrived via the #demo link (explicit intent); on a plain
+     page load the button just pulses briefly to draw the eye. -->
 <script>
 (function(){
   var btn=document.createElement('button');
@@ -518,12 +515,14 @@
     document.body.appendChild(s);
   });
   document.body.appendChild(btn);
-  var manual=false;
-  btn.addEventListener('click',function(){manual=true});
+  /* Attention pulse: one brief highlight so the button is noticed, then it
+     rests. No unprompted panel pop-up on plain page loads. */
+  var pulse=document.createElement('style');
+  pulse.textContent='@keyframes od-pulse{0%,100%{box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}50%{box-shadow:0 12px 32px -8px rgba(201,162,39,.85)}}#oryx-demo-btn.od-attn{animation:od-pulse 1.6s ease-in-out 3}';
+  document.head.appendChild(pulse);
+  btn.classList.add('od-attn');
+  setTimeout(function(){btn.classList.remove('od-attn')},5200);
   if(window.location.hash==='#demo'){btn.click()}
-  window.addEventListener('load',function(){
-    setTimeout(function(){if(!manual&&!window.OryxDemoWidget){btn.click()}},900);
-  });
 })();
 </script>
 

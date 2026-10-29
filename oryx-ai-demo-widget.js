@@ -1,4 +1,4 @@
-/* Oryx AI — Phase 0 guided demo widget, chatbot-style redesign.
+/* Oryx AI — guided demo widget: a scripted menu walkthrough.
    HONEST BY DESIGN: this LOOKS like a chat window but it is a scripted
    demo, NOT a live AI agent. It makes no network requests, stores nothing,
    and sends nothing. The only outbound action is a "Request a pilot" button
@@ -33,7 +33,7 @@
     '.od-msg{padding:10px 13px;border-radius:16px}',
     '.od-msg.bot{background:' + PAPER + ';border:1px solid rgba(10,34,64,.12);border-bottom-left-radius:4px}',
     '.od-msg.user{background:' + NAVY + ';color:#fff;border-bottom-right-radius:4px}',
-    '.od-time{font-size:11px;color:#8A94A8;margin:3px 2px 10px}',
+    '.od-msg p:last-child{margin-bottom:0}',
     '.od-msg h4{font-family:"Source Serif 4",Georgia,serif;font-size:16px;color:' + NAVY + ';margin:0 0 6px}',
     '.od-msg p{margin:0 0 8px}',
     '.od-msg p:last-child{margin-bottom:0}',
@@ -48,18 +48,11 @@
     '.od-row.user + .od-chips,.od-chips:first-child{margin-left:0}',
     '.od-chip{background:#fff;border:1px solid rgba(10,34,64,.35);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;color:' + NAVY + '}',
     '.od-chip:hover{border-color:' + GOLD + ';background:rgba(201,162,39,.12)}',
-    '.od-typing{display:flex;gap:4px;align-items:center;padding:12px 14px}',
-    '.od-typing i{width:8px;height:8px;border-radius:50%;background:#8A94A8;animation:od-bounce 1.2s infinite}',
-    '.od-typing i:nth-child(2){animation-delay:.15s}',
-    '.od-typing i:nth-child(3){animation-delay:.3s}',
-    '@keyframes od-bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}',
     '@keyframes od-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}',
     '.od-foot{border-top:1px solid rgba(10,34,64,.12);padding:10px 12px;display:flex;gap:8px;align-items:center;background:#fff}',
     '.od-foot input{flex:1;border:1px solid rgba(10,34,64,.35);border-radius:999px;padding:10px 14px;font-size:14px;font-family:inherit;min-width:0}',
     '.od-foot button{background:' + NAVY + ';color:#fff;border:1px solid ' + NAVY + ';border-radius:50%;width:40px;height:40px;font-size:18px;line-height:1;cursor:pointer;flex:0 0 auto}',
     '.od-foot button:hover{background:#12305A}',
-    '#oryx-demo-panel.od-busy .od-foot input:disabled{opacity:.6}',
-    '#oryx-demo-panel.od-busy .od-chip{opacity:.55;pointer-events:none}',
     '.od-form{margin:0 0 14px}',
     '.od-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#52607A;margin:10px 0 4px}',
     '.od-form input,.od-form textarea{width:100%;border:1px solid rgba(10,34,64,.35);border-radius:8px;padding:9px 11px;font-size:14px;font-family:inherit}',
@@ -84,7 +77,7 @@
     '<button class="od-head-btn" id="od-restart" aria-label="Restart demo" title="Restart demo">&#8635;</button>' +
     '<button class="od-head-btn od-close" aria-label="Close demo">&times;</button></div>' +
     '<div class="od-body" id="od-body"></div>' +
-    '<form class="od-foot" id="od-form"><input id="od-input" type="text" placeholder="Ask about the pilot, sample, or verification&hellip;" aria-label="Ask about Oryx AI" autocomplete="off">' +
+    '<form class="od-foot" id="od-form"><input id="od-input" type="text" placeholder="Type a keyword — price, sample, verification&hellip;" aria-label="Ask about Oryx AI" autocomplete="off">' +
     '<button type="submit" aria-label="Send message">&#10148;</button></form>';
   document.body.appendChild(panel);
 
@@ -92,10 +85,6 @@
   var input = panel.querySelector('#od-input');
   var form = panel.querySelector('#od-form');
 
-  function timeNow() {
-    try { return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); }
-    catch (e) { return ''; }
-  }
   function scrollDown() { body.scrollTop = body.scrollHeight; }
 
   function bot(html) {
@@ -110,11 +99,7 @@
     var bubble = document.createElement('div');
     bubble.className = 'od-msg bot';
     bubble.innerHTML = html;
-    var time = document.createElement('div');
-    time.className = 'od-time';
-    time.textContent = timeNow();
     wrap.appendChild(bubble);
-    wrap.appendChild(time);
     row.appendChild(av);
     row.appendChild(wrap);
     body.appendChild(row);
@@ -129,11 +114,7 @@
     var bubble = document.createElement('div');
     bubble.className = 'od-msg user';
     bubble.textContent = text;
-    var time = document.createElement('div');
-    time.className = 'od-time';
-    time.textContent = timeNow();
     wrap.appendChild(bubble);
-    wrap.appendChild(time);
     row.appendChild(wrap);
     body.appendChild(row);
     scrollDown();
@@ -173,38 +154,10 @@
     scrollToLatest();
   }
 
-  /* ---------- typing indicator: the chatbot feel ----------
-     Every bot reply is preceded by a short typing animation. This is a
-     timed local animation only — no network, no live agent behind it. */
-  var busy = false, queue = [];
-  function setBusy(on) {
-    busy = on;
-    if (on) { panel.classList.add('od-busy'); input.setAttribute('disabled', 'disabled'); }
-    else { panel.classList.remove('od-busy'); input.removeAttribute('disabled'); }
-  }
-  function respond(fn) {
-    if (busy) { queue.push(fn); return; }
-    setBusy(true);
-    var row = document.createElement('div');
-    row.className = 'od-row';
-    var av = document.createElement('div');
-    av.className = 'od-avatar';
-    av.setAttribute('aria-hidden', 'true');
-    av.textContent = 'O';
-    var bubble = document.createElement('div');
-    bubble.className = 'od-msg bot od-typing';
-    bubble.innerHTML = '<i></i><i></i><i></i>';
-    row.appendChild(av);
-    row.appendChild(bubble);
-    body.appendChild(row);
-    scrollDown();
-    setTimeout(function () {
-      row.remove();
-      fn();
-      setBusy(false);
-      if (queue.length) { respond(queue.shift()); }
-    }, 850);
-  }
+  /* ---------- replies are instant ----------
+     This is a scripted menu walkthrough, not a chat agent, so it does not
+     fake typing or timestamps: picking a path shows the answer at once. */
+  function respond(fn) { fn(); }
 
   /* ---------- content blocks ---------- */
   function showSample() {
@@ -224,13 +177,13 @@
   }
 
   function showHow() {
-    bot('<h4>How it works — six stages, one audit trail</h4><ol style="margin:4px 0 8px 18px;padding:0">' +
-      '<li><b>Question framing</b> — your question is sharpened into an answerable brief.</li>' +
-      '<li><b>Evidence acquisition</b> — real, published sources are gathered, never invented.</li>' +
-      '<li><b>Synthesis</b> — a draft report is written from the evidence, with citation markers.</li>' +
-      '<li><b>Claim-level verification</b> — every citation is mechanically checked: does it resolve, and does it say what the claim says?</li>' +
-      '<li><b>Adversarial review</b> — unsupported claims and overstatements are flagged, never silently fixed.</li>' +
-      '<li><b>Human review gate</b> — no report becomes final until a human approves it.</li></ol>' +
+    bot('<h4>From brief to delivery</h4><ol style="margin:4px 0 8px 18px;padding:0">' +
+      '<li><b>Brief agreed</b> — your question and the pass criteria are agreed before any research begins.</li>' +
+      '<li><b>Sources gathered</b> — real, published sources, never invented.</li>' +
+      '<li><b>Draft written</b> — a draft report from the evidence, with citation markers.</li>' +
+      '<li><b>Verification record</b> — every citation mechanically checked and counted; the model never scores its own work.</li>' +
+      '<li><b>Flags, not silent fixes</b> — overstatements are flagged for a human reviewer, never quietly repaired.</li>' +
+      '<li><b>Your decision</b> — five working days to accept against the agreed criteria, or decline at no cost.</li></ol>' +
       '<p>Each report also carries an evidence table (one row per source) and a screening log (why each source was included or excluded).</p>');
     showMenu();
   }
@@ -302,7 +255,7 @@
   }
 
   function welcome() {
-    bot('<p>Welcome. This is a <b>guided demo</b> of Oryx AI — a scripted walkthrough, not a live agent. Pick a path, or type a question:</p>');
+    bot('<p>Welcome. This is a <b>guided demo</b> of Oryx AI — a scripted walkthrough, not a live agent. Pick a path below, or type a keyword like price, sample, or verification:</p>');
     showMenu();
   }
 
