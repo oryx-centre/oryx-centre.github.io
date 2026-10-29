@@ -80,11 +80,11 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <style>
   :root{
     --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
-    --gold:#C9A227; --gold2:#9A7B14; --ink:#16233C; --mut:#52607A;
+    --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
     --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
     --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
     --sans:'Public Sans',Helvetica,Arial,sans-serif;
@@ -223,7 +223,7 @@
   footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
   @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
-  .foot-grid h4{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
   .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
   .foot-grid a:hover{color:#fff}
   .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
@@ -293,10 +293,14 @@
   </div>
 </header>
 
+<main>
+  
 <header class="hero" id="top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
+        
+          
         <div class="eyebrow">Oryx Centre for Strategic Futures</div>
         <h1 style="margin-top:24px">Research you<br>can <span class="accent">audit</span>,<br>for a complex world.</h1>
         <p class="sub">Oryx is an independent non-profit research centre building governance-first methods for agentic AI in strategic research &mdash; where every material claim stays traceable to its evidence, and every consequential judgement stays with a human.</p>
@@ -521,15 +525,16 @@
   </div>
 </div>
 
-<footer>
+</main>
+  <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h4>Oryx Centre for Strategic Futures</h4>
+        <h3>Oryx Centre for Strategic Futures</h3>
         <p style="font-size:15px;max-width:340px">Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h3>Explore</h3>
         <a href="#research">Research</a>
         <a href="#framework">Framework</a>
         <a href="#paper">Working Paper</a>
@@ -541,7 +546,7 @@
         <a href="refund-policy.html">Refund Policy</a>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h3>Contact</h3>
         <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
         <a href="mailto:amartya@oryxcentre.dpdns.org">amartya@oryxcentre.dpdns.org</a>
         <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
