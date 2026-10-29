@@ -252,7 +252,7 @@
       '<li><b>Pay only if it passes.</b> If it does not meet the agreed criteria, you pay nothing.</li>' +
       '<li>You have five working days to accept or decline it.</li>' +
       '<li>Pricing is agreed per pilot — no public price list yet.</li>' +
-      '<li>Pilot engagements are currently contracted as individual consultancy.</li></ul>' +
+      '<li>Pilot engagements are currently contracted through Riya Nalwa\'s Udyam-registered proprietorship.</li></ul>' +
       '<p>For pharma, automobile, hospitality, and college/institute research teams.</p>');
     chips([{ label: 'Request a pilot', action: showForm }]);
     showMenu();
