@@ -45,7 +45,8 @@
   .strip-in{display:flex;justify-content:space-between;align-items:center;height:36px}
   .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .brand{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy);text-decoration:none}
+  .brand{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:13px}
+  .brand svg{display:block;flex:0 0 auto}
   .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
   .nav-links{display:flex;gap:28px}
   .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);text-decoration:none}
@@ -61,24 +62,47 @@
   footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--mut);font-size:14px}
   footer a{color:var(--mut)}
   @media(max-width:700px){.nav-links{display:none}main{padding-top:160px}}
+
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+  @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+  .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8A6D10;margin-bottom:18px}
+  .foot-grid a{display:block;margin-bottom:10px;font-size:15px;color:#52607A;text-decoration:none}
+  .foot-grid a:hover{color:#0A2240}
+  .foot-grid p{font-size:15px}
+  .foot-mark{font-family:Georgia,'Times New Roman',serif;font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(10,34,64,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+  .foot-bar{border-top:1px solid rgba(10,34,64,.16);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-bar .small{color:#52607A;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .skip{position:absolute;left:-9999px;top:0;background:#0A2240;color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700;text-decoration:none}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site">
-  <div class="strip"><div class="wrap strip-in"><span>Oryx Centre for Strategic Futures</span><span>Delhi · Noida, India</span></div></div>
+  <div class="strip"><div class="wrap strip-in"><span>Noida, India &middot; Est. 2026</span><span><a href="mailto:contact@oryxcentre.dpdns.org" style="color:#C7D0DE;text-decoration:none">contact@oryxcentre.dpdns.org</a></span></div></div>
   <div class="masthead"><div class="wrap nav-in">
-    <a class="brand" href="https://oryxcentre.dpdns.org/">ORYX<small>Centre for Strategic Futures</small></a>
-    <nav class="nav-links">
-      <a href="https://oryxcentre.dpdns.org/">Home</a>
-      <a href="https://oryxcentre.dpdns.org/oryx-ai.html">Oryx AI</a>
-      <a href="https://oryxcentre.dpdns.org/oryx-ai-sample-report.html">Sample Report</a>
+    <a class="brand" href="index.html" aria-label="Oryx Centre for Strategic Futures">
+    <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+    <span>ORYX CENTRE<small>Strategic Futures</small></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="index.html#research">Research</a>
+      <a href="index.html#framework">Framework</a>
+      <a href="index.html#paper">Working Paper</a>
+      <a href="index.html#about">About</a>
+      <a href="oryx-ai.html">Oryx AI</a>
     </nav>
   </div></div>
 </header>
-<main><div class="wrap">
+<main id="main"><div class="wrap">
   <p class="eyebrow">Refund Policy</p>
   <h1>Refund Policy</h1>
-  <p class="updated">Last updated: 25 October 2026</p>
+  <p class="updated">Last updated: 30 October 2026</p>
 
   <p>Oryx AI pilot engagements work on pay-only-if-it-passes: the fee is payable only after you accept a report against criteria agreed upfront. This policy follows from that model.</p>
 
@@ -96,8 +120,42 @@
     <p style="margin-bottom:0">Refund requests and questions: <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>.</p>
   </div>
 </div></main>
-<footer><div class="wrap">
-  <p>Oryx Centre for Strategic Futures · Delhi/Noida, India · <a href="https://oryxcentre.dpdns.org/">Home</a> · <a href="https://oryxcentre.dpdns.org/oryx-ai.html">Oryx AI</a> · <a href="https://oryxcentre.dpdns.org/privacy-policy.html">Privacy Policy</a> · <a href="https://oryxcentre.dpdns.org/terms.html">Terms of Service</a></p>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#guides">Guides</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxcentre.dpdns.org">amartya@oryxcentre.dpdns.org</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+        <a href="https://www.linkedin.com/company/oryx-centre">Oryx on LinkedIn &#8599;</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
 </body>
 </html>

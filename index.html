@@ -13,14 +13,14 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
+<meta name="description" content="Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
 <meta property="og:title" content="Oryx Centre for Strategic Futures — Trust, But Verify">
-<meta property="og:description" content="Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
+<meta property="og:description" content="Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://oryxcentre.dpdns.org/">
 <meta property="og:site_name" content="Oryx Centre for Strategic Futures">
 <meta name="twitter:title" content="Oryx Centre for Strategic Futures — Trust, But Verify">
-<meta name="twitter:description" content="Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
+<meta name="twitter:description" content="Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.">
 <meta name="twitter:image" content="https://oryxcentre.dpdns.org/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Oryx Centre for Strategic Futures","url":"https://oryxcentre.dpdns.org/","description":"An early-stage, unregistered research initiative working on AI, geopolitics, emerging technologies, strategic foresight and the Global South.","email":"amartya@oryxcentre.dpdns.org","foundingDate":"2026-10-02","address":{"@type":"PostalAddress","addressLocality":"Noida","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"sameAs":["https://www.crunchbase.com/organization/oryx-centre-for-strategic-futures","https://github.com/oryx-centre"],"founder":[{"@type":"Person","name":"Amartya Kumar"},{"@type":"Person","name":"Riya Nalwa"}]}
@@ -256,6 +256,10 @@
   .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
   @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
   .watermark{animation:markBreathe 9s ease-in-out infinite}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
   @media (prefers-reduced-motion:reduce){
     *,*:before,*:after{animation:none!important;transition:none!important}
     .js .rv{opacity:1;transform:none}
@@ -265,11 +269,12 @@
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="site">
   <div class="strip">
     <div class="wrap strip-in">
-      <span>Delhi, India &middot; Est. 2026</span>
+      <span>Noida, India &middot; Est. 2026</span>
       <span><a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a></span>
     </div>
   </div>
@@ -283,19 +288,19 @@
         </svg>
         <span>ORYX CENTRE<small>Strategic Futures</small></span>
       </a>
-      <div class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="#research">Research</a>
         <a href="#framework">Framework</a>
         <a href="#paper">Working Paper</a>
         <a href="#about">About</a>
         <a href="oryx-ai.html">Oryx AI</a>
-      </div>
+      </nav>
       <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
   
 <header class="hero" id="top">
   <div class="wrap">
@@ -305,11 +310,13 @@
           
         <div class="eyebrow">Oryx Centre for Strategic Futures</div>
         <h1 style="margin-top:24px">Research you<br>can <span class="accent">audit</span>,<br>for a complex world.</h1>
-        <p class="sub">Oryx is an independent non-profit research centre building governance-first methods for agentic AI in strategic research &mdash; where every material claim stays traceable to its evidence, and every consequential judgement stays with a human.</p>
+        <p class="sub">Oryx is an independent research initiative building governance-first methods for agentic AI in strategic research &mdash; where every material claim stays traceable to its evidence, and every consequential judgement stays with a human. It works with research institutions, funders and public agencies that need evidence they can defend.</p>
         <div class="hero-cta">
-          <a class="btn" href="https://oryxcentre.dpdns.org/Oryx_Working_Paper_v3.pdf">Read the working paper &#8599;</a>
+          <a class="btn" href="oryx-ai.html">Explore Oryx AI &#8599;</a>
+          <a class="btn ghost" href="https://oryxcentre.dpdns.org/Oryx_Working_Paper_v3.pdf">Read the working paper &#8599;</a>
           <a class="textlink" href="#framework">Explore the framework &#8964;</a>
         </div>
+        <p class="small" style="margin-top:26px;color:var(--mut)">Working paper v3.0 on Zenodo &middot; Companion citation-audit study &middot; Listed in the UN DESA Civil Society database</p>
       </div>
       <div class="orbit" aria-hidden="true">
         <div class="glow"></div>
@@ -446,7 +453,31 @@
   </div>
 </section>
 
-<section id="guides" style="padding-top:20px"> <div class="wrap"> <div class="sec-head"> <div class="eyebrow">Guides</div> <h2>Practical checks from our research.</h2> <p>Short guides from the Centre's research on checking AI-generated claims and citations.</p> </div> <div class="cards"> <div class="card"> <div class="num">/ 01</div> <h3>How to check an AI vendor's claims before you sign</h3> <p>A six-step check you can run on a vendor's claims — using the vendor's own materials — before you sign.</p> <p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-vendor-claims.html">Read the guide &#8599;</a></p> </div> <div class="card"> <div class="num">/ 02</div> <h3>How to check AI-generated citations in your own paper</h3> <p>A four-verdict method for checking AI-generated citations, in about ten minutes per batch.</p> <p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-citations.html">Read the guide &#8599;</a></p> </div> </div> </div> </section> <div class="band philosophy">
+<section id="guides" style="padding-top:20px"> <div class="wrap"> <div class="sec-head"> <div class="eyebrow">Guides</div> <h2>Practical checks from our research.</h2> <p>Short guides from the Centre's research on checking AI-generated claims and citations.</p> </div> <div class="cards"> <div class="card"> <div class="num">/ 01</div> <h3>How to check an AI vendor's claims before you sign</h3> <p>A six-step check you can run on a vendor's claims — using the vendor's own materials — before you sign.</p> <p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-vendor-claims.html">Read the guide &#8599;</a></p> </div> <div class="card"> <div class="num">/ 02</div> <h3>How to check AI-generated citations in your own paper</h3> <p>A four-verdict method for checking AI-generated citations, in about ten minutes per batch.</p> <p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-citations.html">Read the guide &#8599;</a></p> </div> </div> </div> </section> 
+<section id="explore" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Explore the site</div>
+      <h2>Everything on this site, in one glance.</h2>
+      <p>Start with the service, read the research, or run a practical check yourself. Every page below is one click away.</p>
+    </div>
+    <div class="paper-panel" style="margin-bottom:40px">
+      <div class="small" style="color:var(--gold2)">About Oryx, stated plainly</div>
+      <p style="margin-top:14px">Oryx is an early-stage, unregistered research initiative founded on 2 October 2026 in Noida, India, by Amartya Kumar and Riya Nalwa. It is not a company and not yet a registered nonprofit. Pilot engagements are contracted through Riya Nalwa&rsquo;s Udyam-registered proprietorship (UDYAM-UP-56-0189301). Nothing on this site claims a client, a funder or a result that does not exist.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="num">/ 01</div><h3>Oryx AI</h3><p>The applied service: one auditable research report, pay only if it passes criteria agreed upfront, with a guided demo and an enquiry form.</p><p style="margin-top:18px"><a class="textlink" href="oryx-ai.html">Explore Oryx AI &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 02</div><h3>Sample report</h3><p>A condensed sample from Oryx AI&rsquo;s own launch test &mdash; labelled DRAFT, with its verification numbers and gaps in plain sight. Not a client delivery.</p><p style="margin-top:18px"><a class="textlink" href="oryx-ai-sample-report.html">Read the sample &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 03</div><h3>Working paper v3.0</h3><p>The founding framework: from answers to auditable intelligence. 23 pages, open on Zenodo, DOI 10.5281/zenodo.23718472.</p><p style="margin-top:18px"><a class="textlink" href="https://oryxcentre.dpdns.org/Oryx_Working_Paper_v3.pdf">Download the PDF &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 04</div><h3>Second study: Trust, But Verify</h3><p>A claim-level citation audit of AI-generated strategic research briefs &mdash; the companion study to the framework paper, open on Zenodo.</p><p style="margin-top:18px"><a class="textlink" href="https://doi.org/10.5281/zenodo.23731235">Read it on Zenodo &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 05</div><h3>Check an AI vendor&rsquo;s claims</h3><p>A six-step check you can run on a vendor&rsquo;s claims &mdash; using the vendor&rsquo;s own materials &mdash; before you sign.</p><p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-vendor-claims.html">Read the guide &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 06</div><h3>Check AI-generated citations</h3><p>A four-verdict method for checking AI-generated citations, in about ten minutes per batch.</p><p style="margin-top:18px"><a class="textlink" href="how-to-check-ai-citations.html">Read the guide &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 07</div><h3>Policies</h3><p>How this site handles data, and the terms for pilot engagements: privacy, terms of service, and refunds &mdash; pay only if the report passes.</p><p style="margin-top:18px"><a class="textlink" href="privacy-policy.html">Privacy &#8599;</a> &nbsp;<a class="textlink" href="terms.html">Terms &#8599;</a> &nbsp;<a class="textlink" href="refund-policy.html">Refunds &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 08</div><h3>Contact</h3><p>Research collaboration, funding, or a pilot question &mdash; write to the Centre directly. No form on this site sends or stores anything.</p><p style="margin-top:18px"><a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a></p></div>
+    </div>
+  </div>
+</section>
+<div class="band philosophy">
   <div class="watermark">ORYX</div>
   <section id="about">
     <div class="wrap">
@@ -504,7 +535,7 @@
         <div class="medallion"><span>AK</span></div>
         <h3>Amartya <span>Kumar</span></h3>
         <div class="role small">Founder</div>
-        <p style="margin-top:14px">Founded the Oryx Centre for Strategic Futures in Delhi to work on the governance of advanced AI from a Global South vantage point. Author of the founding working paper and of <em>INDIA: From Me to We</em> (2025).</p>
+        <p style="margin-top:14px">Founded the Oryx Centre for Strategic Futures in Noida to work on the governance of advanced AI from a Global South vantage point. Author of the founding working paper and of <em>INDIA: From Me to We</em> (2025).</p>
         <p class="flink"><a class="textlink" href="https://www.linkedin.com/in/amartya-kumar-oryx/">Connect with Amartya &#8599;</a></p>
       </div>
       <div class="fcard">
@@ -533,7 +564,7 @@
     <div class="foot-grid">
       <div>
         <h3>Oryx Centre for Strategic Futures</h3>
-        <p style="font-size:15px;max-width:340px">Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
       </div>
       <div>
         <h3>Explore</h3>
@@ -541,6 +572,9 @@
         <a href="#framework">Framework</a>
         <a href="#paper">Working Paper</a>
         <a href="#about">About</a>
+        <a href="#guides">Guides</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
         <a href="oryx-ai.html">Oryx AI</a>
         <a href="oryx-ai-sample-report.html">Sample Report</a>
         <a href="privacy-policy.html">Privacy Policy</a>
@@ -558,7 +592,7 @@
   </div>
   <div class="foot-mark">ORYX</div>
   <div class="wrap foot-bar">
-    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Delhi, India</span>
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
     <span class="small">Auditable intelligence, human direction.</span>
   </div>
 </footer>

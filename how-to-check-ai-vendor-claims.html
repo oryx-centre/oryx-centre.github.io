@@ -198,7 +198,11 @@
     .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
     @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
     .watermark{animation:markBreathe 9s ease-in-out infinite}
-    @media (prefers-reduced-motion:reduce){
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
       *,*:before,*:after{animation:none!important;transition:none!important}
       .js .rv{opacity:1;transform:none}
       .progress{display:none}
@@ -224,14 +228,18 @@
     .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
     .guide p.fine{font-size:15px}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to check an AI vendor's claims before you sign","url":"https://oryxcentre.dpdns.org/how-to-check-ai-vendor-claims.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxcentre.dpdns.org/"}}
+</script>
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="site">
   <div class="strip">
     <div class="wrap strip-in">
-      <span>Delhi, India &middot; Est. 2026</span>
+      <span>Noida, India &middot; Est. 2026</span>
       <span><a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a></span>
     </div>
   </div>
@@ -245,19 +253,19 @@
         </svg>
         <span>ORYX CENTRE<small>Strategic Futures</small></span>
       </a>
-      <div class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="index.html#research">Research</a>
         <a href="index.html#framework">Framework</a>
         <a href="index.html#paper">Working Paper</a>
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Oryx AI</a>
-      </div>
+      </nav>
       <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
     </div>
   </div>
 </header>
 
-<main><header class="hero" id="top">
+<main id="main"><header class="hero" id="top">
   <div class="wrap">
     <div class="eyebrow">Guide &mdash; For organisations</div>
     <h1 style="margin-top:24px">How to check an AI vendor's claims before you sign</h1>
@@ -322,7 +330,7 @@
     <div class="foot-grid">
       <div>
         <h3>Oryx Centre for Strategic Futures</h3>
-        <p style="font-size:15px;max-width:340px">Independent non-profit research on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
       </div>
       <div>
         <h3>Explore</h3>
@@ -331,6 +339,8 @@
         <a href="index.html#paper">Working Paper</a>
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
         <a href="refund-policy.html">Refund Policy</a>
@@ -340,12 +350,13 @@
         <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
         <a href="mailto:amartya@oryxcentre.dpdns.org">amartya@oryxcentre.dpdns.org</a>
         <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+        <a href="https://www.linkedin.com/company/oryx-centre">Oryx on LinkedIn &#8599;</a>
       </div>
     </div>
   </div>
   <div class="foot-mark">ORYX</div>
   <div class="wrap foot-bar">
-    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Delhi, India</span>
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
     <span class="small">Auditable intelligence, human direction.</span>
   </div>
 </footer>
