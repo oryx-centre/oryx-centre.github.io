@@ -1,0 +1,25 @@
+# Oryx Centre for Strategic Futures
+
+> Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South. Founded 2 October 2026, based in Noida, India. Research you can audit: every material claim traceable to its evidence, with consequential judgements kept with an accountable human.
+
+## Pages
+
+- [Home](https://oryxai.in/): Research you can audit, for a complex world. The Centre's founding framework, engagement steps, and founder introductions.
+- [Oryx AI](https://oryxai.in/oryx-ai.html): Auditable research from Oryx AI. How an engagement works, what you receive, and the guided demo.
+- [Sample report](https://oryxai.in/oryx-ai-sample-report.html): A published sample of an auditable research report on AI citations. A sample, not a client report.
+- [How to check AI-generated citations in your own paper](https://oryxai.in/how-to-check-ai-citations.html): A four-verdict method for checking AI-generated citations, in about ten minutes per batch.
+- [How to check an AI vendor's claims before you sign](https://oryxai.in/how-to-check-ai-vendor-claims.html): A six-step check to run on a vendor's claims, using the vendor's own materials, before you sign.
+- [AI pilot evaluation checklist](https://oryxai.in/ai-pilot-evaluation-checklist.html): A checklist for evaluating an AI pilot before committing.
+- [Broken links in AI citations](https://oryxai.in/broken-links-ai-citations.html): Findings on broken links in AI-generated citations.
+- [Sales floor](https://oryxai.in/sales-floor.html): The Centre's current offer and engagement terms.
+
+## Papers
+
+- [From Answers to Auditable Intelligence (working paper v3.0)](https://oryxai.in/Oryx_Working_Paper_v3.pdf): A governance-first framework for agentic AI in strategic research and public policy, by Amartya Kumar and Riya Nalwa. Zenodo DOI 10.5281/zenodo.23718472, CC BY 4.0.
+- [Trust, But Verify (Paper 2 v2)](https://doi.org/10.5281/zenodo.23731235): A claim-level citation audit of AI-generated strategic research briefs: 30 briefs, 194 citations — Verified 50 (26%), Broken 95 (49%), Title mismatch 17 (9%), No URL 1, Unverifiable 31 (16%).
+
+## Contact
+
+- Website: https://oryxai.in/
+- Email: contact@oryxcentre.dpdns.org, amartya@oryxcentre.dpdns.org, riya@oryxcentre.dpdns.org
+- LinkedIn: https://www.linkedin.com/in/amartya-kumar-oryx/ and https://www.linkedin.com/company/oryx-centre
