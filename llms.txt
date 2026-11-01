@@ -11,7 +11,11 @@
 - [How to check an AI vendor's claims before you sign](https://oryxai.in/how-to-check-ai-vendor-claims.html): A six-step check to run on a vendor's claims, using the vendor's own materials, before you sign.
 - [AI pilot evaluation checklist](https://oryxai.in/ai-pilot-evaluation-checklist.html): A checklist for evaluating an AI pilot before committing.
 - [Broken links in AI citations](https://oryxai.in/broken-links-ai-citations.html): Findings on broken links in AI-generated citations.
-- [Sales floor](https://oryxai.in/sales-floor.html): The Centre's current offer and engagement terms.
+- [Auditable research report: AI-generated citations, 2023-2026](https://oryxai.in/auditable-research-report-ai-citations.html): Approved sample report from Oryx AI's local MVP test run on 1 Nov 2026. A sample, not a client delivery.
+- [Sales floor](https://oryxai.in/sales-floor.html): Roster of the Oryx AI sales-agent desks, drafting and monitoring only. No desk sends, signs, changes a price, spends, or makes a public claim on its own.
+- [Privacy policy](https://oryxai.in/privacy-policy.html): What this site collects (nothing on its own), how email enquiries are handled, and how to opt out of outreach.
+- [Terms of service](https://oryxai.in/terms.html): Terms for Oryx AI pilot engagements, including acceptance and pay-only-if-it-passes payment.
+- [Refund policy](https://oryxai.in/refund-policy.html): No payment is taken before acceptance, so an unaccepted report has nothing to refund.
 
 ## Papers
 
