@@ -15,6 +15,7 @@
 - [AI pilot evaluation checklist](https://oryxai.in/ai-pilot-evaluation-checklist.html): A checklist for evaluating an AI pilot before committing.
 - [Broken links in AI citations](https://oryxai.in/broken-links-ai-citations.html): Findings on broken links in AI-generated citations.
 - [Auditable research report: AI-generated citations, 2023-2026](https://oryxai.in/auditable-research-report-ai-citations.html): Approved sample report from Oryx AI's local MVP test run on 1 Nov 2026. A sample, not a client delivery.
+- [Verified beta report: LLMs in healthcare, 2023-2026](https://oryxai.in/oryx-ai-beta-report-31oct.html): Public-beta verification run, 31 Oct 2026 — 7 sources, 7/7 verified, human-reviewed before publication. A beta run, not a client delivery.
 - [Sales floor](https://oryxai.in/sales-floor.html): Roster of the Oryx AI sales-agent desks, drafting and monitoring only. No desk sends, signs, changes a price, spends, or makes a public claim on its own.
 - [Privacy policy](https://oryxai.in/privacy-policy.html): What this site collects (nothing on its own), how email enquiries are handled, and how to opt out of outreach.
 - [Terms of service](https://oryxai.in/terms.html): Terms for Oryx AI pilot engagements, including acceptance and pay-only-if-it-passes payment.
