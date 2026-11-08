@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim-level evidence audit: check each claim — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/claim-level-evidence-audit.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A claim-level evidence audit checks every claim in a document separately — source, support, and verdict — instead of scoring the document as a whole. This guide explains the method, the four verdicts, and what a report contains.">
+<meta property="og:title" content="Claim-level evidence audit: check each claim | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="A claim-level evidence audit checks every claim in a document separately — source, support, and verdict — instead of scoring the document as a whole. This guide explains the method, the four verdicts, and what a report contains.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/claim-level-evidence-audit.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="Claim-level evidence audit: check each claim | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="A claim-level evidence audit checks every claim in a document separately — source, support, and verdict — instead of scoring the document as a whole. This guide explains the method, the four verdicts, and what a report contains.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+    .guide table{border-collapse:collapse;font-size:15px;margin:0 0 26px;max-width:100%}
+    .guide td,.guide th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+    .guide th{background:rgba(10,34,64,.05);color:var(--navy)}
+    @media(max-width:800px){.guide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Claim-level evidence audit: check each claim", "url": "https://oryxai.in/claim-level-evidence-audit.html", "isPartOf": {"@type": "WebSite", "name": "Oryx Centre for Strategic Futures", "url": "https://oryxai.in/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a claim-level evidence audit?", "acceptedAnswer": {"@type": "Answer", "text": "It breaks a document into its individual claims, checks each claim against its own source, and records a separate verdict for each one, instead of giving the document a single score."}}, {"@type": "Question", "name": "What are the four verdicts in a claim-level evidence audit?", "acceptedAnswer": {"@type": "Answer", "text": "Supports, partially supports, does not support, and cannot verify. The first three judge the relationship between claim and source; the fourth means no source could be checked at all."}}, {"@type": "Question", "name": "What does a claim-level audit report contain?", "acceptedAnswer": {"@type": "Answer", "text": "The claim list, the verdict log with one row per claim, the summary counts by verdict, and the sign-off by a named human reviewer."}}, {"@type": "Question", "name": "What can a claim-level audit not do?", "acceptedAnswer": {"@type": "Answer", "text": "It checks whether the stated evidence supports the stated claim. It does not check whether the underlying science is right, whether the document is complete, or whether a number is meaningful."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oryxai.in/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://oryxai.in/claim-level-evidence-audit.html"}, {"@type": "ListItem", "position": 3, "name": "Claim-level evidence audit: check each claim"}]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+      </nav>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; Claim-level evidence audit: check each claim</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For researchers and buyers</div>
+    <h1 style="margin-top:24px">Claim-level evidence audit: check each claim</h1>
+    <p class="sub">A claim-level evidence audit breaks a document into its individual claims, checks each one against its own source, and records a separate verdict for each. This guide explains the method, the four verdicts, and what a report contains.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+      <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65">Oryx Centre for Strategic Futures is a two-person research initiative founded 2 October 2026. It is a Udyam-registered micro enterprise (UDYAM-UP-56-0189301) &mdash; NOT a registered organisation and NOT a registered non-profit. Every number below from Oryx&rsquo;s own work is labelled as a pilot result, not a universal rate.</p>
+      <p>Most checks of a document give one verdict for the whole thing: pass, fail, or a score. A claim-level evidence audit does the opposite. It breaks a document into its individual claims, checks each claim against its own source, and records a separate verdict for each one. A report can then be mostly sound and still contain three claims that fail &mdash; and you can see exactly which three, and why.</p>
+      <p>That is the whole idea. The rest of this page explains what counts as a claim, how each one is checked, what the verdicts mean, and what an audit report contains. You need nothing from Oryx to follow the method.</p>
+      <h2>Why check claim by claim</h2>
+      <p>A document is not one assertion. It is dozens of them, and they do not share a fate. One claim may rest on a real, current source that says exactly what is claimed. The claim next to it may cite a paper that does not exist, or a real paper that says something else entirely. A single score for the document hides that difference &mdash; and the difference is the decision.</p>
+      <p>Claim-by-claim checking also makes the result fixable. &ldquo;Your paper scored 72%&rdquo; tells an author nothing to do. &ldquo;Claims 4, 9, and 17 fail; claims 4 and 9 have broken links, claim 17 cites a real paper for a statement it does not make&rdquo; tells them exactly what to repair. The same applies to a vendor proposal: a failed claim is a named gap to fix or withdraw, not a reason to argue about the whole vendor.</p>
+      <h2>What counts as a claim</h2>
+      <p>A claim is a checkable statement plus a source that should support it. Two parts, both needed:</p>
+      <ul>
+      <li>
+      <p><strong>The statement.</strong> Something that can be true or false: a finding, a figure, a comparison, a description of what a system does. &ldquo;Our model scores 92% accuracy on FinanceBench&rdquo; is a claim. &ldquo;Enterprise-grade accuracy you can trust&rdquo; is not &mdash; there is nothing in it to check until it points at evidence.</p>
+      </li>
+      <li>
+      <p><strong>The source.</strong> The document, dataset, evaluation, or reference that is supposed to back the statement up. A claim without a source is unverified, not unimportant: it goes on the list with the verdict &ldquo;cannot verify&rdquo; and the reason &ldquo;no source offered&rdquo;.</p>
+      </li>
+      </ul>
+      <p>Slogans get one question instead of a check: &ldquo;What evidence supports this, in writing?&rdquo; If the answer is more slogans, the statement stays out of the decision.</p>
+      <h2>The four verdicts</h2>
+      <p>Every claim in an audit gets exactly one verdict:</p>
+      <ol>
+      <li>
+      <p><strong>Supports.</strong> The source exists, resolves, and says what the claim says. The claim can be relied on.</p>
+      </li>
+      <li>
+      <p><strong>Partially supports.</strong> The source exists and is relevant, but it supports only part of the claim &mdash; a narrower result, a different population, an older version. The claim needs narrowing or a better source.</p>
+      </li>
+      <li>
+      <p><strong>Does not support.</strong> The source exists but says something else, or contradicts the claim. A real source saying something else is a failed check, not a pass.</p>
+      </li>
+      <li>
+      <p><strong>Cannot verify.</strong> The source does not resolve, cannot be located, or was never offered. The claim is not checked &mdash; it is uncheckable as presented, and it stays that way until a source is supplied.</p>
+      </li>
+      </ol>
+      <p>The first three verdicts are about the relationship between claim and source. The fourth is about the absence of a relationship at all. Keeping them separate matters: &ldquo;does not support&rdquo; and &ldquo;cannot verify&rdquo; fail for different reasons and are fixed differently.</p>
+      <h2>The five steps, per claim</h2>
+      <p>The audit runs the same five steps on every claim:</p>
+      <p><strong>1. Extract the claim, word for word.</strong> Record the statement exactly as made, with where it appeared (page, section, slide, email). A claim you cannot quote back is a claim you cannot hold anyone to.</p>
+      <p><strong>2. Identify the source it points to.</strong> Note the citation, link, DOI, document, or dataset attached to the claim. If no source is attached, mark the claim &ldquo;cannot verify &mdash; no source offered&rdquo; and move on; no further step can rescue it.</p>
+      <p><strong>3. Check the source resolves.</strong> Follow the DOI or link yourself. Open the document. A dead link or a document that cannot be located is a failed citation, not a minor flaw. In Oryx&rsquo;s published pilot audit of 66 AI-generated citations, 31 (47%) had broken links (Paper 2, study 1 &mdash; a pilot, not a universal rate). Resolvability fails often enough to check every time.</p>
+      <p><strong>4. Check the source actually supports the claim.</strong> Read the relevant passage and mark the verdict plainly: supports, partially supports, or does not support. In the same pilot audit, 7 of the 66 citations (11%) mismatched the claim they were attached to, 11 (17%) could not be verified, and only 5 both resolved and fully supported the claim (Paper 2, study 1 &mdash; a pilot, not a universal rate). Existence and support are two different checks, and only the second tells you whether the claim is true.</p>
+      <p><strong>5. Record the verdict, with the reason.</strong> One line per claim: the claim, the source, the verdict, and the one-sentence reason. The log is the audit. Without it, the work cannot be re-checked, and a reviewer cannot tell what was actually verified.</p>
+      <h2>A worked example: four claims, four verdicts</h2>
+      <p>These are illustrative examples of how the verdicts work, not a test of any real document.</p>
+      <table>
+      <thead>
+      <tr>
+      <th>#</th>
+      <th>Claim (as made)</th>
+      <th>Source</th>
+      <th>Resolves?</th>
+      <th>Supports?</th>
+      <th>Verdict</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>1</td>
+      <td>&ldquo;The model scored 92% on FinanceBench, March 2026 evaluation&rdquo;</td>
+      <td>Evaluation report PDF</td>
+      <td>Yes</td>
+      <td>Supports &mdash; the report shows 92% on the stated benchmark</td>
+      <td><strong>Supports</strong></td>
+      </tr>
+      <tr>
+      <td>2</td>
+      <td>&ldquo;Cuts review time by 40% for mid-size firms&rdquo;</td>
+      <td>A two-page case note, no client named, no dates</td>
+      <td>Yes</td>
+      <td>Partially supports &mdash; 40% appears, but for one unnamed firm over two weeks, not mid-size firms generally</td>
+      <td><strong>Partially supports</strong></td>
+      </tr>
+      <tr>
+      <td>3</td>
+      <td>&ldquo;Trained only on licensed data&rdquo;</td>
+      <td>No source offered; &ldquo;trust our compliance team&rdquo;</td>
+      <td>No source</td>
+      <td>Not checked</td>
+      <td><strong>Cannot verify</strong></td>
+      </tr>
+      <tr>
+      <td>4</td>
+      <td>&ldquo;A 2024 study found X improves outcomes by 30%&rdquo;</td>
+      <td>A real 2024 paper &mdash; which reports a 12% improvement, on a different outcome</td>
+      <td>Yes</td>
+      <td>Does not support &mdash; the source exists but says something else</td>
+      <td><strong>Does not support</strong></td>
+      </tr>
+      </tbody>
+      </table>
+      <p>Claim 4 is the most instructive. The citation is real, the paper is real, the year is right &mdash; and the claim still fails, because the paper does not say what the claim says. Only reading the passage catches that. A check that stops at &ldquo;the link works&rdquo; would have passed it.</p>
+      <h2>How a claim-level audit differs from other checks</h2>
+      <ul>
+      <li>
+      <p><strong>Peer review</strong> judges a paper&rsquo;s contribution, methods, and argument. A claim-level audit judges only whether each claim&rsquo;s stated evidence supports it. It is narrower, and it can be run before peer review, on a draft, or on a document that will never be peer-reviewed at all &mdash; a vendor proposal, a policy brief, an internal report.</p>
+      </li>
+      <li>
+      <p><strong>A plagiarism check</strong> asks whether the words are original. A claim-level audit asks whether the claims are supported. A fully original document can fail every claim; a heavily borrowed one can pass them all.</p>
+      </li>
+      <li>
+      <p><strong>A fact-check</strong> usually verifies a small number of high-profile claims. A claim-level audit is systematic: every material claim in the document gets a verdict, not just the ones that look suspicious.</p>
+      </li>
+      <li>
+      <p><strong>An AI detector</strong> guesses whether text was machine-written. A claim-level audit does not care who wrote the text &mdash; it checks whether the claims hold. AI-generated citations are a common reason to run one, because they look plausible while failing often, but the method applies to human-written documents too.</p>
+      </li>
+      </ul>
+      <h2>The human review gate</h2>
+      <p>An audit is not finished when the checks are run. It is finished when a named human reviews the verdicts and signs off on them. That is the human review gate: a person, named in the report, who has read the verdicts, checked the reasoning on the failures, and accepts responsibility for the result. The gate exists because verdicts involve judgement &mdash; &ldquo;partially supports&rdquo; is a judgement call, and a judgement call needs a named judge.</p>
+      <p>Oryx&rsquo;s working paper describes a six-layer framework in which the human gate is one layer among others; the audit itself is the claim-by-claim method described above. The gate does not re-do the checks. It reviews them, challenges the borderline verdicts, and signs the report. Without a named gate, an audit is a spreadsheet, not a decision.</p>
+      <h2>What an audit report contains</h2>
+      <p>A complete claim-level evidence audit report has four parts:</p>
+      <ol>
+      <li>
+      <p><strong>The claim list.</strong> Every material claim in the document, quoted word for word, with where it appeared.</p>
+      </li>
+      <li>
+      <p><strong>The verdict log.</strong> One row per claim: the source, whether it resolved, the verdict, and the one-sentence reason. Failed claims carry the reason in full &mdash; a broken link, a mismatched passage, a missing source.</p>
+      </li>
+      <li>
+      <p><strong>The summary counts.</strong> How many claims were checked, and how many fell under each verdict. Counts are reported as counts, not as a score: &ldquo;5 of 66 claims fully supported&rdquo; is informative; &ldquo;72% trustworthy&rdquo; is not a claim-level result.</p>
+      </li>
+      <li>
+      <p><strong>The sign-off.</strong> The name of the human reviewer, the date, and what happens next for the failed claims &mdash; fix, re-source, withdraw, or re-check by a stated date.</p>
+      </li>
+      </ol>
+      <p>Anything less is a partial audit, and should say so. A report that lists verdicts without reasons cannot be re-checked; a report without a named reviewer cannot be relied on.</p>
+      <h2>What an audit cannot do</h2>
+      <p>A claim-level audit checks whether the stated evidence supports the stated claim. It does not check:</p>
+      <ul>
+      <li>
+      <p><strong>Whether the underlying science is right.</strong> A claim can be faithfully supported by its source and still be wrong, if the source itself is wrong. The audit verifies the chain from claim to source, not the source&rsquo;s own correctness.</p>
+      </li>
+      <li>
+      <p><strong>Whether the document is complete.</strong> An audit checks the claims that are there. It does not find the claims the author left out.</p>
+      </li>
+      <li>
+      <p><strong>Whether a number is meaningful.</strong> A percentage with no method stated &mdash; what was measured, on what inputs, by whom &mdash; can pass the support check (the source really does report that number) while still telling you nothing useful. Method questions are a separate check, and worth running alongside.</p>
+      </li>
+      </ul>
+      <p>Saying these limits plainly is part of the method. An audit that claims more than it checks is itself an unsupported claim.</p>
+      <h2>When to run one</h2>
+      <ul>
+      <li>
+      <p><strong>Before submitting a paper</strong> that contains AI-assisted citations, or any citations you have not personally verified.</p>
+      </li>
+      <li>
+      <p><strong>Before signing a vendor contract</strong>, on the material claims in the proposal and demo &mdash; the claims the purchase decision rests on.</p>
+      </li>
+      <li>
+      <p><strong>Before publishing a report</strong> that will be quoted, cited, or used to justify a decision.</p>
+      </li>
+      <li>
+      <p><strong>After a draft changes</strong>, on the claims that changed. A re-check of changed claims only is a legitimate partial audit, as long as it says so.</p>
+      </li>
+      </ul>
+      <p>The cost of running one is time: roughly a few minutes per claim for the resolve-and-support checks, plus the extraction pass. The cost of not running one is a failed claim discovered by a reviewer, a client, or a reader &mdash; after the document is already out.</p>
+      <h2>Sources and further reading</h2>
+      <ul>
+      <li>
+      <p>Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>) &mdash; the six-layer framework behind the claim, source, and human-gate checks above.</p>
+      </li>
+      <li>
+      <p>Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>) &mdash; the published pilot citation audit quoted in steps 3 and 4.</p>
+      </li>
+      <li>
+      <p>Oryx&rsquo;s guide, &ldquo;Auditable AI research: what makes research checkable&rdquo; (<a href="https://oryxai.in/auditable-ai-research.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the five properties that make any report, including an audit report, checkable.</p>
+      </li>
+      <li>
+      <p>Oryx&rsquo;s guide, &ldquo;How to check AI-generated citations in your own paper&rdquo; (<a href="https://oryxai.in/how-to-check-ai-citations.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the five-step citation check this audit method applies claim by claim.</p>
+      </li>
+      <li>
+      <p>Oryx&rsquo;s guide, &ldquo;How to check an AI vendor&rsquo;s claims before you sign&rdquo; (<a href="https://oryxai.in/how-to-check-ai-vendor-claims.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the six-step vendor-claim check, and the worked example of the same method on a proposal.</p>
+      </li>
+      <li>
+      <p>Oryx&rsquo;s &ldquo;AI vendor claims checklist&rdquo; (<a href="https://oryxai.in/ai-vendor-claims-checklist.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the seven-check version of this method, run per claim with a copyable log.</p>
+      </li>
+      <li>
+      <p>Oryx&rsquo;s guide, &ldquo;Human review gate AI&rdquo; (<a href="https://oryxai.in/human-review-gate-ai.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the named-human gate that signs off an audit.</p>
+      </li>
+      </ul>
+      <hr>
+      <p>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxai.in" style="text-decoration:underline">amartya@oryxai.in</a>).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
