@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check AI citations in your paper — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-check-ai-citations-in-your-paper.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A paper-level pass for checking AI-assisted citations before submission: inventory the reference list, resolve every link, match each source, and log the verdicts — with free tools and a 30-minute routine.">
+<meta property="og:title" content="How to check AI citations in your paper | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="A paper-level pass for checking AI-assisted citations before submission: inventory the reference list, resolve every link, match each source, and log the verdicts — with free tools and a 30-minute routine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-check-ai-citations-in-your-paper.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to check AI citations in your paper | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="A paper-level pass for checking AI-assisted citations before submission: inventory the reference list, resolve every link, match each source, and log the verdicts — with free tools and a 30-minute routine.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to check AI citations in your paper","url":"https://oryxai.in/how-to-check-ai-citations-in-your-paper.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check all the AI citations in my paper before submission?","acceptedAnswer":{"@type":"Answer","text":"Run a paper-level pass over the whole reference list: inventory every citation, resolve every link and DOI, match each source against the independent record, check support for the claim it carries, and log a verdict per citation — with free tools and about 30 minutes."}},
+{"@type":"Question","name":"What are the three ways AI citations fail in a paper?","acceptedAnswer":{"@type":"Answer","text":"In a published pilot audit of 66 AI-generated citations, 31 had broken links (47%), 7 mismatched the claim they were attached to (11%), and 11 could not be verified (17%). Only 5 both resolved and fully supported the claim. That is a pilot result, not a universal rate."}},
+{"@type":"Question","name":"How long does the paper-level check take?","acceptedAnswer":{"@type":"Answer","text":"About 30 minutes for most papers: re-resolve every link and DOI on the final version, re-check AI-assisted citations against their log entries, read the reference list for duplicates and inconsistent years, and confirm the log is saved with the submission files."}},
+{"@type":"Question","name":"What framework is this check based on?","acceptedAnswer":{"@type":"Answer","text":"The check follows the governance-first framework in the Oryx working paper v3, From Answers to Auditable Intelligence, DOI 10.5281/zenodo.23718472. The working paper is a design proposal, not validated by a blinded pilot."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/how-to-check-ai-citations-in-your-paper.html"},
+{"@type":"ListItem","position":3,"name":"How to check AI citations in your paper"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+      </nav>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to check AI citations in your paper</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For researchers</div>
+    <h1 style="margin-top:24px">How to check AI citations in your paper</h1>
+    <p class="sub">A paper-level pass for checking AI-assisted citations before submission: inventory the reference list, resolve every link, match each source, and log the verdicts — with free tools and a 30-minute routine.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+      <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> run a paper-level pass over the whole reference list before submission: inventory every citation, resolve every link and DOI, match each source against the record, check support for the claim, and log a verdict per citation &mdash; with free tools and a 30-minute routine.</p>
+      <p>If an AI tool helped draft your paper, the errors it introduced are probably not in your argument. They are in your reference list. A fabricated citation looks exactly like a real one on the page &mdash; same author format, same journal style, same confident DOI &mdash; and it will sit there quietly until a reviewer, an editor, or a reader follows the link and finds nothing, or finds a paper that says something else.</p>
+      <p>This guide is a paper-level pass: a single routine you run over the whole reference list before submission. It is not a per-citation deep dive &mdash; that is covered in Oryx&rsquo;s companion guide, &ldquo;How to check AI-generated citations in your own paper&rdquo; &mdash; it is the pass that makes sure no citation in your paper escapes checking at all. You need no product and no paid tool to follow it: a browser, Crossref, OpenAlex, and about 30 minutes.</p>
+      <h2>Start with the reference list, not the text</h2>
+      <p>Most people check citations as they read their draft, one at a time, in the order they appear. That is how citations get missed: the ones in footnotes, in tables, in the methods section you stopped re-reading three drafts ago.</p>
+      <p>Start instead by extracting the full reference list into one place &mdash; a spreadsheet or a plain text file, one row per citation, with the in-text claim it supports noted beside it. Then mark each row: did an AI tool produce or suggest this citation, or did you find it yourself? AI-assisted citations get checked first and hardest, because that is where the failure rate concentrates. But check the whole list. A citation you typed by hand can still carry a wrong year or a dead link.</p>
+      <p>Your inventory is also your defence. If a reviewer questions a citation later, a one-line log per citation &mdash; citation, verdict, date checked &mdash; shows the check happened. Keep it with the paper, not in your head.</p>
+      <h2>The three ways AI citations fail in a paper</h2>
+      <p>In a published pilot audit of 66 AI-generated citations (Paper 2, study 1 &mdash; a pilot, not a universal rate), the failures fell into three kinds:</p>
+      <ul>
+        <li><strong>Broken links &mdash; 31 of 66 (47%).</strong> The DOI or URL does not resolve. The paper cannot be found at the address given. This is the commonest failure, and the easiest to catch: following the link takes seconds.</li>
+        <li><strong>Mismatched &mdash; 7 of 66 (11%).</strong> The link resolves to a real paper, but the paper does not say what your sentence claims it says. A real source cited for a claim it does not make is a failed check, not a pass.</li>
+        <li><strong>Could not be verified &mdash; 11 of 66 (17%).</strong> The citation looks complete but cannot be traced to any real record &mdash; no matching title, authors, or DOI in Crossref, OpenAlex, or Google Scholar. A perfect-looking reference that appears nowhere is fabricated until proven otherwise.</li>
+      </ul>
+      <p>Only 5 of the 66 both resolved and fully supported the claim. That is a pilot result from one audit, not a rate you should quote about AI tools in general. Its lesson for your paper is narrower and safer: do not trust a citation because it looks well-formed. Resolve it, match it, and read what it actually says.</p>
+      <h2>The paper-level pass, in six steps</h2>
+      <p>Run these over the whole reference list, in order. Do not skip ahead to fixing until the pass is complete &mdash; you want the full picture of how many citations fail before you start repairing.</p>
+      <p><strong>1. Inventory every citation.</strong> One row per reference, with the claim it supports. Count them. If the count surprises you, that is the first finding: citations you forgot were there are citations nobody has checked.</p>
+      <p><strong>2. Resolve every link and DOI.</strong> Click each one, or paste each DOI into the Crossref resolver. Mark &ldquo;resolves&rdquo; or &ldquo;broken&rdquo; for every row. A broken link is a failed citation, not a minor flaw &mdash; fix it or remove the citation before you go further.</p>
+      <p><strong>3. Match the paper, not just the link.</strong> For each citation that resolves, check that the title, authors, year, and journal match what your reference list says. A link that leads to a different paper with a similar title is a mismatch, and it usually means the citation was assembled from fragments of real references.</p>
+      <p><strong>4. Check support for the claim it carries.</strong> Read the passage the citation is supposed to support &mdash; the abstract at minimum, the relevant section where the claim is specific. Mark each citation: supports, partially supports, or does not support. &ldquo;Partially supports&rdquo; is a real verdict: it means the claim needs narrowing to what the source actually says.</p>
+      <p><strong>5. Cross-check anything you cannot trace.</strong> For citations that do not resolve or do not match, search the title in Crossref, OpenAlex, or Google Scholar. If the paper exists under a different DOI or year, correct the reference. If it appears nowhere, treat it as fabricated: do not keep it in the hope that a reader will not check.</p>
+      <p><strong>6. Log the verdict per citation.</strong> One line each: citation, verdict, date checked. The log is what turns a private tidy-up into a check you can show a co-author, a supervisor, or a reviewer.</p>
+      <h2>What to do with the citations that fail</h2>
+      <p>A failed citation has three legitimate endings, and no others:</p>
+      <ul>
+        <li><strong>Replace it</strong> with a real source that supports the same claim. This is the usual fix for a broken link where the underlying paper exists.</li>
+        <li><strong>Re-source the claim</strong> &mdash; rewrite the sentence to say only what a source you have actually read supports. This is the fix for a mismatch: the claim was the problem, not the citation.</li>
+        <li><strong>Drop the claim.</strong> If no real source supports it, the sentence goes. A gap in your argument is honest and fixable; a fabricated citation is neither.</li>
+      </ul>
+      <p>Never keep a citation you could not verify, and never cite a paper you have not at least located. &ldquo;The AI gave it to me and it looked right&rdquo; is not a defence a reviewer will accept.</p>
+      <h2>Traps that only show up at paper level</h2>
+      <p>Some failures are invisible when you check citations one at a time. They only appear when you look at the whole list:</p>
+      <ul>
+        <li><strong>The same source cited two different ways.</strong> One entry says 2023, another says 2024; one spells the author differently. At least one of them is wrong, and a reader who checks both will trust neither.</li>
+        <li><strong>A secondary citation passed off as primary.</strong> Your reference list cites the original study, but the AI actually read a summary of it. If you have not read the original, cite the source you did read &mdash; or read the original.</li>
+        <li><strong>A preprint cited as peer-reviewed work.</strong> Preprints are citable, but they are not peer-reviewed. If your sentence implies peer review, the citation overstates its own authority.</li>
+        <li><strong>The wrong version or year.</strong> A paper with multiple versions &mdash; preprint, conference version, journal version &mdash; cited by the year of the wrong one. Check the version you actually mean.</li>
+        <li><strong>A real journal name on a paper that does not exist.</strong> Fabricated citations routinely borrow real journal names. The journal being real proves nothing about the paper.</li>
+      </ul>
+      <h2>A 30-minute pre-submission routine</h2>
+      <p>Do this the day you submit, after the last edit:</p>
+      <ol>
+        <li>Re-run step 2 &mdash; resolve every link and DOI &mdash; on the final version of the paper. Links break between drafts more often than you expect.</li>
+        <li>Re-check every AI-assisted citation against its log entry. If a sentence changed since the check, the check is stale: re-run steps 3 and 4 on that citation.</li>
+        <li>Read the reference list once, top to bottom, looking only for duplicates, inconsistent years, and entries that do not match their in-text citations.</li>
+        <li>Confirm the log is saved with the submission files.</li>
+      </ol>
+      <p>Thirty minutes is the whole routine for most papers. The cost of skipping it is a failed citation found by someone else, after the paper is already out.</p>
+      <h2>What this check cannot do</h2>
+      <p>Checking your citations verifies the chain from claim to source. It does not verify the science: a claim can be faithfully supported by its source and still be wrong, if the source itself is wrong. It does not check claims you left uncited. And it does not judge whether a source is the best source for the claim &mdash; only whether the source you cited says what you said it says. Those are separate checks, and worth running alongside.</p>
+      <h2>Sources and further reading</h2>
+      <ul>
+        <li>Paper 2 v2, <em>Trust, But Verify</em> (<a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">Zenodo DOI 10.5281/zenodo.23731235</a>) &mdash; the published pilot citation audit quoted above.</li>
+        <li>Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (<a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">Zenodo DOI 10.5281/zenodo.23718472</a>) &mdash; the six-layer framework behind the claim-level check.</li>
+        <li>Oryx&rsquo;s guide, &ldquo;How to check AI-generated citations in your own paper&rdquo; (<a href="https://oryxai.in/how-to-check-ai-citations.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the five-step check for a single citation, which this paper-level pass applies across the whole reference list.</li>
+        <li>Oryx&rsquo;s guide, &ldquo;How to check if an AI citation is real&rdquo; (<a href="https://oryxai.in/how-to-check-if-an-ai-citation-is-real.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the real-or-fabricated check for a single suspicious reference.</li>
+        <li>Oryx&rsquo;s guide, &ldquo;Claim-level evidence audit: check each claim&rdquo; (<a href="https://oryxai.in/claim-level-evidence-audit.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the same resolve-then-support method applied claim by claim to a whole document.</li>
+        <li>Oryx&rsquo;s guide, &ldquo;Auditable AI research: what makes research checkable&rdquo; (<a href="https://oryxai.in/auditable-ai-research.html" style="text-decoration:underline">oryxai.in</a>) &mdash; the five properties that make any report, including an audit report, checkable.</li>
+      </ul>
+      <p><strong>Related:</strong> <a href="how-to-check-ai-citations.html" style="text-decoration:underline">How to check AI-generated citations in your own paper</a> &mdash; the five-step check for a single citation, which this paper-level pass applies across the whole reference list.</p>
+      <hr>
+      <p>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxai.in" style="text-decoration:underline">amartya@oryxai.in</a>).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative (Udyam-registered micro enterprise) working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
