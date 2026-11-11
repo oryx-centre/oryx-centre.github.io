@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check AI-generated legal citations — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-check-ai-generated-legal-citations.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A filing-ready check for AI-generated legal citations: confirm each case and statute exists, read what it actually says, and check it is still good law — with free tools and a pre-filing routine.">
+<meta property="og:title" content="How to check AI-generated legal citations | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="A filing-ready check for AI-generated legal citations: confirm each case and statute exists, read what it actually says, and check it is still good law — with free tools and a pre-filing routine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-check-ai-generated-legal-citations.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to check AI-generated legal citations | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="A filing-ready check for AI-generated legal citations: confirm each case and statute exists, read what it actually says, and check it is still good law — with free tools and a pre-filing routine.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to check AI-generated legal citations","url":"https://oryxai.in/how-to-check-ai-generated-legal-citations.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How do I check an AI-generated legal citation before filing?","acceptedAnswer":{"@type":"Answer","text":"Run a six-step check on every citation: confirm the case or statute exists in an authoritative database, confirm it is the case or statute you named, read the judgment or current text to check it says what you claim, check it is still good law, confirm the jurisdiction and court level, and log the verdict per citation — with free tools and about 30 minutes for a typical brief."}},
+{"@type":"Question","name":"What are the ways AI-generated legal citations fail?","acceptedAnswer":{"@type":"Answer","text":"In a published pilot audit of 194 AI-generated research citations, 50 verified (26%), 95 were broken (49%), 17 pointed to a real source that did not say what was claimed (9%), and 31 could not be verified (16%). Legal citations add three more failure modes: the case is no longer good law, the wrong court or jurisdiction is cited, and a headnote is quoted as if it were the holding."}},
+{"@type":"Question","name":"How long does the pre-filing routine take?","acceptedAnswer":{"@type":"Answer","text":"About 30 minutes for most briefs: re-resolve every case and statute on the final version, re-check AI-assisted citations against their log entries, read the table of authorities for duplicates and inconsistent years, and confirm the log is saved with the filing papers."}},
+{"@type":"Question","name":"Is this guide legal advice?","acceptedAnswer":{"@type":"Answer","text":"No. It teaches citation checking only — how to check whether a citation points at a real source that says what you claim it says. It does not tell you what the law is, and it does not verify your legal argument."}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/how-to-check-ai-generated-legal-citations.html"},
+{"@type":"ListItem","position":3,"name":"How to check AI citations in your paper"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+      </nav>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to check AI-generated legal citations</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For legal researchers</div>
+    <h1 style="margin-top:24px">How to check AI-generated legal citations</h1>
+    <p class="sub">A filing-ready check for AI-generated legal citations: confirm each case and statute exists, read what it actually says, and check it is still good law — with free tools and a pre-filing routine.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+      <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> run a six-step check on every AI-generated legal citation before a brief, memo, or filing goes out: confirm the case or statute exists, confirm it is the one you named, read what it actually says, check it is still good law, confirm the jurisdiction and level, and log the verdict &mdash; with free tools and a 30-minute pre-filing routine. This guide teaches citation checking; it is not legal advice.</p>
+      <p>An AI tool that drafts a research paper can invent a citation. An AI tool that drafts a legal brief can do the same thing — and the consequences are worse. A wrong citation in a paper risks a reviewer's correction. A wrong citation in a filing risks your client's case, your reputation, and, in some courts, sanctions. In June 2023, a US federal judge sanctioned two lawyers and their firm $5,000 for filing a brief with six completely fabricated case citations generated by ChatGPT — cases that did not exist, with invented quotations (Mata v. Avianca, Inc., No. 22-cv-1461, S.D.N.Y. June 22, 2023). The court made the point that still frames the issue: there is nothing inherently improper about using an AI tool for assistance; the failure was filing citations nobody had verified.</p>
+      <p>This guide is a check you run on every AI-generated legal citation before a brief, memo, or filing goes out. You need no product and no paid tool to follow it: a browser, free legal databases, and about 30 minutes for a typical brief. It works for case law and for statutes, and it works in India and elsewhere, because the check is the same everywhere: does the source exist, is it the source you named, does it say what you claim, and is it still good law?</p>
+      <h2>Why legal citations fail differently</h2>
+      <p>A research citation fails when the paper does not exist or does not support the claim. A legal citation can fail in all of those ways, plus three more that are specific to law:</p>
+      <ul>
+      <li><strong>The case exists but is no longer good law.</strong> It was overruled, reversed on appeal, or distinguished so narrowly that it no longer supports your proposition. A citation that was correct five years ago can be wrong today, and an AI tool has no way of knowing unless it checked.</li>
+      <li><strong>The citation points at the wrong court or the wrong jurisdiction.</strong> A US state court decision cited as if it bound a federal court, or a High Court decision cited as if it were Supreme Court authority, is a failed citation even though the case is real.</li>
+      <li><strong>The headnote is not the holding.</strong> AI tools frequently summarise a case from its headnote or a secondary summary. The headnote is an editor's summary, not the court's words. If your sentence claims the court held something, only the judgment itself can support it.</li>
+      </ul>
+      <p>None of these failures is visible on the page. A fabricated case citation looks exactly like a real one — same party names, same reporter volume, same page numbers, same confident quotation. The only defence is to open the source.</p>
+      <h2>What a pilot audit found</h2>
+      <p>In a published pilot audit of 30 AI-generated research briefs (Paper 2, study 2 — a pilot, not a universal rate), 194 citations were checked claim by claim against their sources: 50 verified (26%), 95 broken (49%), 17 pointed to a real source that did not say what was claimed (9%), and 31 could not be verified at all (16%). That audit covered research briefs, not legal filings — but the failure pattern is the same one courts have since found in AI-drafted briefs: links that do not resolve, real sources cited for claims they do not make, and references that appear nowhere. Treat the numbers as a warning about the method, not as a rate you can quote about any particular tool.</p>
+      <h2>The six-step check for each legal citation</h2>
+      <p>Run these on every AI-generated citation in the brief, in order. Do not skip ahead to fixing until the check is complete — you want the full picture of how many citations fail before you start repairing.</p>
+      <p><strong>1. Does it exist?</strong> Search the case name or citation in an authoritative database, not in the AI tool that produced it. For Indian law: Indian Kanoon (free) and the Supreme Court of India judgments portal. For US law: CourtListener (free) and Google Scholar's case law search (free). If the case appears in no database, treat it as fabricated until proven otherwise — a perfect-looking citation that appears nowhere is not a citation, it is a guess.</p>
+      <p><strong>2. Is it the case or statute you named?</strong> Check the parties, the court, the year, and the reporter citation against the record you found. A real case with a similar name is not the case you cited: AI tools routinely assemble citations from fragments of real references — the right parties with the wrong year, or the right court with a volume number that belongs to a different case. For statutes, check the Act's name, the section number, and the version: an amended section cited by its pre-amendment number is a mismatch.</p>
+      <p><strong>3. Does it say what you claim?</strong> Read the judgment itself — the relevant paragraphs, not the headnote and not a summary. Mark each citation: supports, partially supports, or does not support. "Partially supports" is a real verdict: it means the proposition needs narrowing to what the court actually held. If you cited a case for a proposition and the judgment says the opposite, that is a failed check, not a pass. Never cite a case you have not at least located and read the relevant part of.</p>
+      <p><strong>4. Is it still good law?</strong> Check what happened to the case after it was decided. In free databases, use the "cited by" or "citing cases" feature — Indian Kanoon and Google Scholar both show later cases that cite the one you are checking — and read whether any later decision overruled, reversed, or distinguished it. A case that was overruled is not authority for your proposition, however well it reads. For statutes, check the current version: India Code (free) carries the law as amended; an AI tool citing a repealed provision is citing a dead source.</p>
+      <p><strong>5. Is it the right jurisdiction and the right level?</strong> A decision binds only within its own court hierarchy. Check that the court you named is the court that decided the case, and that its authority covers the forum you are filing in. A persuasive authority from another jurisdiction can be cited as persuasive — but only if you say so. Citing it as binding when it is not is a misrepresentation, even if the case is real and accurately quoted.</p>
+      <p><strong>6. Log the verdict per citation.</strong> One line each: citation, verdict (verified / broken / mismatch / unverifiable / overruled), date checked, and the database you checked it in. The log is what turns a private tidy-up into a check you can show a colleague, a senior, or a court. Keep it with the brief, not in your head.</p>
+      <h2>Free tools that help (and what they do not do)</h2>
+      <ul>
+      <li><strong>Indian Kanoon</strong> (free): full-text search of Indian Supreme Court and High Court judgments, with "cited by" links. It tells you whether a case exists and what later cases did with it; it does not tell you whether the case supports your proposition.</li>
+      <li><strong>Supreme Court of India judgments portal and eCourts</strong> (free): the authoritative source for recent Indian judgments. If a recent Supreme Court citation cannot be found here, be suspicious.</li>
+      <li><strong>India Code</strong> (free): statutes as amended. Use it to check that the section you cite is the section in force.</li>
+      <li><strong>CourtListener</strong> (free): US federal and state case law, with citation history. The free equivalent of a citator for existence and later history.</li>
+      <li><strong>Google Scholar case law</strong> (free): US case law search with "cited by" lists. Useful for a quick existence check; not a substitute for reading the opinion.</li>
+      <li><strong>SCC Online and Manupatra</strong> (paid): the standard Indian citators. If your firm or institution subscribes, use them for the good-law check; if not, the free tools above cover the existence and support checks, which are where AI citations most often fail.</li>
+      </ul>
+      <p>Tools help you find; you still judge support and good law. No database will tell you that a case does not say what your sentence claims it says. Only reading it will.</p>
+      <h2>Traps that only show up in legal citations</h2>
+      <p>Some failures are invisible when you check citations one at a time, or when you only check research papers:</p>
+      <ul>
+      <li><strong>A real case name with a fabricated citation.</strong> The parties are real, the court is real, the reporter volume does not exist. Check the full citation, not just the name.</li>
+      <li><strong>A headnote quoted as a holding.</strong> The headnote says one thing; the judgment says something narrower. Quote the judgment, not the summary.</li>
+      <li><strong>A dissent cited as the majority.</strong> The words are real and in the judgment — but they lost. If your sentence implies the court held something, a dissent does not support it.</li>
+      <li><strong>An overruled case cited as live authority.</strong> It reads perfectly and supports your point — and it stopped being law years ago. Step 4 exists for this trap.</li>
+      <li><strong>A statute cited by the wrong section.</strong> Section numbers shift between versions and between Acts with similar names. Check the section against the current text on India Code or the equivalent official source.</li>
+      <li><strong>A foreign case cited as domestic authority.</strong> A US or UK decision cited as if it were Indian law, with no flag that it is only persuasive. The case is real; the citation is still wrong.</li>
+      <li><strong>A parallel citation that does not exist.</strong> AI tools invent parallel citations (the same case in a second reporter) with plausible-looking volume and page numbers. Verify each reporter citation separately.</li>
+      </ul>
+      <h2>A pre-filing routine</h2>
+      <p>Do this the day you file, after the last edit:</p>
+      <ol>
+      <li>Re-run step 1 — confirm every case and statute still resolves — on the final version of the brief. Citations break between drafts more often than you expect.</li>
+      <li>Re-check every AI-assisted citation against its log entry. If a paragraph changed since the check, the check is stale: re-run steps 3 and 4 on that citation.</li>
+      <li>Read the table of authorities once, top to bottom, looking only for duplicates, inconsistent years, and entries that do not match their in-text citations.</li>
+      <li>Confirm the log is saved with the filing papers. If the court or the other side questions a citation, the log shows the check happened.</li>
+      </ol>
+      <p>Thirty minutes is the whole routine for most briefs. The cost of skipping it is a fabricated citation found by someone else, after the brief is already filed — and, as Mata v. Avianca showed, the court will ask not whether you used AI, but whether you verified anything at all. Some courts now require disclosure when generative AI was used in a filing; check your court's rules before you file, and disclose where required.</p>
+      <h2>What this check cannot do</h2>
+      <p>Checking your citations verifies the chain from claim to source. It does not verify your legal argument: a claim can be faithfully supported by its source and still lose, if the source is distinguishable or the argument is weak. It does not check propositions you left uncited. And it does not judge whether a case is the best authority for your point — only whether the source you cited exists, says what you said it says, and is still good law. Those are separate judgments, and they are yours, not the tool's.</p>
+      <h2>Sources and further reading</h2>
+      <ul>
+      <li>Paper 2 v2, <em>Trust, But Verify</em> (<a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">Zenodo DOI 10.5281/zenodo.23731235</a>) — the published pilot citation audit quoted above (study 2: 30 briefs, 194 citations).</li>
+      <li>Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (<a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">Zenodo DOI 10.5281/zenodo.23718472</a>) — the six-layer framework behind the claim-level check.</li>
+      <li>Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y. June 22, 2023) — sanctions for filing ChatGPT-fabricated case citations; the order is public and worth reading in full.</li>
+      <li>Oryx's guide, "How to check AI-generated citations in your own paper" (oryxai.in) — the five-step check for a single research citation, which this guide adapts to legal sources.</li>
+      <li>Oryx's guide, "How to check if an AI citation is real" (oryxai.in) — the real-or-fabricated check for a single suspicious reference.</li>
+      <li>Oryx's guide, "Claim-level evidence audit: check each claim" (oryxai.in) — the same resolve-then-support method applied claim by claim to a whole document.</li>
+      </ul>
+      <p><strong>Related:</strong> <a href="how-to-check-ai-citations-in-your-paper.html" style="text-decoration:underline">How to check AI citations in your paper</a> &mdash; the paper-level pass for a whole reference list, which this guide adapts to legal sources.</p>
+      <hr>
+      <p>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxai.in" style="text-decoration:underline">amartya@oryxai.in</a>).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative (Udyam-registered micro enterprise) working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
