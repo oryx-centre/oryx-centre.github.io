@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EU AI Act requirements for high-risk AI systems — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/eu-ai-act-high-risk-ai-systems-requirements.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="What the EU AI Act requires of high-risk AI systems: the seven requirements in Articles 9–15, who they fall on, the current dates, and the penalties.">
+<meta property="og:title" content="EU AI Act requirements for high-risk AI systems | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="What the EU AI Act requires of high-risk AI systems: the seven requirements in Articles 9–15, who they fall on, the current dates, and the penalties.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/eu-ai-act-high-risk-ai-systems-requirements.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="EU AI Act requirements for high-risk AI systems | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="What the EU AI Act requires of high-risk AI systems: the seven requirements in Articles 9–15, who they fall on, the current dates, and the penalties.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide h3{font-family:var(--serif);font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.25;font-weight:600;color:var(--navy);margin:44px 0 14px;max-width:820px}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"EU AI Act requirements for high-risk AI systems","url":"https://oryxai.in/eu-ai-act-high-risk-ai-systems-requirements.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the seven high-risk requirements under the EU AI Act?", "acceptedAnswer": {"@type": "Answer", "text": "Articles 9 to 15: a risk management system; data and data governance; technical documentation; record-keeping; transparency and information to deployers; human oversight; and accuracy, robustness, and cybersecurity."}}, {"@type": "Question", "name": "When do the high-risk obligations apply?", "acceptedAnswer": {"@type": "Answer", "text": "Annex III high-risk systems from 2 December 2027 and Annex I systems from 2 August 2028, after the Digital Omnibus on AI (Regulation (EU) 2026/1744) deferred the original dates. Article 50 transparency duties apply from 2 August 2026 and were not deferred."}}, {"@type": "Question", "name": "What are the penalties for non-compliance?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 35 million euros or 7% of worldwide annual turnover for prohibited practices; up to 15 million euros or 3% for most other obligations, including the high-risk requirements; and up to 7.5 million euros or 1% for supplying incorrect, incomplete, or misleading information to authorities."}}, {"@type": "Question", "name": "Is this guide legal advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It maps what the regulation requires so a reader can check a vendor's compliance claim against the evidence. It does not determine whether a particular system is high-risk, and it does not replace a qualified adviser's opinion."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oryxai.in/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://oryxai.in/eu-ai-act-high-risk-ai-systems-requirements.html"}, {"@type": "ListItem", "position": 3, "name": "EU AI Act requirements for high-risk AI systems"}]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+      </nav>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; EU AI Act requirements for high-risk AI systems</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For AI governance</div>
+    <h1 style="margin-top:24px">EU AI Act requirements for high-risk AI systems</h1>
+    <p class="sub">What the EU AI Act requires of high-risk AI systems: the seven requirements in Articles 9–15, who they fall on, the current dates, and the penalties.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+<p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> the EU AI Act's seven high-risk requirements (Articles 9–15) — risk management, data governance, technical documentation, record-keeping, transparency, human oversight, and accuracy, robustness, and cybersecurity — with the application dates as amended by the Digital Omnibus in 2026. This guide maps the regulation; it is not legal advice.</p>
+      <p>The EU AI Act is the first law anywhere that sets binding, risk-based rules for AI systems. It does not regulate "AI" in general. It sorts systems into risk tiers and attaches obligations to the tier. For most organisations, only one tier matters in practice: <strong>high-risk</strong>. If your system is high-risk, the Act imposes a defined set of requirements on it — and on the organisations that build it and use it. If it is not high-risk, those requirements do not apply, though other duties (such as transparency for chatbots) still might.</p>
+<p>This guide explains the high-risk requirements the way Oryx explains everything else: as claims that need evidence. Each requirement below is stated, then translated into the question you would ask and the evidence you would expect to see. A reader who never contacts Oryx should still leave able to read a vendor's compliance claim and check whether it points at anything real.</p>
+<h2>The four risk tiers, in brief</h2>
+<p>The Act (<a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" style="text-decoration:underline">Regulation (EU) 2024/1689</a>, in force since 1 August 2024) classifies AI systems into four tiers:</p>
+<ul>
+<li><strong>Unacceptable risk — banned.</strong> Practices listed in Article 5, such as social scoring, manipulative techniques, and untargeted scraping of facial images. These have been prohibited since 2 February 2025. No documentation or oversight can make them lawful.</li>
+<li><strong>High risk — the full regime.</strong> Systems listed in Annex I (AI as a safety component of products already regulated under EU harmonisation law, such as medical devices and machinery) and Annex III (standalone use cases, listed below). This guide is about this tier.</li>
+<li><strong>Limited risk — transparency duties.</strong> Systems such as chatbots and deepfake generators must disclose that the user is interacting with AI (Article 50). These duties apply from 2 August 2026 and were not deferred by the Digital Omnibus.</li>
+<li><strong>Minimal risk — no obligations.</strong> The vast majority of AI systems, such as spam filters and AI in video games, fall here. Providers may voluntarily follow codes of conduct.</li>
+</ul>
+<p>The tier decides everything. The most common and most expensive mistake is misclassification — treating a high-risk system as if it were minimal-risk, or spending high-risk effort on a system that is not high-risk at all.</p>
+<h2>Is your system high-risk?</h2>
+<p>A system is high-risk in two ways (Article 6):</p>
+<p><strong>Annex I — a safety component of a regulated product.</strong> The AI is a safety component of a product covered by EU harmonisation legislation (medical devices, machinery, toys, lifts, and others listed in Annex I), and that product itself requires third-party conformity assessment. A diagnostic aid inside a medical device is the classic example.</p>
+<p><strong>Annex III — eight standalone use cases.</strong> A system is high-risk if it is used in one of these areas:</p>
+<ol>
+<li><strong>Biometrics</strong> — remote biometric identification, biometric categorisation, and emotion inference (with narrow exceptions).</li>
+<li><strong>Critical infrastructure</strong> — safety components in the management of roads, water, gas, heating, electricity, and digital infrastructure.</li>
+<li><strong>Education and vocational training</strong> — systems that determine access to education or evaluate learning outcomes.</li>
+<li><strong>Employment and worker management</strong> — recruitment and selection, including CV screening, and systems that make decisions on promotion, termination, task allocation, or monitoring of workers.</li>
+<li><strong>Access to essential private and public services</strong> — credit scoring, risk assessment for life or health insurance, and systems that evaluate eligibility for public benefits.</li>
+<li><strong>Law enforcement</strong> — systems used to assess the risk of offending, to detect crime, or as polygraphs and similar tools.</li>
+<li><strong>Migration and border control</strong> — systems used to assess risks posed by persons entering the EU, or to examine asylum and visa applications.</li>
+<li><strong>Administration of justice and democratic processes</strong> — systems that assist judges in research and decision-making, and systems used to influence the outcome of an election or referendum.</li>
+</ol>
+<p><strong>The filter: Article 6(3).</strong> An Annex III system is <em>not</em> high-risk if it does not pose a significant risk to health, safety, or fundamental rights — for example, because it performs a narrow procedural task, improves the result of a human activity that was already completed, detects decision-making patterns without replacing a human assessment, or performs a preparatory task. This filter is narrow and must be documented: a provider that relies on it must be able to show its reasoning. It does not apply to profiling — a system that profiles people is high-risk even if it only performs one of those tasks.</p>
+<p><strong>Who owes what.</strong> The Act distinguishes roles. The <strong>provider</strong> develops the system (or has it developed) and places it on the market under its own name. The <strong>deployer</strong> uses the system under its authority. The seven requirements below fall on the provider. The deployer has its own duties (Article 26) — using the system as instructed, keeping human oversight, monitoring it, and informing people affected by its decisions. If a deployer substantially modifies a high-risk system, or puts its own name on it, it becomes a provider (Article 25) and takes on the provider's obligations.</p>
+<h2>The seven requirements (Articles 9–15)</h2>
+<p>Chapter III, Section 2 of the Act sets seven requirements a high-risk system must meet. Article 8 is the umbrella: the requirements apply across the system's lifecycle, must account for its intended purpose and the generally acknowledged state of the art, and must be met before the system is placed on the market. Articles 9 to 15 are the substance. For each, this guide states the requirement, the question to ask, and the evidence to expect.</p>
+<h3>Article 9 — Risk management system</h3>
+<p><strong>The requirement.</strong> A risk management system, established, implemented, documented, and maintained as a continuous, iterative process throughout the system's lifecycle. It must identify and analyse known and foreseeable risks — including risks arising from the system's interaction with its environment and from reasonably foreseeable misuse — estimate and evaluate them, and adopt measures to address them. Residual risks must be judged acceptable, and the system must be tested.</p>
+<p><strong>The question to ask.</strong> Show me the risk register: which risks were identified, how were they evaluated, what measures were taken, and what residual risk remains?</p>
+<p><strong>Evidence to expect.</strong> A written risk management file, updated across the lifecycle — not a one-off assessment done before launch and never revisited. If the vendor cannot show a risk it identified and then mitigated, the risk management system is a claim, not a control. (For the general method — separate the claim from its source, verify the source, record who accepted the residual risk — see Oryx's guide "<a href="how-to-check-ai-vendor-claims.html" style="text-decoration:underline">How to check an AI vendor's claims before you sign</a>".)</p>
+<h3>Article 10 — Data and data governance</h3>
+<p><strong>The requirement.</strong> Training, validation, and testing data must be subject to appropriate data governance practices: data collection and preparation, examination for possible biases, and documentation of the datasets' provenance, scope, and characteristics. Training data must be relevant, sufficiently representative, and as free of errors as possible for the intended purpose.</p>
+<p><strong>The question to ask.</strong> Where did the data come from, what does it cover, what does it not cover, and what was done about bias?</p>
+<p><strong>Evidence to expect.</strong> A data governance record describing the datasets, their sources, their known gaps, and the bias examination. A system whose training data cannot be described cannot be shown to be representative — and a system trained on data that does not cover the population it will decide about is a system whose outputs should not be trusted for that population. This is the same failure pattern Oryx's citation audits found in AI-generated research: in a published pilot of 30 AI-generated research briefs (Paper 2, study 2 — a pilot, not a universal rate), 95 of 194 citations (49%) were broken and 17 (9%) pointed to a real source that did not say what was claimed. Bad inputs produce plausible-looking outputs that fail on checking.</p>
+<h3>Article 11 — Technical documentation</h3>
+<p><strong>The requirement.</strong> Technical documentation, drawn up before the system is placed on the market and kept up to date, containing the information set out in Annex IV: a general description of the system, its intended purpose, its architecture, its data, its testing, and its performance.</p>
+<p><strong>The question to ask.</strong> May I see the technical documentation — or, if it is confidential, a description of what it contains and how it is kept current?</p>
+<p><strong>Evidence to expect.</strong> A documentation file that exists, is versioned, and matches the system being sold. A vendor that cannot describe its own system's architecture and testing in writing has not documented it, whatever its marketing says. Note that much of this documentation will be commercially sensitive; a buyer is entitled to assurance that it exists and is maintained, not necessarily to the full file.</p>
+<h3>Article 12 — Record-keeping</h3>
+<p><strong>The requirement.</strong> The system must automatically record events (logs) while it is operating, to a standard appropriate to its intended purpose — enough to trace the system's functioning, detect problems, and support post-market monitoring. Providers and deployers must keep the logs under their control for a period appropriate to the intended purpose, of at least six months, unless Union or national law provides otherwise.</p>
+<p><strong>The question to ask.</strong> What is logged, for how long, and who can reconstruct what the system did on a given day?</p>
+<p><strong>Evidence to expect.</strong> A logging specification and a retention rule. A system that produces no record of its own decisions cannot be investigated after an incident — and an investigation that cannot be done is a risk nobody accepted in writing.</p>
+<h3>Article 13 — Transparency and information to deployers</h3>
+<p><strong>The requirement.</strong> High-risk systems must be designed so that deployers can interpret the system's output and use it appropriately. The provider must supply instructions for use, including the system's intended purpose, its expected accuracy and limitations, the conditions under which it should and should not be used, and the human oversight measures built in.</p>
+<p><strong>The question to ask.</strong> What does the system not do well, and where should a deployer not rely on it?</p>
+<p><strong>Evidence to expect.</strong> Instructions for use that state the limits honestly. A document that lists only capabilities and no limitations has not been written to Article 13's standard. Limits stated in writing are the deployer's best protection: they are what makes it possible to use the system within its competence.</p>
+<h3>Article 14 — Human oversight</h3>
+<p><strong>The requirement.</strong> High-risk systems must be designed and developed so that they can be effectively overseen by natural persons while in use. Oversight measures must enable the person to understand the system's capabilities and limitations, monitor its operation, detect anomalies, decide not to use the system or its output, override it, and interrupt it — including through a "stop" button or similar procedure. For biometric identification systems, the Act requires verification by at least two natural persons before an action is taken.</p>
+<p><strong>The question to ask.</strong> Who is the named human who can stop this system, what do they see, and do they have the time and authority to intervene?</p>
+<p><strong>Evidence to expect.</strong> Named oversight roles, the information the overseer receives (the output, the sources it relied on, and the uncertainty behind it — not just the final answer), and a working stop mechanism. For remote biometric identification systems, the Act adds a stricter rule (Article 14(5)): no action may be taken on an identification unless it has been separately verified and confirmed by at least two natural persons, with a narrow carve-out for certain law-enforcement, migration, border-control, and asylum uses where Union or national law considers the requirement disproportionate. A queue of a thousand outputs a day with one reviewer is not oversight; it is a rubber stamp. (See Oryx's guide "<a href="ai-governance-evidence-checklist.html" style="text-decoration:underline">AI governance evidence checklist</a>" for the evidence record that makes oversight checkable.)</p>
+<h3>Article 15 — Accuracy, robustness, and cybersecurity</h3>
+<p><strong>The requirement.</strong> High-risk systems must achieve an appropriate level of accuracy, robustness, and cybersecurity, and perform consistently for their intended purpose. The declared accuracy levels must be stated in the instructions for use. The system must be resilient to errors, faults, and inconsistencies, and protected against attempts by unauthorised third parties to alter its use or performance — including data poisoning, adversarial examples, and model evasion.</p>
+<p><strong>The question to ask.</strong> What accuracy was measured, on what test data, and what happens when the system is attacked or fed data it was not designed for?</p>
+<p><strong>Evidence to expect.</strong> Measured accuracy figures with the test method stated, robustness testing (including adversarial testing), and cybersecurity measures described. An accuracy figure without a test method is a slogan. A system that has never been tested against hostile inputs has an untested security claim.</p>
+<h2>What organisations must do around the system</h2>
+<p>The seven requirements describe what the system must be. A second set of obligations describes what organisations must do:</p>
+<ul>
+<li><strong>Provider obligations (Articles 16–17).</strong> The provider must ensure the system meets Articles 9–15, draw up the technical documentation, operate a quality management system, carry out the conformity assessment, keep the documentation available, and cooperate with authorities. The quality management system is the organisational wrapper: it is what makes the seven requirements repeatable rather than one-off.</li>
+<li><strong>Conformity assessment (Article 43).</strong> Before placing a high-risk system on the market, the provider must demonstrate conformity — for most Annex III systems, through internal control based on the technical documentation; for some systems (including certain biometric systems), through a third-party assessment by a notified body. Conformity is then marked with the CE marking, and an EU declaration of conformity is drawn up.</li>
+<li><strong>Registration (Article 49).</strong> Before placing the system on the market, the provider must register it in the EU database for high-risk AI systems, with the information listed in Annex VIII. Deployers that are public authorities must register their use.</li>
+<li><strong>Deployer obligations (Article 26).</strong> The deployer must use the system in accordance with the instructions, assign human oversight to people with the necessary competence and authority, monitor the system's operation, keep the logs, and inform people affected by certain decisions (for example, workers, or people subject to a decision on access to a service).</li>
+<li><strong>Post-market monitoring and incidents (Articles 72–73).</strong> The provider must monitor the system once deployed, and report serious incidents to the market surveillance authority.</li>
+</ul>
+<p>A claim of compliance that points at none of these — no conformity assessment, no registration, no quality management system — is a claim without evidence.</p>
+<h2>Dates: the timetable changed in 2026</h2>
+<p>The Act applies in phases (Article 113). The original dates were: prohibitions (Article 5) from 2 February 2025; general-purpose AI obligations from 2 August 2025; most provisions, including Annex III high-risk obligations, from 2 August 2026; Annex I high-risk systems from 2 August 2027.</p>
+<p>Those dates for high-risk systems were deferred by the Digital Omnibus on AI, <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj" style="text-decoration:underline">Regulation (EU) 2026/1744</a>, published in the Official Journal on 24 July 2026. Under the amended timetable, the requirements for Annex III high-risk systems apply from <strong>2 December 2027</strong>, and for Annex I high-risk systems from <strong>2 August 2028</strong>. The Article 50 transparency duties were not deferred and apply from 2 August 2026.</p>
+<p>Two cautions. First, a deferral is not a repeal: the requirements are unchanged, only the date moved. Second, this area of law is moving quickly — check the current text on EUR-Lex before relying on any date in this guide. A guide written in November 2026 cannot promise what the law will say in 2027.</p>
+<h2>Penalties (Article 99)</h2>
+<p>The Act sets three tiers of administrative fines, imposed by Member State authorities. The figures are maximums, not tariffs, and the fine is the higher of the fixed amount or the percentage of total worldwide annual turnover for the preceding financial year — except for small and medium-sized enterprises and start-ups, where the lower of the two applies:</p>
+<ul>
+<li><strong>Prohibited practices (Article 5):</strong> up to €35 million or 7% of worldwide annual turnover.</li>
+<li><strong>Most other obligations</strong> — including the high-risk requirements, provider and deployer duties, and the Article 50 transparency duties: up to €15 million or 3% of worldwide annual turnover.</li>
+<li><strong>Supplying incorrect, incomplete, or misleading information</strong> to authorities or notified bodies: up to €7.5 million or 1% of worldwide annual turnover.</li>
+</ul>
+<p>Enforcement also includes non-monetary measures, including withdrawal of a non-compliant system from the market. The penalty provisions apply from 2 August 2025, but a penalty can only rest on an obligation that is already enforceable — so the deferred high-risk requirements cannot be penalised until they apply.</p>
+<h2>A worked example: mapping one system</h2>
+<p>Take a CV-screening tool sold to employers. It falls under Annex III (employment and worker management), so it is high-risk — unless the provider can document an Article 6(3) case that it poses no significant risk, which is hard for a tool that decides whose application advances.</p>
+<p>Map it against the seven requirements:</p>
+<ol>
+<li><strong>Risk management (Art. 9):</strong> Has the provider identified the risk that the tool systematically downgrades candidates from a particular background, and measured it? Ask for the risk register.</li>
+<li><strong>Data governance (Art. 10):</strong> What data was it trained on, how old is it, and was it examined for bias? A tool trained on a decade of past hiring decisions has learned the past employer's preferences — including its biases.</li>
+<li><strong>Technical documentation (Art. 11):</strong> Does a documentation file exist that describes the model, its features, and its testing?</li>
+<li><strong>Record-keeping (Art. 12):</strong> Can the deployer reconstruct which candidates were rejected and why, six months later?</li>
+<li><strong>Transparency (Art. 13):</strong> Do the instructions for use state the tool's accuracy, its limits, and the conditions under which it should not be used?</li>
+<li><strong>Human oversight (Art. 14):</strong> Is there a named person who reviews rejections before they are final, with time to do it and authority to override?</li>
+<li><strong>Accuracy and robustness (Art. 15):</strong> What accuracy was measured, on what test data, and was the tool tested against attempts to game it?</li>
+</ol>
+<p>One system, seven questions, seven pieces of evidence. A vendor that can answer all seven has done the work. A vendor that can answer none of them is selling a claim, not a compliant system.</p>
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Treating the deferral as a cancellation.</strong> The Digital Omnibus moved the dates; the requirements are unchanged. Organisations that stop work will face the same obligations on the new date, with less time to prepare.</li>
+<li><strong>Confusing a framework with compliance.</strong> Mapping your system against a framework (NIST AI RMF, ISO/IEC 42001) is useful preparation, but it is not a conformity assessment and it does not produce a CE marking.</li>
+<li><strong>Claiming compliance from a vendor's slide.</strong> "EU AI Act compliant" on a sales deck is a claim. The evidence is the technical documentation, the conformity assessment, the registration, and the quality management system. Ask for the evidence, not the adjective.</li>
+<li><strong>Forgetting the deployer.</strong> Buying a compliant system does not make the buyer compliant. The deployer must still assign human oversight, monitor the system, and inform affected people.</li>
+<li><strong>Ignoring Article 6(3) in both directions.</strong> Some providers claim the narrow-procedural-task filter without documenting it; others ignore it and do high-risk work on a system that is genuinely out of scope. Either way, the reasoning must be written down.</li>
+<li><strong>Assuming the Act does not reach you.</strong> The Act applies to providers placing systems on the EU market and to deployers in the EU — including non-EU providers whose system's output is used in the EU. A Global South organisation selling into Europe is in scope; one selling only outside the EU is not, though its buyers may still ask for the same evidence.</li>
+</ul>
+<h2>What this guide cannot do</h2>
+<p>This guide maps the regulation's requirements onto the questions and evidence a reader can check. It does not determine whether a particular system is high-risk — that determination needs the system's actual use, its Annex III category, and the Article 6(3) filter, applied by someone who knows the facts. It does not verify any vendor's compliance claim; only the technical documentation, conformity assessment, and registration do that. It does not replace a qualified adviser's opinion on an organisation's obligations, and it does not address national implementing rules, sector-specific law (such as the GDPR, which applies alongside the Act), or the standards that will support conformity assessment. If a decision carries legal risk, consult a qualified adviser and read the regulation itself on EUR-Lex.</p>
+<h2>Sources and further reading</h2>
+<ul>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" style="text-decoration:underline">Regulation (EU) 2024/1689</a>, <em>Laying down harmonised rules on artificial intelligence</em> (EUR-Lex) — the Act itself: Articles 5–6 (prohibitions and classification), 8–15 (high-risk requirements), 16–17 (provider obligations), 26 (deployer obligations), 43 (conformity assessment), 49 (registration), 99 (penalties), 113 (application dates).</li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj" style="text-decoration:underline">Regulation (EU) 2026/1744</a>, the Digital Omnibus on AI (EUR-Lex) — the 2026 amendment deferring the high-risk application dates to 2 December 2027 (Annex III) and 2 August 2028 (Annex I).</li>
+<li>Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>) — the six-layer framework behind the claim-level check used in this guide.</li>
+<li>Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>) — the published pilot citation audits quoted above (study 2: 30 briefs, 194 citations).</li>
+<li>Oryx's guide, "<a href="how-to-check-ai-vendor-claims.html" style="text-decoration:underline">How to check an AI vendor's claims before you sign</a>" (oryxai.in) — the six-step vendor-claim check, applied here to compliance claims.</li>
+<li>Oryx's guide, "<a href="ai-governance-evidence-checklist.html" style="text-decoration:underline">AI governance evidence checklist</a>" (oryxai.in) — the evidence checklist for governance claims, including human oversight.</li>
+<li>Oryx's guide, "<a href="claim-level-evidence-audit.html" style="text-decoration:underline">Claim-level evidence audit: check each claim</a>" (oryxai.in) — the same resolve-then-support method applied claim by claim to a whole document.</li>
+</ul>
+      <p><strong>Related:</strong> <a href="how-to-check-ai-vendor-claims.html" style="text-decoration:underline">How to check an AI vendor's claims before you sign</a> &mdash; the six-step vendor-claim check, applied here to compliance claims.</p>
+      <hr>
+      <p><strong>Offer line — the ONLY offer mention on this page, placed last:</strong> Oryx AI offers claim-level evidence audits for research drafts and vendor claims — ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: amartya@oryxai.in).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative (Udyam-registered micro enterprise) working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
