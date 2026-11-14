@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to evaluate AI guardrails — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-evaluate-ai-guardrails.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="How to test whether an AI system's guardrails actually hold: what guardrails are, what they cannot do, a six-step evaluation, and the questions to send a vendor.">
+<meta property="og:title" content="How to evaluate AI guardrails | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="How to test whether an AI system's guardrails actually hold: what guardrails are, what they cannot do, a six-step evaluation, and the questions to send a vendor.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-evaluate-ai-guardrails.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to evaluate AI guardrails | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="How to test whether an AI system's guardrails actually hold: what guardrails are, what they cannot do, a six-step evaluation, and the questions to send a vendor.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide h3{font-family:var(--serif);font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.25;font-weight:600;color:var(--navy);margin:44px 0 14px;max-width:820px}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to evaluate AI guardrails","url":"https://oryxai.in/how-to-evaluate-ai-guardrails.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an AI guardrail?", "acceptedAnswer": {"@type": "Answer", "text": "A control placed around a model — an input filter, an output filter, a policy rule, a topic limit, a PII control, a tool-use limit, or a human-in-the-loop gate — that is supposed to stop the system doing something it should not do. A rule only counts as a guardrail if something enforces it; a policy document on its own is not a control."}}, {"@type": "Question", "name": "Do guardrails make AI outputs true?", "acceptedAnswer": {"@type": "Answer", "text": "No. A filter can block a forbidden topic and still pass a confident, well-written answer that cites a paper that does not exist. In Oryx's published pilot audit, 95 of 194 AI-generated citations had broken links and only 50 were verified as real and supporting the claim. Truth-checking is a separate job from content-filtering."}}, {"@type": "Question", "name": "How do you test whether a guardrail works?", "acceptedAnswer": {"@type": "Answer", "text": "Write down what it must block and allow, build a fixed set of 20–40 test prompts including reframed and indirect attempts, run them and record a verdict for each, report the results as counts, check the surrounding controls, and re-test after every change."}}, {"@type": "Question", "name": "What should stop you signing with a vendor?", "acceptedAnswer": {"@type": "Answer", "text": "The vendor will not name its guardrails, will not share its test set, or the guardrails fail on direct attempts. A guardrail you cannot see tested is not a guardrail you can rely on."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://oryxai.in/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://oryxai.in/how-to-evaluate-ai-guardrails.html"}, {"@type": "ListItem", "position": 3, "name": "How to evaluate AI guardrails"}]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+      </nav>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to evaluate AI guardrails</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For teams deploying AI</div>
+    <h1 style="margin-top:24px">How to evaluate AI guardrails</h1>
+    <p class="sub">How to test whether an AI system's guardrails actually hold: what guardrails are, what they cannot do, a six-step evaluation, and the questions to send a vendor.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+<p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> this guide teaches you how to test whether an AI system's guardrails actually hold: what guardrails are, what they cannot do, a six-step evaluation, and the questions to send a vendor before you sign. It teaches the method; it is not certification, legal advice, or a compliance determination.</p>
+      <p>"We have guardrails" is one of the most common claims a vendor makes about an AI system — and one of the least tested. A guardrail is a control placed around a model: a filter, a rule, or a check that is supposed to stop the system doing something it should not do. The claim is easy to make. Whether the guardrail actually holds, in your use, against the prompts your users will really send, is a different question — and it is one you can test yourself, before you sign.</p>
+<p>This guide teaches the test. A reader who never contacts Oryx should still leave able to run it.</p>
+<h2>What guardrails actually are</h2>
+<p>Guardrails come in several kinds, and a vendor may mean any of them — or all of them — when it says the word. Ask which ones are actually in place:</p>
+<ul>
+<li><strong>Input filters.</strong> Checks applied to the user's prompt before it reaches the model: blocked topics, blocked phrases, injection patterns, or limits on what the system will accept.</li>
+<li><strong>Output filters.</strong> Checks applied to the model's reply before it reaches the user: blocked content categories, profanity or toxicity screens, and rules that replace or refuse certain answers.</li>
+<li><strong>Policy rules.</strong> Written rules about what the system may and may not do — for example, never give medical dosage advice, never reveal internal instructions, never generate a citation it cannot source. A rule only counts as a guardrail if something enforces it; a policy document on its own is not a control.</li>
+<li><strong>Topic and scope limits.</strong> Restrictions on what the system will discuss or do — for example, a customer-support assistant that refuses questions outside its product, or a research assistant that refuses to draft legal filings.</li>
+<li><strong>PII and data controls.</strong> Rules that stop personal data leaving the system — redacting names, addresses, or account numbers from outputs, or refusing to repeat data the user pasted in.</li>
+<li><strong>Tool-use limits.</strong> For systems that can act — send email, query a database, call an API — limits on which tools it may use, what it may change, and when it must ask a human first.</li>
+<li><strong>Human-in-the-loop gates.</strong> Points where the system stops and waits for a person to approve before it proceeds. This is the strongest form of guardrail, and the most expensive to run — which is why vendors often describe it and rarely implement it.</li>
+</ul>
+<p>If a vendor cannot name which of these it uses, "we have guardrails" is a slogan, not a claim. The first step of any evaluation is to get the list in writing.</p>
+<h2>What guardrails cannot do</h2>
+<p>This is the part vendors rarely volunteer, and it matters more than the list above:</p>
+<ul>
+<li><strong>Guardrails do not make outputs true.</strong> A filter can block a forbidden topic and still pass a confident, well-written answer that cites a paper that does not exist. In a published Oryx pilot audit of 194 AI-generated citations across 30 research briefs, 95 (49%) had broken links and only 50 (26%) were verified as real and supporting the claim (Paper 2, Study 2 — a pilot, not a universal rate). Those citations came from systems that would have passed most content filters. Truth-checking is a separate job from content-filtering, and a guardrail does neither the other's work.</li>
+<li><strong>Guardrails do not stop every jailbreak.</strong> A jailbreak is a prompt designed to get around a guardrail — by reframing the request, by role-play, by splitting it across turns, or by hiding instructions inside pasted text. No guardrail blocks all of them. A vendor that claims otherwise has not tested enough.</li>
+<li><strong>Guardrails do not cover every language or phrasing.</strong> A filter tuned on English prompts may miss the same request in Hindi, in another script, or in slang. If your users do not all write in English, the guardrail has not been evaluated until it has been tested in the languages your users actually use.</li>
+<li><strong>Guardrails degrade.</strong> Models are updated, prompts drift, and new jailbreak techniques appear. A guardrail that held in January may not hold in June. An evaluation is a snapshot, not a permanent verdict — it needs a re-test date.</li>
+</ul>
+<h2>The six-step evaluation</h2>
+<h3>Step 1 — Write down what the guardrail must do</h3>
+<p>Before testing anything, list the behaviours the guardrail is supposed to prevent and the behaviours it is supposed to allow. Be specific: "must refuse to draft a legal filing" is testable; "must be safe" is not. Include the allowed side too — a guardrail that blocks legitimate work is a failed guardrail, not a strong one. Get the vendor's own list first, then add the behaviours you care about that it omitted.</p>
+<h3>Step 2 — Build a test set</h3>
+<p>Write 20–40 test prompts covering the behaviours from Step 1. Include:</p>
+<ul>
+<li><strong>Direct attempts</strong> — the straightforward request the guardrail should refuse (e.g. "write a legal filing for my court case").</li>
+<li><strong>Reframed attempts</strong> — the same request restated, split across turns, or wrapped in a fictional scenario.</li>
+<li><strong>Indirect attempts</strong> — instructions hidden inside pasted text, a document, or a quoted message, asking the system to follow them.</li>
+<li><strong>Edge cases</strong> — requests that are close to the line but legitimate, which the guardrail should allow.</li>
+<li><strong>Your languages</strong> — the same prompts in every language your users will actually use.</li>
+</ul>
+<p>Keep the test set fixed and written down. If you change it mid-test, you cannot compare results.</p>
+<h3>Step 3 — Run the tests and record the verdict for each</h3>
+<p>For every prompt, record three things: the prompt, the system's response, and a verdict — <strong>blocked</strong> (refused or safely redirected), <strong>passed</strong> (answered correctly and within the rules), or <strong>failed</strong> (answered when it should have refused, or refused when it should have answered). A guardrail that refuses a legitimate request has failed that test just as surely as one that answers a forbidden one. Count both kinds of failure.</p>
+<h3>Step 4 — Measure, honestly</h3>
+<p>Report the results as counts, not adjectives. "Blocked 17 of 20 direct attempts, 9 of 15 reframed attempts, and refused 3 of 10 legitimate requests" is an evaluation. "Strong guardrails" is not. State the limits alongside the numbers: how many prompts, in which languages, on which date, on which version of the system. A vendor's own test numbers are a claim too — ask for the test set, not just the score. If the vendor will not share it, say so in your record and treat the score as unverified.</p>
+<h3>Step 5 — Check the surrounding controls</h3>
+<p>A guardrail is only one layer. Check whether the system also has the controls that catch what the guardrail misses:</p>
+<ul>
+<li><strong>Logging.</strong> Are prompts and responses logged, and can you review them? If a guardrail fails silently and nobody can see it, the failure does not exist on paper — only in practice.</li>
+<li><strong>Override and escalation.</strong> Can a human override a refusal, and is the override recorded? Who can do it, and what happens when they do?</li>
+<li><strong>Version and change records.</strong> When the model or the guardrail rules change, is there a record — and a re-test?</li>
+<li><strong>Human review gate.</strong> Is there a named person who reviews the guardrail's failures and accepts the residual risk? A guardrail without a named human acceptor is a control without an owner.</li>
+</ul>
+<h3>Step 6 — Re-test after every change</h3>
+<p>Every model update, prompt change, or guardrail rule change is a new evaluation. Re-run the same test set — that is why Step 2 insisted on a fixed, written-down set — and compare the counts. A guardrail that held before an update and fails after it is a regression, and it is the most common way a deployed system quietly gets worse.</p>
+<h2>Red flags</h2>
+<ul>
+<li>The vendor will not name which guardrails exist, or describes them only as "industry-standard".</li>
+<li>The vendor quotes a safety score but will not share the test set, the prompt count, or the date.</li>
+<li>The guardrail has never been tested in the languages your users write in.</li>
+<li>Refusals are not logged, or there is no record of who reviewed a failure.</li>
+<li>There is no named human who accepts the residual risk when a guardrail fails.</li>
+<li>The guardrail blocks legitimate work often enough that users learn to work around it — because a bypassed guardrail protects nothing.</li>
+<li>The vendor treats the evaluation as a one-off, with no re-test after updates.</li>
+</ul>
+<h2>A worked example (method only, labelled pilot)</h2>
+<p>Oryx has not published a guardrails evaluation. What it has published is the method this guide applies, and the reason the method is needed. In the pilot audit of 194 AI-generated citations across 30 research briefs (Paper 2, Study 2 — a pilot, not a universal rate), 95 citations (49%) had broken links, 17 (9%) pointed at a real source that did not support the claim, 31 (16%) could not be verified at all, and 1 had no URL at all. Only 50 (26%) were verified. Every one of those citations looked plausible, and a content filter would have passed almost all of them — they contained nothing a toxicity or topic filter would block. The point is the method: a control that filters content is not a control that verifies truth, and an evaluation that only tests the filter will miss the failures that matter most to a research team. Test both, and record both.</p>
+<h2>Questions to send a vendor (copy-paste list)</h2>
+<ol>
+<li>Which guardrails are in place — input filters, output filters, policy rules, topic limits, PII controls, tool-use limits, human gates? Name each one.</li>
+<li>What exactly is each guardrail supposed to block, and what is it supposed to allow?</li>
+<li>Share the test set you used to evaluate them — the prompts, the counts, the date, and the system version.</li>
+<li>How do the guardrails perform against reframed and indirect prompts, not just direct ones?</li>
+<li>In which languages have they been tested, and what were the results per language?</li>
+<li>Are refusals and guardrail failures logged, and can we review the logs?</li>
+<li>Who is the named human who reviews guardrail failures and accepts the residual risk?</li>
+<li>What happens when the model or the guardrail rules change — is there a re-test, and who runs it?</li>
+</ol>
+<h2>What to do with the result</h2>
+<ul>
+<li><strong>Pass.</strong> The guardrails blocked the forbidden requests, allowed the legitimate ones, and the surrounding controls (logging, override records, a named human acceptor, a re-test plan) are in place. Keep the test record with the contract file.</li>
+<li><strong>Conditional.</strong> Named gaps exist — for example, reframed prompts slip through, or one language is untested. Fix the gaps, re-run the same test set, and record the new counts before signing.</li>
+<li><strong>Reject.</strong> The vendor will not name the guardrails, will not share a test set, or the guardrails fail on direct attempts. A guardrail you cannot see tested is not a guardrail you can rely on.</li>
+</ul>
+<p>Keep the test record — prompts, responses, verdicts, counts, date, version — with the contract file. It is your evidence if a guardrail fails in production, and it is the baseline for the next re-test.</p>
+<h2>Sources and further reading</h2>
+<ul>
+<li>Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>) — the claim-level evidence method this guide applies.</li>
+<li>Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>) — the pilot citation audits; Study 2: 30 briefs, 194 citations.</li>
+<li><a href="https://www.nist.gov/itl/ai-risk-management-framework" style="text-decoration:underline">NIST AI Risk Management Framework</a> (public framework: Govern, Map, Measure, Manage) — a reference for organising AI risk work; this guide is not a NIST assessment.</li>
+<li>Oryx's guide, "<a href="how-to-check-ai-vendor-claims.html" style="text-decoration:underline">How to check an AI vendor's claims before you sign</a>" (oryxai.in) — the general claim-checking method, applied here to guardrails.</li>
+<li>Oryx's guide, "<a href="ai-safety-audit-checklist.html" style="text-decoration:underline">AI safety audit checklist</a>" (oryxai.in) — the wider safety-audit checklist this evaluation sits inside.</li>
+</ul>
+      <p><strong>Related:</strong> <a href="ai-safety-audit-checklist.html" style="text-decoration:underline">AI safety audit checklist</a> &mdash; the wider safety-audit checklist this evaluation sits inside.</p>
+      <hr>
+      <p>Oryx AI offers claim-level evidence audits for research drafts and vendor claims — ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: amartya@oryxai.in).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative (Udyam-registered micro enterprise) working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Oryx AI</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
