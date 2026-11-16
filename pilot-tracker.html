@@ -76,6 +76,18 @@
     .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
     .btn.gold:hover{background:#D9B83C}
     @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
   
     /* HERO */
     .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -300,14 +312,14 @@
 
 <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> every counter starts at 0 on 17 November 2026. Conversations before that date are not counted here, because the tracker starts here. The counters move only when a pilot event happens — and they are updated the same day it does.</p>
 <h2>The counters</h2>
-<table style="width:100%;border-collapse:collapse;font-size:16px;margin:0 0 26px">
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;border-collapse:collapse;font-size:16px;margin:0 0 26px">
 <thead><tr><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px 10px 0">Stage</th><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px">Count</th><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px">What it means</th></tr></thead>
 <tbody>
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>Pilots offered</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">0</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">A pilot proposed in writing, with boundary, fixed price and date</td></tr>
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>Pilots accepted</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">0</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">The client accepted the pilot terms and the work started</td></tr>
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>Pilots paid</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">0</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">The report passed the agreed criteria and the pilot fee was paid</td></tr>
 <tr><td style="padding:10px 12px 10px 0"><strong>Repeat audits</strong></td><td style="padding:10px 12px">0</td><td style="padding:10px 12px">A client who came back for a second audit</td></tr>
-</tbody></table>
+</tbody></table></div>
 <h2>Why count in public</h2>
 <p>We are pre-revenue. We claim no clients, no funders and no results that do not exist. A public counter is the honest alternative to a claim: it shows 0 until the work exists, and it shows the work once it does. The number itself becomes the story once it moves.</p>
 <h2>How a pilot moves a counter</h2>

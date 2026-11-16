@@ -76,6 +76,18 @@
     .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
     .btn.gold:hover{background:#D9B83C}
     @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
   
     /* HERO */
     .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -300,7 +312,7 @@
 
 <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> free check — 5 citations, no card, results within 5 working days. Pilot — one full research report, ₹7,500 in India or $150 abroad, payable only if it passes criteria agreed with you in writing first. If it does not pass, you pay nothing.</p>
 <h2>Free check vs pilot</h2>
-<table style="width:100%;border-collapse:collapse;font-size:16px;margin:0 0 26px">
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table style="width:100%;border-collapse:collapse;font-size:16px;margin:0 0 26px">
 <thead><tr><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px 10px 0"></th><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px">Free 5-citation check</th><th style="text-align:left;border-bottom:2px solid #C9A227;padding:10px 12px">Pilot report</th></tr></thead>
 <tbody>
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>What you get</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">5 citations from your material, each resolved and read against its claim, with a verdict</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">One full research report on your question, every material claim cited, gaps and confidence stated, human-reviewed</td></tr>
@@ -309,7 +321,7 @@
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>Turnaround</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">Results within 5 working days</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">Criteria agreed first; you then have 5 working days to accept or decline the report</td></tr>
 <tr><td style="padding:10px 12px 10px 0;border-bottom:1px solid rgba(10,34,64,.10)"><strong>Human review</strong></td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">Yes — every check is reviewed by Riya Nalwa</td><td style="padding:10px 12px;border-bottom:1px solid rgba(10,34,64,.10)">Yes — no report ships without her review (3–5 working days)</td></tr>
 <tr><td style="padding:10px 12px 10px 0"><strong>What you keep</strong></td><td style="padding:10px 12px">The 5 verdicts and the evidence behind them</td><td style="padding:10px 12px">The report, the evidence table and the mechanical verification record</td></tr>
-</tbody></table>
+</tbody></table></div>
 <h2>What the pilot price covers — and what it does not</h2>
 <p>The pilot price is the price. There is no setup fee, no hidden charge, and no subscription. It covers one research report on one agreed question, the claim-level verification of every material claim, the evidence table, the human review, and the tamper-evident hash on the exported report. It does not cover a second report, ongoing research, or a draft audit — those are priced separately and agreed in writing first.</p>
 <h2>Draft audit</h2>

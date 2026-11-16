@@ -76,6 +76,18 @@
     .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
     .btn.gold:hover{background:#D9B83C}
     @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
   
     /* HERO */
     .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -241,7 +253,7 @@
 </style>
 <style>
 .quiz-q{border:1px solid rgba(10,34,64,.16);background:#fff;padding:24px 26px;margin:0 0 22px}
-.quiz-q .cite{font-size:16px;color:var(--mut);margin:10px 0 16px}
+.quiz-q .cite{font-size:16px;color:var(--mut);margin:10px 0 16px;overflow-wrap:anywhere}
 .quiz-q button{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.06em;background:#fff;color:var(--navy);border:1px solid var(--navy);padding:9px 14px;margin:0 8px 8px 0;cursor:pointer}
 .quiz-q button:hover{background:var(--navy);color:#fff}
 .quiz-q button:disabled{opacity:.55;cursor:default}
