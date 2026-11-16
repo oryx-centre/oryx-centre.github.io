@@ -37,6 +37,7 @@
 {"@type":"Question","name":"What is Oryx Evidence Audit?","acceptedAnswer":{"@type":"Answer","text":"An auditable research service from the Oryx team. You ask a research question; the report is built through six stages — question framing, evidence acquisition, claim-level traceability, adversarial review, human decision gates, and monitoring and correction — with every material claim cited and every gap stated."}},
 {"@type":"Question","name":"What does “pay only if it passes” mean?","acceptedAnswer":{"@type":"Answer","text":"The pilot fee is payable only if the report passes criteria agreed upfront — including the sourced-claim rate, every material claim cited, gaps and confidence stated, and human review completed. If it does not pass, you pay nothing. Pilot pricing is ₹7,500 in India and $150 abroad, payable only on acceptance."}},
 {"@type":"Question","name":"What makes a report auditable?","acceptedAnswer":{"@type":"Answer","text":"Verification numbers are computed mechanically from the report itself, never written by the model that wrote it. Claims without a citation are shown in a separate unsourced section, not buried. An adversarial pass flags problems, and a human reviewer approves the report before delivery."}},
+{"@type":"Question","name":"How do I know a report has not been changed after delivery?","acceptedAnswer":{"@type":"Answer","text":"Every exported report is sealed with a SHA-256 hash of its text and its PDF, recorded in a verification file and printed in the report footer. Each job on the beta has a verification page that recomputes both hashes and reports VERIFIED or MISMATCH."}},
 {"@type":"Question","name":"What happens to my draft or question?","acceptedAnswer":{"@type":"Answer","text":"Your draft stays yours. It is never published, never reused, and never shared outside the review of that audit. Questions and reports are confidential by default."}},
 {"@type":"Question","name":"Is Oryx Evidence Audit a chatbot that answers instantly?","acceptedAnswer":{"@type":"Answer","text":"No. There is no instant, ungated answer: every report passes human review before delivery. The guided demo on this page is scripted and is not a live agent."}},
 {"@type":"Question","name":"How do I start?","acceptedAnswer":{"@type":"Answer","text":"Use the enquiry form on this page, or write to contact@oryxcentre.dpdns.org with your question. Pilot engagements are currently contracted through Riya Nalwa's Udyam-registered proprietorship."}}
@@ -227,6 +228,13 @@
     .js .rv{opacity:1;transform:none}
     .progress{display:none}
   }
+  /* COMPARE TABLE */
+  .compare{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line)}
+  .compare th,.compare td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:16px;vertical-align:top}
+  .compare th{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:rgba(10,34,64,.04)}
+  .compare td:first-child{font-weight:700;color:var(--navy)}
+  .compare tr:last-child td{border-bottom:0}
+  @media(max-width:700px){.compare th,.compare td{padding:12px 14px;font-size:14px}}
   /* ENQUIRY FORM */
   .enquiry-form{max-width:720px}
   .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
@@ -266,6 +274,7 @@
         <a href="index.html#paper">Working Paper</a>
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="press.html">Press</a>
       </nav>
       <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
     </div>
@@ -285,7 +294,7 @@
         <h1 style="margin-top:24px">A research department<br>in a <span class="accent">box</span></h1>
         <p class="sub">Every claim checked, every check shown. Auditable research reports for teams that need evidence they can defend &mdash; every material claim cited to a real source, every gap and confidence level stated plainly, and no report shipped without human review.</p>
         <div class="hero-cta">
-          <a class="btn" href="mailto:contact@oryxcentre.dpdns.org?subject=Oryx%20AI%20pilot%20request">Request a pilot &#8599;</a>
+          <a class="btn" href="start-a-pilot.html">Request a pilot &#8599;</a>
           <a class="textlink" href="#how">How it works &#8964;</a>
           <a class="textlink" href="oryx-ai-sample-report.html">See a sample report &#8599;</a>
           <a class="textlink" href="evidence-audit-india.html">Evidence Audit and Vendor-Claim Verification &#8599;</a>
@@ -394,9 +403,78 @@
       <p>Every engagement is priced per pilot or per audit, agreed with you upfront against written criteria. No subscriptions, no seat licences, no surprises.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="num">01</div><h3>Pilot report</h3><p>One full research report on your question, verified and human-reviewed. The fee is payable only if it passes the criteria agreed upfront &mdash; otherwise you pay nothing.</p><p style="margin-top:18px"><strong>&#8377;7,500 in India &middot; $150 abroad, payable only on acceptance.</strong></p></div>
+      <div class="card"><div class="num">01</div><h3>Pilot report</h3><p>One full research report on your question, verified and human-reviewed. The fee is payable only if it passes the criteria agreed upfront &mdash; otherwise you pay nothing.</p><p style="margin-top:18px"><strong>&#8377;7,500 in India &middot; $150 abroad, payable only on acceptance.</strong></p><p style="margin-top:18px"><a class="textlink" href="start-a-pilot.html">Start a pilot &#8599;</a></p></div>
       <div class="card"><div class="num">02</div><h3>Draft audit</h3><p>Your draft &mdash; written by your team or by an AI tool &mdash; audited citation by citation, with a verification summary and flags for what to fix before it goes out.</p><p style="margin-top:18px"><strong>Pricing agreed per audit.</strong></p></div>
       <div class="card"><div class="num">03</div><h3>Ongoing research</h3><p>Regular reports, standing questions, or a retainer for a research department that needs auditable output every month.</p><p style="margin-top:18px"><strong>Talk to us.</strong></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="verify" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Verification</div>
+      <h2>Verify a report</h2>
+      <p>Every exported report is sealed with a tamper-evident hash, so you can check that the report you hold is the report that was delivered.</p>
+    </div>
+    <div class="paper-panel">
+      <p>When a report is exported, the SHA-256 hash of both the report text and the report PDF is recorded in a verification file, and the hash is printed in the report&rsquo;s own footer with a pointer to its verification page.</p>
+      <p style="margin-top:14px">Each job on the beta has its own verification page &mdash; /job/&lt;id&gt;/verify &mdash; which recomputes both hashes and reports VERIFIED or MISMATCH. Verification pages sit behind the same sign-in as the rest of the beta. <a class="textlink" href="https://oryxai.pythonanywhere.com/login">Open the beta &#8599;</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="compare" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Comparison</div>
+      <h2>Oryx vs a chatbot</h2>
+      <p>A chatbot gives you a plausible answer. Oryx gives you research you can defend &mdash; the difference is what happens to every claim.</p>
+    </div>
+    <table class="compare">
+      <thead><tr><th></th><th>A chatbot answer</th><th>Oryx Evidence Audit</th></tr></thead>
+      <tbody>
+        <tr><td>Speed</td><td>Instant, ungated</td><td>Researched, then reviewed &mdash; days, not seconds</td></tr>
+        <tr><td>Claims</td><td>Plausible-sounding, often uncited</td><td>Every material claim traced to a retrievable source</td></tr>
+        <tr><td>Gaps</td><td>Smoothed over or hidden</td><td>Labelled in plain sight, with confidence stated</td></tr>
+        <tr><td>Review</td><td>None</td><td>A human reviewer checks the draft before delivery</td></tr>
+        <tr><td>Proof</td><td>None</td><td>A mechanical verification record, plus a tamper-evident hash on every exported report</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="reviewer" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Your reviewer</div>
+      <h2>Who reviews your report</h2>
+    </div>
+    <div class="paper-panel">
+      <div class="eyebrow">Riya Nalwa &middot; Co-founder</div>
+      <div class="title" style="margin-top:18px">The human review gate</div>
+      <p style="margin-top:18px">Riya Nalwa is co-founder of the Oryx Centre for Strategic Futures and the sole human review gate for Oryx Evidence Audit. She holds an MSc in Biotechnology from Sharda University, where she graduated as Gold Medalist. Every report passes her review before delivery, and she takes 3&ndash;5 working days. Pilot engagements are contracted through her Udyam-registered proprietorship (UDYAM-UP-56-0189301).</p>
+    </div>
+  </div>
+</section>
+
+<section id="trust" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Trust</div>
+      <h2>What we don&rsquo;t do</h2>
+      <p>Stated plainly, so you know exactly where our work ends.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="num">/ 01</div><h3>No certification</h3><p>We map evidence against frameworks such as the EU AI Act and NIST AI RMF. We do not certify systems, and we do not issue compliance certificates.</p></div>
+      <div class="card"><div class="num">/ 02</div><h3>No legal advice</h3><p>We do not give legal advice. Mapping against a regulation is not a legal opinion.</p></div>
+      <div class="card"><div class="num">/ 03</div><h3>No invented track record</h3><p>We are pre-revenue. We claim no clients, no funders and no results that do not exist. What we publish is our own audit and our own papers.</p></div>
+      <div class="card"><div class="num">/ 04</div><h3>No model-building</h3><p>We do not build or train models. We audit and verify the research that models and people produce.</p></div>
+    </div>
+    <div class="paper-panel" style="margin-top:40px">
+      <div class="eyebrow">Pilot confidentiality</div>
+      <div class="title" style="margin-top:18px">What a pilot shares &mdash; and what it never does</div>
+      <p style="margin-top:18px">A pilot shares only what the client needs: the system version and one case output. Nothing internal, nothing financial, nothing about other clients. The final report is released only after acceptance, and payment is on acceptance.</p>
     </div>
   </div>
 </section>
@@ -411,6 +489,7 @@
       <div class="card"><h3>What is Oryx Evidence Audit?</h3><p>An auditable research service from the Oryx team. You ask a research question; the report is built through six stages &mdash; question framing, evidence acquisition, claim-level traceability, adversarial review, human decision gates, and monitoring and correction &mdash; with every material claim cited and every gap stated.</p></div>
       <div class="card"><h3>What does &ldquo;pay only if it passes&rdquo; mean?</h3><p>The pilot fee is payable only if the report passes criteria agreed upfront &mdash; including the sourced-claim rate, every material claim cited, gaps and confidence stated, and human review completed. If it does not pass, you pay nothing. Pilot pricing is &#8377;7,500 in India and $150 abroad.</p></div>
       <div class="card"><h3>What makes a report auditable?</h3><p>Verification numbers are computed mechanically from the report itself, never written by the model that wrote it. Claims without a citation are shown in a separate unsourced section, not buried. An adversarial pass flags problems, and a human reviewer approves the report before delivery.</p></div>
+      <div class="card"><h3>How do I know a report has not been changed after delivery?</h3><p>Every exported report is sealed with a SHA-256 hash of its text and its PDF, recorded in a verification file and printed in the report footer. Each job on the beta has a verification page that recomputes both hashes and reports VERIFIED or MISMATCH.</p></div>
       <div class="card"><h3>What happens to my draft or question?</h3><p>Your draft stays yours. It is never published, never reused, and never shared outside the review of that audit. Questions and reports are confidential by default.</p></div>
       <div class="card"><h3>Is Oryx Evidence Audit a chatbot that answers instantly?</h3><p>No. There is no instant, ungated answer: every report passes human review before delivery. The guided demo on this page is scripted and is not a live agent.</p></div>
       <div class="card"><h3>How do I start?</h3><p>Use the enquiry form below, or write to <a class="textlink" href="mailto:contact@oryxcentre.dpdns.org">contact@oryxcentre.dpdns.org</a> with your question. Pilot engagements are currently contracted through Riya Nalwa's Udyam-registered proprietorship.</p></div>
@@ -477,6 +556,8 @@
         <a href="index.html#paper">Working Paper</a>
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="start-a-pilot.html">Start a pilot</a>
+        <a href="press.html">Press</a>
         <a href="oryx-ai-sample-report.html">Sample Report</a>
         <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
         <a href="how-to-check-ai-citations.html">Citations guide</a>

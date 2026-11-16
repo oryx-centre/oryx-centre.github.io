@@ -179,6 +179,16 @@
   .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
   .card p{color:var(--mut);font-size:16px}
 
+  /* STATS STRIP */
+  .stats-band{background:var(--navy);color:#EDF0F5;padding:64px 0}
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+  @media(max-width:900px){.stats{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{border-left:1px solid rgba(255,255,255,.18);padding-left:20px}
+  .stat .n{font-family:var(--serif);font-size:44px;font-weight:600;color:#fff;line-height:1}
+  .stat .l{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#C7D0DE;margin-top:10px}
+  .stats-note{color:#8B96A9;font-size:14px;margin-top:28px;max-width:760px}
+
   /* FRAMEWORK */
   .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
@@ -313,6 +323,7 @@
         <a href="#paper">Working Paper</a>
         <a href="#about">About</a>
         <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="press.html">Press</a>
       </nav>
       <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
     </div>
@@ -377,10 +388,25 @@
       <div class="eyebrow">Oryx Evidence Audit &mdash; Applied research service</div>
       <div class="title" style="margin-top:18px">The Centre&rsquo;s applied service.</div>
       <p style="margin-top:18px">Oryx Evidence Audit turns the Centre&rsquo;s framework into a service for research teams that cannot afford a confident-sounding error. Every claim checked, every check shown. One pilot report &mdash; ₹7,500 in India, $150 abroad, pay only if it passes &mdash; the full offer and process live on the service page.</p>
-      <div style="margin-top:30px"><a class="btn" href="oryx-ai.html">Explore Oryx Evidence Audit &#8599;</a><a class="btn" href="oryx-ai.html#demo" style="margin-left:12px">Try a guided demo &#8599;</a></div>
+      <div style="margin-top:30px"><a class="btn" href="oryx-ai.html">Explore Oryx Evidence Audit &#8599;</a><a class="btn" href="start-a-pilot.html" style="margin-left:12px">Start a pilot &#8599;</a><a class="btn" href="oryx-ai.html#demo" style="margin-left:12px">Try a guided demo &#8599;</a></div>
     </div>
   </div>
 </section>
+
+<div class="stats-band">
+  <div class="wrap">
+    <div class="eyebrow">The evidence, counted</div>
+    <div class="stats" style="margin-top:28px">
+      <div class="stat"><div class="n">194</div><div class="l">Citations checked</div></div>
+      <div class="stat"><div class="n">50</div><div class="l">Verified</div></div>
+      <div class="stat"><div class="n">95</div><div class="l">Broken</div></div>
+      <div class="stat"><div class="n">17</div><div class="l">Title mismatch</div></div>
+      <div class="stat"><div class="n">31</div><div class="l">Unverifiable</div></div>
+      <div class="stat"><div class="n">30</div><div class="l">Briefs audited</div></div>
+    </div>
+    <p class="stats-note">From <em>Trust, But Verify</em> (DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="color:var(--gold)">10.5281/zenodo.23731235</a>): a claim-level citation audit of AI-generated strategic research briefs. One further citation carried no URL. This is our own published audit of AI-generated research — not a client result.</p>
+  </div>
+</div>
 
 <section id="research">
   <div class="wrap">
@@ -503,7 +529,7 @@
       <p style="margin-top:14px">Oryx is an early-stage research initiative founded on 2 October 2026 in Noida, India, by Amartya Kumar and Riya Nalwa. Pilot engagements are contracted through Riya Nalwa&rsquo;s Udyam-registered proprietorship (UDYAM-UP-56-0189301). Nothing on this site claims a client, a funder or a result that does not exist.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="num">/ 01</div><h3>Oryx Evidence Audit</h3><p>The applied service: one auditable research report &mdash; ₹7,500 in India, $150 abroad &mdash; pay only if it passes criteria agreed upfront, with a guided demo and an enquiry form.</p><p style="margin-top:18px"><a class="textlink" href="oryx-ai.html">Explore Oryx Evidence Audit &#8599;</a></p></div>
+      <div class="card"><div class="num">/ 01</div><h3>Oryx Evidence Audit</h3><p>The applied service: one auditable research report &mdash; ₹7,500 in India, $150 abroad &mdash; pay only if it passes criteria agreed upfront, with a guided demo and an enquiry form.</p><p style="margin-top:18px"><a class="textlink" href="oryx-ai.html">Explore Oryx Evidence Audit &#8599;</a> &nbsp;<a class="textlink" href="start-a-pilot.html">Start a pilot &#8599;</a></p></div>
       <div class="card"><div class="num">/ 02</div><h3>Sample report</h3><p>A condensed sample from Oryx AI&rsquo;s own launch test &mdash; labelled DRAFT, with its verification numbers and gaps in plain sight. Not a client delivery.</p><p style="margin-top:18px"><a class="textlink" href="oryx-ai-sample-report.html">Read the sample &#8599;</a></p></div>
       <div class="card"><div class="num">/ 03</div><h3>Working paper v3.0</h3><p>The founding framework: from answers to auditable intelligence. 23 pages, open on Zenodo, DOI 10.5281/zenodo.23718472.</p><p style="margin-top:18px"><a class="textlink" href="https://oryxai.in/Oryx_Working_Paper_v3.pdf">Download the PDF &#8599;</a></p></div>
       <div class="card"><div class="num">/ 04</div><h3>Second study: Trust, But Verify</h3><p>A claim-level citation audit of AI-generated strategic research briefs &mdash; the companion study to the framework paper, open on Zenodo.</p><p style="margin-top:18px"><a class="textlink" href="https://doi.org/10.5281/zenodo.23731235">Read it on Zenodo &#8599;</a></p></div>
@@ -614,6 +640,8 @@
         <a href="how-to-check-ai-citations.html">Citations guide</a>
         <a href="how-to-check-if-an-ai-citation-is-real.html">Real-citation guide</a>
         <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="start-a-pilot.html">Start a pilot</a>
+        <a href="press.html">Press</a>
         <a href="oryx-ai-sample-report.html">Sample Report</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
