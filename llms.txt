@@ -5,7 +5,7 @@
 ## Pages
 
 - [Home](https://oryxai.in/): Research you can audit, for a complex world. The Centre's founding framework, engagement steps, and founder introductions.
-- [Oryx AI](https://oryxai.in/oryx-ai.html): Auditable research from Oryx AI. How an engagement works, what you receive, and the guided demo.
+- [Oryx Evidence Audit](https://oryxai.in/oryx-ai.html): Auditable research from Oryx Evidence Audit. How an engagement works, what you receive, and the guided demo.
 - [Sample report](https://oryxai.in/oryx-ai-sample-report.html): A published sample of an auditable research report on AI citations. A sample, not a client report.
 - [Press](https://oryxai.in/press.html): Op-eds and coverage from the Oryx Centre for Strategic Futures, accepted for publication.
 - [Guides](https://oryxai.in/guides.html): All guides from the Oryx Centre for Strategic Futures: checking citations and vendor claims, the audit method, governance, safety and security.
@@ -23,9 +23,9 @@
 - [Evidence Audit and Vendor-Claim Verification (India)](https://oryxai.in/evidence-audit-india.html): Claim-by-claim audit of AI-generated reports and vendor claims packs for clients in India, payable only if the report passes criteria agreed in writing beforehand.
 - [Evidence Audit and Vendor-Claim Verification (international)](https://oryxai.in/evidence-audit-abroad.html): The same audit service for clients outside India, on the same payable-only-if-it-passes terms.
 - [Start a pilot](https://oryxai.in/start-a-pilot.html): Start a pilot report with Oryx Evidence Audit: one auditable research report, ₹7,500 in India and $150 abroad, payable only if it passes criteria agreed in writing.
-- [Sales floor](https://oryxai.in/sales-floor.html): Roster of the Oryx AI sales-agent desks, drafting and monitoring only. No desk sends, signs, changes a price, spends, or makes a public claim on its own.
+- [Sales floor](https://oryxai.in/sales-floor.html): Roster of the Oryx Evidence Audit sales-agent desks, drafting and monitoring only. No desk sends, signs, changes a price, spends, or makes a public claim on its own.
 - [Privacy policy](https://oryxai.in/privacy-policy.html): What this site collects (nothing on its own), how email enquiries are handled, and how to opt out of outreach.
-- [Terms of service](https://oryxai.in/terms.html): Terms for Oryx AI pilot engagements, including acceptance and pay-only-if-it-passes payment.
+- [Terms of service](https://oryxai.in/terms.html): Terms for Oryx Evidence Audit pilot engagements, including acceptance and pay-only-if-it-passes payment.
 - [Refund policy](https://oryxai.in/refund-policy.html): No payment is taken before acceptance, so an unaccepted report has nothing to refund.
 
 ## Papers
