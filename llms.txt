@@ -7,9 +7,12 @@
 - [Home](https://oryxai.in/): Research you can audit, for a complex world. The Centre's founding framework, engagement steps, and founder introductions.
 - [Oryx AI](https://oryxai.in/oryx-ai.html): Auditable research from Oryx AI. How an engagement works, what you receive, and the guided demo.
 - [Sample report](https://oryxai.in/oryx-ai-sample-report.html): A published sample of an auditable research report on AI citations. A sample, not a client report.
+- [Press](https://oryxai.in/press.html): Op-eds and coverage from the Oryx Centre for Strategic Futures, accepted for publication.
 - [How to check AI-generated citations in your own paper](https://oryxai.in/how-to-check-ai-citations.html): A four-verdict method for checking AI-generated citations, in about ten minutes per batch.
 - [How to check an AI vendor's claims before you sign](https://oryxai.in/how-to-check-ai-vendor-claims.html): A six-step check to run on a vendor's claims, using the vendor's own materials, before you sign.
 - [AI governance evidence checklist: prove every claim](https://oryxai.in/ai-governance-evidence-checklist.html): A practical checklist for governing AI adoption: inventory the claims, check each source resolves and supports the claim, name the human who accepts the risk, and keep the record.
+- [AI safety audit checklist: check before you deploy](https://oryxai.in/ai-safety-audit-checklist.html): A practical AI safety audit checklist: test what the system actually does, check its guardrails and human oversight, and record what you found — before it meets real users.
+- [AI security review checklist](https://oryxai.in/ai-security-review-checklist.html): A checklist for reviewing an AI system's security before you deploy it: prompt injection, data leakage, and access controls — what to test, how to test it, and how to record the result.
 - [Human review gate AI: what a human must check](https://oryxai.in/human-review-gate-ai.html): A human review gate is a named person checking an AI output before it is used — not a disclaimer. Learn where gates belong, what the reviewer checks, and what to record.
 - [AI vendor due diligence checklist: evidence first](https://oryxai.in/ai-vendor-due-diligence-checklist.html): Before you sign with an AI vendor, check the evidence behind the claims, the data handling, and the exit terms. A practical due-diligence checklist for buyers, with red flags and a scoring method.
 - [AI pilot evaluation checklist](https://oryxai.in/ai-pilot-evaluation-checklist.html): A checklist for evaluating an AI pilot before committing.
@@ -18,6 +21,7 @@
 - [Verified beta report: LLMs in healthcare, 2023-2026](https://oryxai.in/oryx-ai-beta-report-31oct.html): Public-beta verification run, 31 Oct 2026 — 7 sources, 7/7 verified, human-reviewed before publication. A beta run, not a client delivery.
 - [Evidence Audit and Vendor-Claim Verification (India)](https://oryxai.in/evidence-audit-india.html): Claim-by-claim audit of AI-generated reports and vendor claims packs for clients in India, payable only if the report passes criteria agreed in writing beforehand.
 - [Evidence Audit and Vendor-Claim Verification (international)](https://oryxai.in/evidence-audit-abroad.html): The same audit service for clients outside India, on the same payable-only-if-it-passes terms.
+- [Start a pilot](https://oryxai.in/start-a-pilot.html): Start a pilot report with Oryx Evidence Audit: one auditable research report, ₹7,500 in India and $150 abroad, payable only if it passes criteria agreed in writing.
 - [Sales floor](https://oryxai.in/sales-floor.html): Roster of the Oryx AI sales-agent desks, drafting and monitoring only. No desk sends, signs, changes a price, spends, or makes a public claim on its own.
 - [Privacy policy](https://oryxai.in/privacy-policy.html): What this site collects (nothing on its own), how email enquiries are handled, and how to opt out of outreach.
 - [Terms of service](https://oryxai.in/terms.html): Terms for Oryx AI pilot engagements, including acceptance and pay-only-if-it-passes payment.
