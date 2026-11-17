@@ -99,6 +99,8 @@
   @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
   @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
   @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  /* SCROLL INDICATOR 17 Nov 2026 — horizontally scrolling tables show a visible hint on mobile */
+  @media(max-width:800px){.scroll-x::after{content:"Scroll sideways \2192";display:block;white-space:nowrap;text-align:left;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A6D10;padding:10px 2px 0}}
 
   /* HERO */
   .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -290,7 +292,7 @@
         <a href="pricing.html">Pricing</a>
         <a href="press.html">Press</a>
       </nav>
-      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage &#8599;</a>
     </div>
   </div>
 </header>
@@ -473,7 +475,7 @@
       <h2>Oryx vs a chatbot</h2>
       <p>A chatbot gives you a plausible answer. Oryx gives you research you can defend &mdash; the difference is what happens to every claim.</p>
     </div>
-    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="compare">
+    <div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="compare">
       <thead><tr><th></th><th>A chatbot answer</th><th>Oryx Evidence Audit</th></tr></thead>
       <tbody>
         <tr><td>Speed</td><td>Instant, ungated</td><td>Researched, then reviewed &mdash; days, not seconds</td></tr>

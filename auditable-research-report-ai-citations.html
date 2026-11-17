@@ -41,7 +41,8 @@
   a{color:#0A2240}
   .honesty{font-family:Arial,Helvetica,sans-serif;background:#0A2240;color:#fff;padding:14px 18px;border-left:4px solid #C9A227;margin:24px 0}
   .small{font-size:.85rem;color:#555;font-family:Arial,Helvetica,sans-serif}
-  @media(max-width:800px){table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+  /* SCROLL INDICATOR 17 Nov 2026 — horizontally scrolling tables show a visible hint on mobile */
+  @media(max-width:800px){.scroll-x::after{content:"Scroll sideways \2192";display:block;white-space:nowrap;text-align:left;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A6D10;padding:10px 2px 0}}
 </style>
 </head>
 <body>
@@ -126,7 +127,7 @@
 <li>The evidence does not offer empirical data on the success rates of current institutional policies in preventing AI-generated academic misconduct.</li>
 </ul>
 <h2>Evidence table (verified — UNVERIFIED rows are marked, never dropped)</h2>
-<table>
+<div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
 <thead>
 <tr>
 <th>Source</th>
@@ -171,7 +172,7 @@
 <td><strong>VERIFIED</strong></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <h2>Adversarial review flags (NOT fixes — reviewer must resolve each)</h2>
 <p>Here is the adversarial review of the research draft:</p>
 <p><strong>(a) Claims whose cited source does NOT support them</strong>

@@ -88,6 +88,8 @@
   @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
   @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
   @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  /* SCROLL INDICATOR 17 Nov 2026 — horizontally scrolling tables show a visible hint on mobile */
+  @media(max-width:800px){.scroll-x::after{content:"Scroll sideways \2192";display:block;white-space:nowrap;text-align:left;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A6D10;padding:10px 2px 0}}
   
     /* HERO */
     .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -252,7 +254,6 @@
     .guide table{border-collapse:collapse;font-size:15px;margin:0 0 26px;max-width:100%}
     .guide td,.guide th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
     .guide th{background:rgba(10,34,64,.05);color:var(--navy)}
-    @media(max-width:800px){.guide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "Claim-level evidence audit: check each claim", "url": "https://oryxai.in/claim-level-evidence-audit.html", "isPartOf": {"@type": "WebSite", "name": "Oryx Centre for Strategic Futures", "url": "https://oryxai.in/"}}
@@ -290,7 +291,7 @@
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Evidence Audit</a>
       </nav>
-      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage &#8599;</a>
     </div>
   </div>
 </header>
@@ -353,7 +354,7 @@
       <p><strong>5. Record the verdict, with the reason.</strong> One line per claim: the claim, the source, the verdict, and the one-sentence reason. The log is the audit. Without it, the work cannot be re-checked, and a reviewer cannot tell what was actually verified.</p>
       <h2>A worked example: four claims, four verdicts</h2>
       <p>These are illustrative examples of how the verdicts work, not a test of any real document.</p>
-      <table>
+      <div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
       <thead>
       <tr>
       <th>#</th>
@@ -398,7 +399,7 @@
       <td><strong>Does not support</strong></td>
       </tr>
       </tbody>
-      </table>
+      </table></div>
       <p>Claim 4 is the most instructive. The citation is real, the paper is real, the year is right &mdash; and the claim still fails, because the paper does not say what the claim says. Only reading the passage catches that. A check that stops at &ldquo;the link works&rdquo; would have passed it.</p>
       <h2>How a claim-level audit differs from other checks</h2>
       <ul>

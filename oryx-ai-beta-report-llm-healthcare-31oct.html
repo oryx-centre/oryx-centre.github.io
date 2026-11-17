@@ -28,6 +28,8 @@ tr:nth-child(even) td { background: #ebf4ff; }
 .cover .seller { font-size: 13px; line-height: 1.6; margin-top: 10px; }
 .footer { border-top: 1px solid #cbd5e0; margin-top: 30px; padding-top: 8px; font-size: 11px; color: #4a5568; }
 p{overflow-wrap:anywhere}
+  /* SCROLL INDICATOR 17 Nov 2026 — horizontally scrolling tables show a visible hint on mobile */
+  @media(max-width:800px){.scroll-x::after{content:"Scroll sideways \2192";display:block;white-space:nowrap;text-align:left;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A6D10;padding:10px 2px 0}}
 </style></head><body>
 <div class="cover">
 <p class="org">Oryx Centre for Strategic Futures</p>
@@ -127,7 +129,7 @@ The evidence highlights the critical need for rigorous security evaluation but d
 <p><strong>Evidence does NOT show:</strong>
 *   Specific statistics on the frequency of data breaches or successful prompt injection attacks on healthcare LLMs during the 2023-2026 period.</p>
 <h2>Evidence table (verified — UNVERIFIED rows are marked, never dropped)</h2>
-<div style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
+<div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
 <thead>
 <tr>
 <th>Source</th>

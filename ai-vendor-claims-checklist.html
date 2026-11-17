@@ -88,6 +88,8 @@
   @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
   @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
   @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  /* SCROLL INDICATOR 17 Nov 2026 — horizontally scrolling tables show a visible hint on mobile */
+  @media(max-width:800px){.scroll-x::after{content:"Scroll sideways \2192";display:block;white-space:nowrap;text-align:left;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8A6D10;padding:10px 2px 0}}
   
     /* HERO */
     .hero{padding:48px 0 96px;position:relative;overflow:hidden}
@@ -252,7 +254,6 @@
     .guide table{border-collapse:collapse;font-size:15px;margin:0 0 26px;max-width:100%}
     .guide td,.guide th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
     .guide th{background:rgba(10,34,64,.05);color:var(--navy)}
-    @media(max-width:800px){.guide table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebPage", "name": "AI vendor claims checklist: check every claim", "url": "https://oryxai.in/ai-vendor-claims-checklist.html", "isPartOf": {"@type": "WebSite", "name": "Oryx Centre for Strategic Futures", "url": "https://oryxai.in/"}}
@@ -290,7 +291,7 @@
         <a href="index.html#about">About</a>
         <a href="oryx-ai.html">Evidence Audit</a>
       </nav>
-      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage with Oryx &#8599;</a>
+      <a class="btn" href="mailto:contact@oryxcentre.dpdns.org">Engage &#8599;</a>
     </div>
   </div>
 </header>
@@ -359,7 +360,7 @@
       </ul>
       <h2>A worked example: three claims, three verdicts</h2>
       <p>These are illustrative examples of how the log works, not a test of any real vendor.</p>
-      <table>
+      <div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
       <thead>
       <tr>
       <th>#</th>
@@ -400,11 +401,11 @@
       <td><strong>Reject</strong> — unverified claim, no source offered</td>
       </tr>
       </tbody>
-      </table>
+      </table></div>
       <p>The point of the table is the discipline, not the outcomes. Claim 2 is not a failure of honesty — it is a claim with evidence that is too thin for the decision it is being asked to support. Claim 3 is the commonest failure of all: a claim that matters, with nothing behind it.</p>
       <h2>Copy the claim log</h2>
       <p>Copy this table and fill one row per material claim. Keep it with the contract file.</p>
-      <table>
+      <div class="scroll-x" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table>
       <thead>
       <tr>
       <th>#</th>
@@ -457,7 +458,7 @@
       <td></td>
       </tr>
       </tbody>
-      </table>
+      </table></div>
       <p>One line per claim, one verdict per line. If the log is longer than a page, that is fine — a proposal with many claims deserves a log with many rows. If a claim cannot fill a row, it has not been checked.</p>
       <h2>What to do with the result</h2>
       <p>Score each claim, then decide on the bundle:</p>
