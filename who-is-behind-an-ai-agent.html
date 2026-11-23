@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who is behind an AI agent — and how to verify what it did — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/who-is-behind-an-ai-agent.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="An AI agent did work in your name. Three questions decide whether to trust it: who is behind it, what it is authorised to do, and whether what it did checks out — verified independently of the agent itself.">
+<meta property="og:title" content="Who is behind an AI agent — and how to verify what it did | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="An AI agent did work in your name. Three questions decide whether to trust it: who is behind it, what it is authorised to do, and whether what it did checks out — verified independently of the agent itself.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/who-is-behind-an-ai-agent.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="Who is behind an AI agent — and how to verify what it did | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="An AI agent did work in your name. Three questions decide whether to trust it: who is behind it, what it is authorised to do, and whether what it did checks out — verified independently of the agent itself.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h3{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.25;font-weight:600;color:var(--navy);margin:40px 0 14px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Who is behind an AI agent — and how to verify what it did","url":"https://oryxai.in/who-is-behind-an-ai-agent.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/guides.html"},
+{"@type":"ListItem","position":3,"name":"Who is behind an AI agent — and how to verify what it did"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+      </nav>
+      <a class="btn" href="mailto:amartya@oryxai.in">Engage &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; Who is behind an AI agent — and how to verify what it did</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For researchers</div>
+    <h1 style="margin-top:24px">Who is behind an AI agent — and how to verify what it did</h1>
+    <p class="sub">An AI agent did work in your name. Three questions decide whether to trust it: who is behind it, what it is authorised to do, and whether what it did checks out — verified independently of the agent itself.</p>
+  </div>
+</header>
+
+
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+      <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> An AI agent did work in your name. Three questions decide whether to trust it: who is behind it, what it is authorised to do, and whether what it did checks out &mdash; verified independently of the agent itself.</p>
+      <p>Oryx Centre for Strategic Futures is a two-person research initiative founded 2 October 2026, working on AI governance, geopolitics, emerging technology and strategic foresight for the Global South. It is a Udyam-registered micro enterprise (UDYAM-UP-56-0189301) &mdash; NOT a registered organisation and NOT a registered non-profit. This guide is a teaching page: it explains how anyone who receives work from an AI agent &mdash; a research brief, a drafted memo, a set of citations &mdash; can answer the question the work itself never answers: who is behind this agent, what was it authorised to do, and has what it did been verified? It is a verification guide, NOT legal advice and NOT a compliance certification. Oryx does not certify systems and gives no legal advice.</p>
+      <p>An AI agent just delivered work in your name: a research brief, a drafted memo, a list of sources. The agent&rsquo;s name is on the output. The question nobody asked is the one that matters: <strong>who is behind this agent?</strong></p>
+      <p>Existing pages answer a different question. They are deployment checklists &mdash; owner, permissions, kill switch, logs. Useful, but they never answer the searcher&rsquo;s actual question, which comes in three parts, in this order: <strong>identity</strong> (who is bound to the agent), <strong>authority</strong> (what it is authorised to do), and <strong>verification</strong> (did it do what it claimed, checked independently of the agent itself, claim by claim against evidence).</p>
+      <p>Identity answers &ldquo;who&rdquo;. Authority answers &ldquo;what it may do&rdquo;. Only the third question decides whether any of it works: an agent with a named owner and a written mandate can still produce work that is wrong, and an agent reporting on its own work is not verification.</p>
+      <h2>The question is live: Singapore, 4 November 2026</h2>
+      <p>On 4 November 2026, Singapore MP Tin Pei Ling tabled an adjournment motion in Parliament proposing a national digital identity infrastructure for AI agents: an open and trusted registry, akin to Singpass but for agents, against which any entity could check an agent&rsquo;s identity and its mandate. Her proposal rested on three principles: the agent&rsquo;s identity is bound to the verified identity of the individual, team or organisation accountable for it; the registry is open to check, so any business, agency or individual can verify an agent against it in real time, and a revoked agent can be shut out everywhere at once; and the mandate is clear &mdash; what the agent is permitted to do is recorded, and any material change requires a fresh, documented authorisation.</p>
+      <p>The Government did not commit to building it. Replying for the Government, Senior Minister of State Jasmin Lau said its approach was to work with industry and build on existing infrastructure and emerging international standards, and that this work would inform whether a national registry is needed. No registry exists, and no decision has been announced.</p>
+      <p>The exchange is worth reading because it shows the shape of the problem. Even a government asking the identity question reaches for the same three answers: who, what it may do, and who is accountable. And it shows the limit of the identity answer: a registry tells you who an agent belongs to and what it is allowed to do. It does not tell you whether the work the agent just delivered is true. That is a different check, and no registry performs it.</p>
+      <h2>1. Identity &mdash; who is bound to the agent</h2>
+      <p>An agent is software. Software does not answer for itself. The identity question is: <strong>which human, team, or organisation is accountable for this agent&rsquo;s actions, and can a stranger find them?</strong></p>
+      <p>A good answer has four parts:</p>
+      <ul>
+        <li><strong>A named accountable person, not a brand.</strong> &ldquo;Oryx&rsquo;s research agent, run by Amartya Kumar&rdquo; is an answer. &ldquo;Our AI&rdquo; is not. A model name is not a person. A company logo is not a person.</li>
+        <li><strong>A verified identity behind the name.</strong> The name should trace to a real person or organisation through a record someone else maintains &mdash; a company register, a professional directory, a published contact &mdash; not only to the agent&rsquo;s own profile page.</li>
+        <li><strong>A way to reach them.</strong> A working contact where a complaint or a correction actually lands. An agent whose owner cannot be contacted has no owner in any sense that matters.</li>
+        <li><strong>A revocation path.</strong> If the agent misbehaves, someone can shut it off, and everyone who dealt with it can be told. A registry makes this instant; without one, the owner must be able to do it and say so.</li>
+      </ul>
+      <p>A bad answer is any of these: the agent is identified only by its product name; the &ldquo;owner&rdquo; is a team with no named person; the contact is a form that is never answered; or nobody can say who would switch it off.</p>
+      <h2>2. Authority &mdash; what it is authorised to do</h2>
+      <p>Once you know who is behind the agent, ask what they authorised it to do. A mandate is not a slogan. &ldquo;Assist with research&rdquo; authorises almost anything and therefore nothing in particular.</p>
+      <p>A good mandate is written, and it has four parts:</p>
+      <ul>
+        <li><strong>Scope.</strong> The tasks the agent may perform &mdash; research, draft, summarise, retrieve &mdash; named specifically, not &ldquo;help with work&rdquo;.</li>
+        <li><strong>Limits.</strong> What it may not do: contact people, spend money, file anything, access a given system, decide anything on its own. Limits are the useful part; a mandate without limits is a blank cheque.</li>
+        <li><strong>Duration.</strong> When the authorisation starts and when it ends. An agent authorised in January should not still be acting in June on the same instruction.</li>
+        <li><strong>Change rule.</strong> Any material change to scope requires a fresh, documented authorisation. An agent that quietly widens its own brief has no mandate at all.</li>
+      </ul>
+      <p>Ask to see the mandate in writing before you accept the agent&rsquo;s work. If the owner cannot produce one, the work was produced by an agent with no demonstrated authority &mdash; and that is a fact about the work, not a technicality.</p>
+      <h2>3. Verification &mdash; did it do what it claimed</h2>
+      <p>This is the question the other two exist to support, and the one most often skipped. An agent that reports on its own work is reporting on itself. <strong>Verification must be independent of the agent that produced the work</strong> &mdash; done by a person, or by a tool that does not take the agent&rsquo;s word for anything.</p>
+      <p>The check is the same four-verdict check Oryx uses in its published audits, applied to the agent&rsquo;s output: <strong>verified</strong> (the record exists and supports the claim), <strong>broken</strong> (the record cannot be found), <strong>mismatch</strong> (the record exists but does not say what is claimed), or <strong>unverifiable</strong> (the record cannot be checked with the means available). Take the agent&rsquo;s work product &mdash; a brief, a memo, a list of sources &mdash; and check each cited claim against its source, one by one, without the agent&rsquo;s help.</p>
+      <p>There is a reason to be strict about this. Oryx&rsquo;s published audits checked AI-generated citations claim by claim, and the pattern is directly relevant to agent output. In the larger audit, 194 citations across 30 AI research briefs were checked: 50 verified, 95 broken, 17 mismatched, 31 unverifiable, and 1 with no URL at all (Paper 2 v2, DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a> &mdash; a pilot, not a universal rate). In a smaller study of 66 AI-generated citations, 31 had broken links, 7 mismatched the claim, 11 could not be verified, and only 5 both resolved and fully supported the claim (Working Paper v3, DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>). Most failures are caught by the first step &mdash; asking for the record. The dangerous failures survive it: a real record, correctly cited, that does not support the claim attached to it. That is the mismatch, and it is the failure an agent&rsquo;s fluent, confident output is best at hiding.</p>
+      <p>The same check applies beyond citations. If the agent summarised a document, open the document and compare. If it extracted numbers, trace them to the source table. If it claims a fact, find the fact somewhere the agent did not write. The rule is simple: <strong>nothing the agent says about its own work counts as evidence for its own work.</strong> See the worked version of this check in <a href="/how-to-check-an-ai-agents-work.html">How to check an AI agent&rsquo;s work</a> and the audit itself at <a href="/audit-194-citations.html">194 citations, checked claim by claim</a>.</p>
+      <h2>The check, step by step</h2>
+      <p>You do not need a registry to run this. You need the agent&rsquo;s output in front of you.</p>
+      <ol>
+        <li><strong>Ask for identity.</strong> Who is the named accountable person, and where is that name verified? Write it down.</li>
+        <li><strong>Ask for the mandate.</strong> What was the agent authorised to do, in writing, with limits and an end date? Write it down.</li>
+        <li><strong>Ask for the work product with its sources.</strong> Not a summary of the sources &mdash; the sources themselves, with links or references you can open.</li>
+        <li><strong>Check each cited source yourself.</strong> Open it. Does it exist? Does it say what the agent claims it says? Give each claim one of the four verdicts.</li>
+        <li><strong>Check the load-bearing claims first.</strong> A wrong background citation is a defect; a wrong citation under the conclusion is the whole answer failing.</li>
+        <li><strong>Keep the record.</strong> One line per claim: the claim, the verdict, the record it rests on, the date. A check done this way is itself evidence &mdash; a second person can re-run it from the same records.</li>
+      </ol>
+      <p>If step 1 or 2 fails &mdash; no named person, no written mandate &mdash; say so in the record and treat the work as unverified until both are produced. An agent with no owner and no mandate is not a tool you are using; it is a stranger acting in your name.</p>
+      <h2>Red flags when an agent&rsquo;s work arrives</h2>
+      <ul>
+        <li><strong>No named accountable person.</strong> The agent is identified by a product name or a model name only.</li>
+        <li><strong>A mandate that cannot be produced.</strong> &ldquo;It has general authorisation&rdquo; is not a mandate.</li>
+        <li><strong>The agent verifies its own work.</strong> A self-check, a self-citation, or &ldquo;the agent confirms its sources are accurate&rdquo; is not verification.</li>
+        <li><strong>Sources that cannot be opened.</strong> A citation with no link, a link to a page that does not exist, or a source behind a wall the checker cannot pass.</li>
+        <li><strong>&ldquo;The model is reliable&rdquo; as the only evidence.</strong> Reliability of the model is a claim about the model, not evidence about this output.</li>
+        <li><strong>No revocation path.</strong> Nobody can say how the agent would be stopped, or who would be told.</li>
+        <li><strong>Fluent work with no record.</strong> The output reads well and cites nothing checkable. Fluency is not evidence.</li>
+      </ul>
+      <h2>Questions to ask before you accept an agent&rsquo;s work</h2>
+      <ol>
+        <li>Who is the named person accountable for this agent, and where is that identity verified?</li>
+        <li>What was the agent authorised to do, in writing &mdash; and what was it explicitly not authorised to do?</li>
+        <li>When does that authorisation end, and what happens if it needs to change?</li>
+        <li>Can I see the sources the agent used, opened independently of the agent?</li>
+        <li>For each load-bearing claim, does the cited record exist and does it say what the agent claims?</li>
+        <li>Who checked this work, other than the agent that produced it?</li>
+        <li>If something in this work is wrong, who do I tell &mdash; and can the agent be stopped?</li>
+      </ol>
+      <p>An agent whose owner answers those seven questions cleanly is one whose work can be checked. An agent whose owner cannot answer them has told you something important, whether or not any single claim in the work turns out to be wrong.</p>
+      <h2>What to do with the result</h2>
+      <p>Sort the checked claims into three piles. <strong>Accept</strong> the work whose load-bearing claims are verified, with the record attached &mdash; acceptance is yours, as the human reviewer, not the agent&rsquo;s and not the vendor&rsquo;s. <strong>Fix and re-check</strong> the claims that are broken or mismatched: produce the record, correct the claim, or redo the work, then check again. <strong>Reject the work</strong> when the load-bearing claims fail: if the citations under the conclusion do not exist or do not support it, the rest cannot stand on it, however fluently it reads. Keep the check record with the work, so the next reader can see what was checked and who signed off.</p>
+      <p>Identity and authority failures are handled the same way, one level up. <strong>No named person</strong> means the work is not accepted until one is named. <strong>No written mandate</strong> means the work is not accepted until one is produced.</p>
+      <h2>A note on what this guide does not do</h2>
+      <p>Answering the identity question does not make an agent&rsquo;s work good, lawful, or safe. An agent can have a named owner, a written mandate, and a published transparency record and still produce weak analysis &mdash; and this guide says nothing about any legal obligation, because no registry, mandate, or checklist creates one. A registry answers who an agent is. A mandate answers what it may do. Neither answers whether the work is true. Only the independent check does that, and only claim by claim.</p>
+      <hr>
+      <p><strong>Sources and further reading:</strong> Singapore Parliament, adjournment motion on National Digital Identity Infrastructure for Artificial Intelligence Agents, 4 November 2026 (Ms Tin Pei Ling; reply by Ms Jasmin Lau, Senior Minister of State for Digital Development and Information &mdash; Hansard record: <a href="https://openhansard.sg/reports/matter-adj-3062" style="text-decoration:underline">openhansard.sg</a>); Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>); Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>); related Oryx guides: <a href="/how-to-check-an-ai-agents-work.html" style="text-decoration:underline">How to check an AI agent&rsquo;s work</a>, <a href="/audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a>, <a href="/research-ai.html" style="text-decoration:underline">Research AI: what it is, what it gets wrong, and how to check it</a>, <a href="/india-ai-governance-guidelines-seven-sutras.html" style="text-decoration:underline">India AI Governance Guidelines: the seven Sutras</a>.</p>
+      <p><strong>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; &#8377;7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxcentre.dpdns.org" style="text-decoration:underline">amartya@oryxcentre.dpdns.org</a>).</strong></p>
+      <p><strong>Related:</strong> <a href="how-to-check-an-ai-agents-work.html" style="text-decoration:underline">How to check an AI agent&rsquo;s work</a> &mdash; the worked version of this check, step by step. <a href="audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a> &mdash; the audit this check comes from. <a href="research-ai.html" style="text-decoration:underline">Research AI: what it is, what it gets wrong, and how to check it</a> &mdash; what research AI gets wrong, and how to check it. <a href="india-ai-governance-guidelines-seven-sutras.html" style="text-decoration:underline">India AI Governance Guidelines: the seven Sutras</a> &mdash; MeitY&rsquo;s guidelines, mapped to evidence.</p>
+        </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:amartya@oryxai.in">amartya@oryxai.in &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
