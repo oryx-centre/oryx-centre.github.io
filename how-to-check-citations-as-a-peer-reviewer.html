@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check citations in a paper you are reviewing — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-check-citations-as-a-peer-reviewer.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="A manuscript is in front of you and its reference list may be AI-assisted. Triage the load-bearing claims first, run a four-verdict check at review speed, and report what you find as evidence — not accusation.">
+<meta property="og:title" content="How to check citations in a paper you are reviewing | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="A manuscript is in front of you and its reference list may be AI-assisted. Triage the load-bearing claims first, run a four-verdict check at review speed, and report what you find as evidence — not accusation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-check-citations-as-a-peer-reviewer.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to check citations in a paper you are reviewing | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="A manuscript is in front of you and its reference list may be AI-assisted. Triage the load-bearing claims first, run a four-verdict check at review speed, and report what you find as evidence — not accusation.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h3{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.25;font-weight:600;color:var(--navy);margin:40px 0 14px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to check citations in a paper you are reviewing","url":"https://oryxai.in/how-to-check-citations-as-a-peer-reviewer.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/guides.html"},
+{"@type":"ListItem","position":3,"name":"How to check citations in a paper you are reviewing"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+      </nav>
+      <a class="btn" href="mailto:amartya@oryxai.in">Engage &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to check citations in a paper you are reviewing</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For researchers</div>
+    <h1 style="margin-top:24px">How to check citations in a paper you are reviewing</h1>
+    <p class="sub">A manuscript is in front of you and its reference list may be AI-assisted. Triage the load-bearing claims first, run a four-verdict check at review speed, and report what you find as evidence — not accusation.</p>
+  </div>
+</header>
+
+
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+            <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> A manuscript is in front of you and its reference list may be AI-assisted. Triage the load-bearing claims first, run a four-verdict check at review speed, and report what you find as evidence &mdash; not accusation.</p>
+      <p>Oryx Centre for Strategic Futures is a two-person research initiative founded 2 October 2026, working on AI governance, geopolitics, emerging technology and strategic foresight for the Global South. It is a Udyam-registered micro enterprise (UDYAM-UP-56-0189301) &mdash; NOT a registered organisation and NOT a registered non-profit. This guide is a teaching page: it explains how a peer reviewer can check the citations in a manuscript in front of them, including manuscripts whose reference lists were assembled with AI help. It is a verification method, NOT editorial policy and NOT a substitute for the reviewer&rsquo;s own judgement. Oryx does not certify systems and gives no legal advice.</p>
+      <p>A manuscript is in front of you. Its reference list looks complete, the citations are formatted, the claims are footnoted. The question is whether any of it is real &mdash; and, if the authors used an AI assistant to assemble the references, whether anyone checked them before submission.</p>
+      <p>Every citation guide you will find speaks to the author before submission. None speaks to you, the reviewer, and your job is different from the author&rsquo;s in three ways. First, <strong>time</strong>: you are checking under a review deadline, not at leisure, so you cannot verify every reference. Second, <strong>stakes</strong>: a fabricated citation you miss reaches publication under the journal&rsquo;s name, not the author&rsquo;s alone. Third, <strong>remedy</strong>: you do not fix the paper &mdash; you report what you found to the editor, with evidence, and recommend what follows.</p>
+      <p>This guide is built for that job: triage first, a four-verdict check at review speed, and a way of reporting a failed citation that is evidence, not accusation.</p>
+      <h2>Why this check matters now</h2>
+      <p>The failure mode is not hypothetical, and it is no longer rare. Three documented cases, all verified from primary or reputable secondary reporting, show what reaches the reviewer when nobody checks:</p>
+      <ul>
+        <li><strong>KPMG, &ldquo;Total Experience: Redefining Excellence in the Age of Agentic AI&rdquo; (Oct 2025), pulled June 2026.</strong> A GPTZero forensic review found only 5 of 45 citations pointed to real, intact sources; 28 had paraphrased titles or fake components attached to real sources, and 12 were too vague or flawed to verify confidently. The report also carried claims about named organisations&rsquo; AI use that those organisations told the <em>Financial Times</em> were wrong or misleading. KPMG confirmed the report&rsquo;s removal.</li>
+        <li><strong>arXiv, May 2026.</strong> Computing-section chair Thomas G. Dietterich announced that a submission showing &ldquo;incontrovertible evidence&rdquo; that the authors did not check LLM generation &mdash; hallucinated references, leftover chatbot meta-commentary, placeholder instructions &mdash; brings an immediate one-year ban from arXiv, after which the author&rsquo;s next submission must first be accepted at a reputable peer-reviewed venue. Moderators flag; section chairs confirm. It is a one-strike rule, not automatic, and not a ban on AI use &mdash; the author remains fully responsible for the content.</li>
+        <li><strong>Sullivan &amp; Cromwell, April 2026.</strong> An emergency motion filed in a New York bankruptcy court contained inaccurate citations and other errors generated by AI &mdash; fabricated case citations, misquoted holdings, non-existent statutes &mdash; caught by opposing counsel. The firm apologised to the court in writing, said its AI policies were not followed, and filed a corrected version.</li>
+      </ul>
+      <p>None of these is a peer-reviewed manuscript. All three are the same failure one step earlier or later in the pipeline: a reference list nobody opened. The reviewer&rsquo;s check is the last gate before that failure becomes published record.</p>
+      <h2>The prevalence gradient: check obscure citations hardest</h2>
+      <p>Not all citations deserve equal checking time, because fabrication does not spread evenly. A study published 17 November 2026 (Zhong et al., &ldquo;Dreaming Up Authors&rdquo;, arXiv:2611.23530; EMNLP 2026) tested three frontier language models on academic authorship attribution across 1.92 million papers in eight disciplines, using citation count as a proxy for how prevalent a paper is in training data. The result is a steep gradient: <strong>hallucination rates exceed 98% for rarely cited papers and fall below 37% for highly cited ones</strong>, holding across all models and disciplines. The failures, the authors argue, primarily reflect retrieval limitations rather than knowledge absence.</p>
+      <p>For the reviewer, the practical rule follows directly: <strong>the more obscure the cited source, the harder you check it.</strong> A citation to a famous paper is usually right, because the model has seen it many times. A citation to a paper with a handful of citations is where fabrication concentrates &mdash; and it is also where a fabricated citation is hardest for anyone else to catch, because almost nobody has read the source either.</p>
+      <p>Oryx&rsquo;s own published audits show the same shape in AI-generated research. In the larger audit, 194 citations across 30 AI research briefs were checked claim by claim: 50 verified, 95 broken, 17 mismatched, 31 unverifiable, and 1 with no URL at all (Paper 2 v2, DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a> &mdash; a pilot, not a universal rate). In a smaller study of 66 AI-generated citations, 31 had broken links, 7 mismatched the claim, 11 could not be verified, and only 17 both resolved and fully supported the claim (Working Paper v3, DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>). Most failures are caught by the first step &mdash; asking for the record. The dangerous ones survive it: a real record, correctly cited, that does not support the claim attached to it.</p>
+      <h2>1. Triage first &mdash; load-bearing claims before background ones</h2>
+      <p>You cannot check every citation in a long reference list under a review deadline, and you do not need to. Sort the manuscript&rsquo;s claims before you open a single source:</p>
+      <ul>
+        <li><strong>Load-bearing claims first.</strong> The claims the paper&rsquo;s conclusion rests on. If the citation under the central result fails, the result fails with it. Check these first, and check them properly.</li>
+        <li><strong>Method and data claims second.</strong> Citations that support the method, the dataset, or a number the argument depends on. A wrong method citation corrupts everything built on it.</li>
+        <li><strong>Background claims last.</strong> Scene-setting citations in the introduction and literature review. A failed background citation is a defect worth reporting, but it rarely decides the paper.</li>
+        <li><strong>Obscure sources within each tier first.</strong> Inside each tier, check the least-cited, least-known sources before the famous ones, per the prevalence gradient above.</li>
+      </ul>
+      <p>A practical split for a typical manuscript: pick the 5&ndash;10 citations that carry the argument, and check those thoroughly. Spot-check a further 5&ndash;10 across the rest of the list &mdash; one or two per section, weighted toward obscure sources. If a spot-check finds a failure, expand the check in that section before writing the report.</p>
+      <h2>2. The four-verdict check, at review speed</h2>
+      <p>For each citation you check, open the source yourself &mdash; do not take the manuscript&rsquo;s word for what it says &mdash; and give it one of four verdicts:</p>
+      <ul>
+        <li><strong>Verified.</strong> The record exists and supports the claim. The title, authors, year and venue match; the passage, table or figure the claim rests on says what the manuscript claims it says.</li>
+        <li><strong>Broken.</strong> The record cannot be found. The link is dead, the DOI resolves nowhere or to a different paper, the journal or volume does not exist, or the cited work cannot be located at all.</li>
+        <li><strong>Mismatch.</strong> The record exists but does not say what is claimed. The paper is real, the passage is real, and the claim is not in it &mdash; or the numbers, dates or attributions differ from what the manuscript reports.</li>
+        <li><strong>Unverifiable.</strong> The record cannot be checked with the means available: behind a wall you cannot pass, in a language you cannot read, or a source whose existence you cannot confirm either way. Record it as unverifiable, not as verified and not as failed.</li>
+      </ul>
+      <p>The check for one citation takes minutes, not hours, if you work in this order: <strong>resolve</strong> (does the DOI or link open to the cited work?), <strong>match</strong> (title, authors, year, venue &mdash; do they agree?), <strong>read</strong> (does the passage the claim rests on say what is claimed?), <strong>status</strong> (is the work what the manuscript says it is &mdash; not retracted, not a different edition, not a preprint cited as a published paper?).</p>
+      <p>Two shortcuts that are not shortcuts: a citation that resolves to a real paper is not automatically verified &mdash; the mismatch is the failure that survives a resolution check, and it is the one an AI-assembled list hides best. And a citation you cannot open is not a pass; it is unverifiable, and it goes in the report as such.</p>
+      <h2>3. How to report a failed citation to the editor</h2>
+      <p>A failed citation is a finding, not an accusation. The author may have been misled by a tool, or may have made an ordinary error. Your report should make it easy for the editor to see the evidence and decide, without you having decided the author&rsquo;s intent.</p>
+      <p>For each failed or unverifiable citation, report four things:</p>
+      <ol>
+        <li><strong>The claim as written</strong> &mdash; quote the sentence and give the page or section.</li>
+        <li><strong>The citation as given</strong> &mdash; the reference exactly as it appears in the manuscript.</li>
+        <li><strong>What you found</strong> &mdash; the verdict, and the evidence for it: the dead link, the DOI resolving to a different paper, the passage that says something else, or the wall you could not pass. Give the URL or identifier you checked, and the date.</li>
+        <li><strong>What it carries</strong> &mdash; whether the claim is load-bearing, method, or background, and whether the paper&rsquo;s conclusion depends on it.</li>
+      </ol>
+      <p>Phrase it as evidence. &ldquo;Reference 14 (p. 7) cites Chen et al. (2023) for the claim that X. The DOI resolves to a different paper by different authors; a title search returns no paper matching the citation. The claim is load-bearing: it supports the paper&rsquo;s central result in Section 4.&rdquo; That is a finding an editor can act on. &ldquo;The authors fabricated their references&rdquo; is a conclusion about intent that your check does not support &mdash; do not write it.</p>
+      <p>If you find one failure, say how far you checked: &ldquo;I checked 12 of 48 references in full and spot-checked 8 more; 2 failed, 1 is unverifiable.&rdquo; The editor needs the denominator as much as the failures.</p>
+      <h2>4. When one failed citation means reject, revise, or a targeted re-check</h2>
+      <p>One failed citation does not automatically sink a paper. What it means depends on what it carries:</p>
+      <ul>
+        <li><strong>Reject (or major revision with re-review) when a load-bearing citation fails.</strong> If the citation under the central result does not exist or does not support the result, the result is unsupported. A correction to the citation alone does not fix it &mdash; the claim itself needs re-examination, and the revised paper needs re-review.</li>
+        <li><strong>Revise when a method or data citation fails.</strong> The method or dataset claim needs a real source, or the claim needs to be withdrawn and the affected analysis redone. Minor revision is enough only if the fix is a corrected citation with no knock-on effect on the results.</li>
+        <li><strong>Targeted re-check when a background citation fails.</strong> Ask for the citation to be corrected or removed, and ask the authors to re-check the rest of the reference list &mdash; the section it came from, at minimum &mdash; before resubmission. One failure in the background is evidence the list was not checked; the re-check is the remedy, not just the single correction.</li>
+        <li><strong>Escalate to the editor when the pattern is systematic.</strong> Several failures, failures concentrated in obscure sources, or a mix of broken and mismatched citations across sections indicate the reference list was assembled without verification. Say so, with the counts, and let the editor decide whether the paper needs a full reference audit before it proceeds.</li>
+      </ul>
+      <p>The question to hold in mind throughout: <strong>if this citation is wrong, what else in the paper depends on it?</strong> A wrong background citation is a defect. A wrong load-bearing citation is the paper failing. The verdict on the citation is yours; the decision on the paper is the editor&rsquo;s, informed by how much rides on the failure.</p>
+      <h2>5. What to do when the authors used AI</h2>
+      <p>More manuscripts now arrive with AI-assisted reference lists, and the disclosure &mdash; when it exists &mdash; rarely says how the list was checked. As a reviewer you are not policing AI use. You are checking whether the citations are real and support their claims, by the same test you would apply to any manuscript.</p>
+      <p>Three things are worth doing differently when AI assistance is disclosed or evident:</p>
+      <ul>
+        <li><strong>Check the obscure citations first</strong>, as above &mdash; that is where AI-generated lists fail most often, and where the prevalence gradient is steepest.</li>
+        <li><strong>Do not accept the AI&rsquo;s own verification.</strong> A note that &ldquo;sources were verified with [tool]&rdquo; is a claim about the tool, not evidence about these citations. Open the sources yourself.</li>
+        <li><strong>Treat a missing disclosure as a reporting point, not a verdict.</strong> If the journal requires AI-use disclosure and none is given, note it for the editor. It does not change the verdict on any individual citation.</li>
+      </ul>
+      <h2>The check, step by step</h2>
+      <ol>
+        <li><strong>Read for the argument first.</strong> Identify the claims the conclusion rests on before you open any source.</li>
+        <li><strong>List the load-bearing citations.</strong> Usually 5&ndash;10. Add the method and data citations that carry numbers the argument depends on.</li>
+        <li><strong>Check the obscure ones first</strong> within each tier &mdash; least-cited sources before famous ones.</li>
+        <li><strong>For each citation: resolve, match, read, status.</strong> Give it one of the four verdicts, and keep a one-line record: claim, citation, verdict, evidence, date.</li>
+        <li><strong>Spot-check the rest.</strong> A further 5&ndash;10 across sections, weighted toward obscure sources. Expand the check in any section where a spot-check fails.</li>
+        <li><strong>Report as evidence.</strong> Claim as written, citation as given, what you found, what it carries &mdash; plus the denominator (how many you checked, how many failed).</li>
+      </ol>
+      <h2>Red flags in a reference list</h2>
+      <ul>
+        <li><strong>Citations that resolve to a different paper.</strong> The DOI or link opens a real paper &mdash; by different authors, on a different topic. The identifier-swap is the commonest AI failure in the obscure tier.</li>
+        <li><strong>Perfect-looking citations to papers nobody can find.</strong> Full author lists, plausible journals, exact page ranges &mdash; and no record anywhere. Fluency is not evidence.</li>
+        <li><strong>A cluster of failures in obscure sources.</strong> One failure is a defect; several in the least-known references is a pattern, and it means the list was not checked.</li>
+        <li><strong>Numbers or quotes that do not match the source.</strong> The cited passage exists but says something else, or the figure in the manuscript is not the figure in the source table.</li>
+        <li><strong>Retracted work cited as live.</strong> Check retraction status for load-bearing citations &mdash; a clean reference can be retracted while the manuscript is in revision.</li>
+        <li><strong>No disclosure where the journal requires one.</strong> Note it for the editor; it does not change any individual verdict.</li>
+      </ul>
+      <h2>A note on what this guide does not do</h2>
+      <p>This guide teaches the check. It does not set editorial policy, and it does not tell you whether a paper should be accepted &mdash; that decision is the editor&rsquo;s, on the evidence you report and the rest of the review. A reference list that passes this check can still belong to a weak paper, and a paper with a failed background citation can still be worth publishing after correction. The check answers one question: do the cited records exist, and do they say what the manuscript claims they say? Everything else in the review is still yours.</p>
+      <hr>
+      <p><strong>Sources and further reading:</strong> Oryx Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>); Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>); Zhong et al., &ldquo;Dreaming Up Authors&rdquo; (arXiv:2611.23530, <a href="https://arxiv.org/abs/2611.23530" style="text-decoration:underline">arxiv.org</a>); GPTZero forensic review of KPMG&rsquo;s &ldquo;Total Experience&rdquo; report (reported by the <em>Financial Times</em>, June 2026; <a href="https://gptzero.me/news/investigations-kpmg/" style="text-decoration:underline">GPTZero investigation</a>); arXiv one-year ban for unchecked AI output (CASRAI, <a href="https://casrai.org/news/arxiv-one-year-ban-unchecked-ai-content" style="text-decoration:underline">casrai.org</a>); Sullivan &amp; Cromwell apology letter (Reuters, 21 Apr 2026, <a href="https://www.reuters.com/legal/litigation/sullivan-cromwell-law-firm-apologizes-ai-hallucinations-court-filing-2026-04-21/" style="text-decoration:underline">reuters.com</a>); related Oryx guides: <a href="/who-is-behind-an-ai-agent.html" style="text-decoration:underline">Who is behind an AI agent &mdash; and how to verify what it did</a>, <a href="/how-to-check-an-ai-agents-work.html" style="text-decoration:underline">How to check an AI agent&rsquo;s work</a>, <a href="/audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a>, <a href="/india-ai-governance-guidelines-seven-sutras.html" style="text-decoration:underline">India AI Governance Guidelines: the seven Sutras</a>.</p>
+      <p><strong>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; &#8377;7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxcentre.dpdns.org" style="text-decoration:underline">amartya@oryxcentre.dpdns.org</a>).</strong></p>
+      <p><strong>Related:</strong> <a href="who-is-behind-an-ai-agent.html" style="text-decoration:underline">Who is behind an AI agent &mdash; and how to verify what it did</a> &mdash; three questions for work an agent delivered: identity, authority, verification. <a href="how-to-check-an-ai-agents-work.html" style="text-decoration:underline">How to check an AI agent&rsquo;s work</a> &mdash; the worked version of this check, step by step. <a href="audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a> &mdash; the audit this check comes from. <a href="india-ai-governance-guidelines-seven-sutras.html" style="text-decoration:underline">India AI Governance Guidelines: the seven Sutras</a> &mdash; MeitY&rsquo;s guidelines, mapped to evidence.</p>
+        </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:amartya@oryxai.in">amartya@oryxai.in &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
