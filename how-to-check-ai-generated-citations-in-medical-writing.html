@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to check AI-generated citations in medical writing — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-check-ai-generated-citations-in-medical-writing.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="AI can draft your medical manuscript &mdash; and invent its references. A five-step PubMed check that catches fabricated citations before submission.">
+<meta property="og:title" content="How to check AI-generated citations in medical writing | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="AI can draft your medical manuscript &mdash; and invent its references. A five-step PubMed check that catches fabricated citations before submission.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-check-ai-generated-citations-in-medical-writing.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to check AI-generated citations in medical writing | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="AI can draft your medical manuscript &mdash; and invent its references. A five-step PubMed check that catches fabricated citations before submission.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h3{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.25;font-weight:600;color:var(--navy);margin:40px 0 14px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to check AI-generated citations in medical writing","url":"https://oryxai.in/how-to-check-ai-generated-citations-in-medical-writing.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/guides.html"},
+{"@type":"ListItem","position":3,"name":"How to check AI-generated citations in medical writing"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+      </nav>
+      <a class="btn" href="mailto:amartya@oryxai.in">Engage &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to check AI-generated citations in medical writing</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For medical writers</div>
+    <h1 style="margin-top:24px">How to check AI-generated citations in medical writing</h1>
+    <p class="sub">AI can draft your medical manuscript &mdash; and invent its references. A five-step PubMed check that catches fabricated citations before submission.</p>
+  </div>
+</header>
+
+
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+            <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> AI can draft your medical manuscript &mdash; and invent its references. A five-step PubMed check that catches fabricated citations before submission.</p>
+      <p>Oryx Centre for Strategic Futures is a two-person research initiative founded 2 October 2026, working on AI governance, geopolitics, emerging technology and strategic foresight for the Global South. It is a Udyam-registered micro enterprise (UDYAM-UP-56-0189301) &mdash; NOT a registered organisation and NOT a registered non-profit. This guide is a teaching page: it explains how a medical writer can check AI-generated citations before submission. It is a citation-verification method ONLY &mdash; NOT medical advice, NOT a diagnosis, NOT clinical guidance, and NOT certification of any kind. Nothing here tells you what treatment, dose, or clinical decision is correct; that judgement belongs to qualified clinicians and the peer-reviewed literature itself.</p>
+      <p>A medical manuscript is not like other writing. A wrong citation in a policy brief embarrasses its author; a wrong citation in medical writing can reach a clinician, a guideline committee, or a patient-facing decision. The reference list is part of the evidence, not decoration &mdash; and AI assistants now write reference lists that look complete, formatted, and authoritative while containing papers that do not exist.</p>
+      <p>This guide teaches the check itself: five steps, with PubMed as the cross-check, that any medical writer can run on every AI-generated citation before submission. No product is needed to follow it.</p>
+      <h2>Why this check matters now</h2>
+      <p>The failure is measured, recent, and specific to medicine. Two peer-reviewed studies published in 2026 tested AI-generated medical references directly &mdash; and both found the same shape of failure:</p>
+      <ul>
+        <li><strong>Neurocritical care, 2026.</strong> Three models (GPT-5.3, DeepSeek-V3, Grok-4) were asked to produce ten peer-reviewed references for each of ten neurocritical-care topics &mdash; 300 references in total &mdash; under zero-shot, memory-only conditions with retrieval disabled. Two blinded experts verified every reference against PubMed, the DOI resolver, Google Scholar and CrossRef. Of the 300 references, 165 (55.0%) contained a citation inaccuracy and 85 (28.3%) were completely fabricated &mdash; no such publication exists. Rates varied sharply by model: DeepSeek-V3 hallucinated in 23% of references (8% fabricated), GPT-5.3 in 69% (27% fabricated), and Grok-4 in 73% (50% fabricated). (Seifi &amp; Seyfi, <em>Critical Care Explorations</em> 2026;8(9):e1474 &mdash; a study of models recalling references from memory, not of retrieval-enabled tools; the rates are the study&rsquo;s, not a universal AI error rate.)</li>
+        <li><strong>Urolithiasis, 2026.</strong> Two models answered 65 clinical questions based on the 2025 European Association of Urology guidelines. Gemini 3 Pro&rsquo;s answers were rated clinically appropriate by experts 98.5% of the time, GPT-5.2 Pro&rsquo;s 81.5% &mdash; the clinical content was mostly right. The citations were not: 45.8% of GPT-5.2 Pro&rsquo;s citations and 24.8% of Gemini 3 Pro&rsquo;s citations were entirely fabricated, and a further 30.3% and 31.4% respectively were real publications with incorrect or mismatched DOIs. There was no statistical correlation between medical accuracy and citation quality. (Aktaş &amp; Tunçekin, <em>Scientific Reports</em> 2026, DOI <a href="https://doi.org/10.1038/s41598-026-81085-w" style="text-decoration:underline">10.1038/s41598-026-81085-w</a>.)</li>
+      </ul>
+      <p>The second study is the one to remember. The dangerous combination is not a bad answer with bad citations &mdash; that is easy to spot. It is a clinically accurate answer with fabricated citations: the text reads right, the reasoning follows the guideline, and the references underneath it are invented. A reader who trusts the answer has no reason to open the references, which is exactly why you must.</p>
+      <p>A third, broader check confirms the pattern is not confined to two specialties: across 26 language models asked to supply a missing reference for biomedical passages, fabrication ranged from 10.2% to 98.4% depending on the model, and 55.4% of all responses were fabricated (<a href="https://arxiv.org/abs/2609.14988" style="text-decoration:underline">arXiv:2609.14988</a>). No model was correct in every bibliographic field in more than 54.6% of responses.</p>
+      <p>Oryx&rsquo;s own published audits show the same failure shape in AI-generated research generally. In the larger audit, 194 citations across 30 AI research briefs were checked claim by claim: 50 verified, 95 broken, 17 mismatched, 31 unverifiable, and 1 with no URL at all (Paper 2 v2, DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a> &mdash; a pilot, not a universal rate). In a smaller study of 66 AI-generated citations, 31 had broken links, 7 mismatched the claim, 11 could not be verified, and 17 both resolved and fully supported the claim (Working Paper v3, DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>). The mismatch verdict is the one that matters most in medical writing: a real paper, correctly cited, that does not say what your manuscript claims it says.</p>
+      <h2>The 5-step check, with PubMed as the cross-check</h2>
+      <p>For each AI-generated citation, work in this order. The sequence matters: each step is cheap, and a failure at any step ends the check &mdash; there is no point reading a passage in a paper that does not exist.</p>
+      <h3>Step 1 &mdash; Resolve: does the identifier open to a real record?</h3>
+      <p>Take the DOI or PMID the AI gave you and open it yourself &mdash; in PubMed, or through the DOI resolver at doi.org. Three outcomes:</p>
+      <ul>
+        <li>It opens to the cited paper. Move to step 2.</li>
+        <li>It opens to a <em>different</em> paper. This is the identifier-swap failure, and it is common: the urolithiasis study found roughly a third of citations were real publications with wrong or mismatched DOIs. A DOI that resolves to the wrong paper is a failed citation, not a typo to fix silently &mdash; record it.</li>
+        <li>It resolves nowhere, or to no record at all. The citation is broken. Do not spend time searching for a paper that may not exist; go to step 5&rsquo;s recording and then replace it.</li>
+      </ul>
+      <p>If the AI gave you no DOI or PMID, search PubMed by title and first author before anything else. A citation with no identifier is unverified until PubMed returns a record for it.</p>
+      <h3>Step 2 &mdash; Match: title, authors, year, journal</h3>
+      <p>Open the PubMed record and compare it field by field with what your manuscript cites: title, authors, year, journal, volume, pages. All of them must agree &mdash; not just resemble.</p>
+      <p>Watch for the near-miss: a real paper with a slightly altered title, a wrong year, or authors in the wrong order. AI-generated references are fluent, and a near-miss looks like a transcription error. It is not a transcription error if the record it points to is a different paper. If any field disagrees, treat the citation as mismatched until you can show otherwise, and check whether the paper the AI <em>meant</em> exists under a corrected citation &mdash; sometimes it does, and the fix is a corrected reference rather than a new source.</p>
+      <p>Also check the publication type in the PubMed record. A preprint, a conference abstract, a letter, and a peer-reviewed article are different kinds of evidence, and your manuscript must cite each as what it is.</p>
+      <h3>Step 3 &mdash; Read the passage: does it say what you claim?</h3>
+      <p>This is the step most writers skip, and the step that catches the failures the first two steps miss. Find the passage, table, or figure in the paper that your claim rests on, and read it. Mark one of three:</p>
+      <ul>
+        <li><strong>Supports.</strong> The passage says what your manuscript claims it says &mdash; including the numbers, the population, and the direction of the effect.</li>
+        <li><strong>Partially supports.</strong> The paper is on the topic, but the claim goes further than the passage, or the numbers differ, or the population studied is not the population your manuscript describes.</li>
+        <li><strong>Does not support.</strong> The paper is real, the passage is real, and the claim is not in it. This is a failed check, not a pass &mdash; a real source saying something else is worse than no source, because it lends false authority to the claim.</li>
+      </ul>
+      <p>For numbers, check the source table, not the abstract. A dose, a rate, or a percentage taken from an abstract can be a different figure from the one in the results table &mdash; and a real number attached to the wrong denominator is as misleading as an invented one.</p>
+      <h3>Step 4 &mdash; Status: is the work what your manuscript says it is?</h3>
+      <p>Check four things in the PubMed record and the publisher&rsquo;s page before you keep the citation:</p>
+      <ul>
+        <li><strong>Retracted?</strong> A retraction notice appears in the PubMed record. A paper retracted after the AI&rsquo;s training data was cut off will still be cited as live by the model. If a load-bearing citation is retracted, re-examine the conclusion it supports &mdash; do not just swap the citation silently.</li>
+        <li><strong>Preprint or published?</strong> A preprint cited as a peer-reviewed paper overstates the evidence. Cite it as a preprint, or find the published version.</li>
+        <li><strong>Right version and date?</strong> Guidelines and recommendations change. A citation to a 2021 guideline for a claim about current practice is stale evidence &mdash; check whether a newer version exists and whether the claim still holds under it.</li>
+        <li><strong>Right edition?</strong> A trial&rsquo;s primary report and its later follow-up are different papers with different numbers. Make sure the citation points to the one your claim actually rests on.</li>
+      </ul>
+      <h3>Step 5 &mdash; Record the check</h3>
+      <p>Keep a one-line log per citation: citation, verdict (verified / broken / mismatch / unverifiable), date checked, and the PMID or DOI you actually opened. It takes seconds per citation, and it is your defence if a reviewer, an editor, or a reader asks how the reference list was checked. It is also what lets you re-check quickly: run step 1 again on all links the day you submit, because a clean reference can be retracted while the manuscript is still in revision.</p>
+      <h2>Free tools that help (and what they do not do)</h2>
+      <ul>
+        <li><strong>PubMed</strong> &mdash; the cross-check for this guide. A record&rsquo;s existence, its metadata, its publication type, and its retraction status are all in the record. If a cited medical paper is not in PubMed, ask why before you keep it: it may be in a journal PubMed does not index, or it may not exist.</li>
+        <li><strong>Crossref DOI resolver (doi.org)</strong> &mdash; does this DOI exist, and what does it resolve to? It answers the identifier question, nothing more.</li>
+        <li><strong>Google Scholar and Semantic Scholar</strong> &mdash; find the real paper when the citation is garbled, and show whether other papers cite it. They help you locate; you still judge support.</li>
+        <li><strong>Retraction Watch database and CrossMark</strong> &mdash; check retraction status for load-bearing studies, especially ones cited from memory rather than from a fresh search.</li>
+      </ul>
+      <p>Tools help you find. You still judge whether the paper supports the claim. No tool reads the passage for you, and no tool knows which claim in your manuscript the citation is meant to carry.</p>
+      <h2>Common traps in medical writing</h2>
+      <ul>
+        <li><strong>A real paper cited for a claim it does not make.</strong> The commonest serious failure: the study exists, the citation is accurate, and the conclusion your manuscript draws from it is not in the paper. Only step 3 catches this.</li>
+        <li><strong>A real paper with a wrong or mismatched DOI.</strong> Roughly a third of citations in the urolithiasis study. The DOI is the link between your manuscript and the record &mdash; if it points elsewhere, the citation is broken even though a real paper is involved.</li>
+        <li><strong>A guideline cited by the wrong year.</strong> Clinical guidance is versioned. Citing the 2021 guideline when the 2025 update changed the recommendation is stale evidence, and the reader cannot tell from the reference list alone.</li>
+        <li><strong>A preprint cited as peer-reviewed work.</strong> Preprints are legitimate sources when cited as preprints. Presented as published, peer-reviewed evidence, they overstate what has been checked.</li>
+        <li><strong>A retracted paper cited as live.</strong> Models trained before a retraction have no way to know about it. The retraction check in step 4 is the only defence, and it must be run close to submission.</li>
+        <li><strong>A secondary citation passed off as primary.</strong> The AI cites a review&rsquo;s summary of a trial as though it were the trial. If the claim is about what the trial found, cite the trial &mdash; and read it.</li>
+        <li><strong>Numbers from a different population.</strong> A rate from one age group, setting, or country attached to a claim about another. The citation resolves, the paper is real, and the number does not support the claim. Check the denominator, the population, and the date.</li>
+      </ul>
+      <h2>What to do with broken or mismatched ones</h2>
+      <ul>
+        <li><strong>Replace with a real source.</strong> Find the paper that actually supports the claim, cite it correctly, and record the swap.</li>
+        <li><strong>Re-source the claim.</strong> If no paper supports the claim as written, narrow the claim to what the evidence actually says.</li>
+        <li><strong>Drop the claim.</strong> If the claim cannot be sourced, remove it. Never keep a citation you could not verify, and never cite a paper you have not at least located.</li>
+        <li><strong>Do not quietly fix a fabricated citation.</strong> If you find one, note it in your check log. A pattern of failures in one section means the research in that section was not checked &mdash; expand the check there before submitting.</li>
+        <li><strong>Disclose AI assistance as your target journal requires.</strong> Most journals now have an AI-use policy in their instructions for authors; follow it. Disclosure is about the assistance, not about the check &mdash; the check is your responsibility either way.</li>
+      </ul>
+      <h2>A 10-minute pre-submission routine</h2>
+      <ol>
+        <li>Run the 5-step check on every AI-assisted citation in the manuscript &mdash; resolve, match, read, status, record.</li>
+        <li>Re-run step 1 on all links and DOIs the day you submit.</li>
+        <li>Re-check retraction status on every load-bearing citation the day you submit.</li>
+        <li>Confirm every preprint is cited as a preprint, every guideline by its current version, and every number against its source table.</li>
+        <li>Keep the check log with the manuscript files. If a reviewer asks about a reference, you can answer from the log instead of re-doing the work.</li>
+      </ol>
+      <h2>A note on what this guide does not do</h2>
+      <p>This guide teaches a citation check. It does not give medical advice, it does not tell you what treatment, dose, or clinical decision is correct, and it certifies nothing &mdash; not a paper, not a system, not a claim. Clinical judgement belongs to qualified clinicians, and the evidence belongs to the peer-reviewed literature itself. A manuscript that passes this check can still be wrong on the medicine; a manuscript with a failed background citation can still be worth publishing after correction. The check answers one question: do the cited records exist, and do they say what the manuscript claims they say? Everything else in the writing is still yours.</p>
+      <hr>
+      <p><strong>Sources and further reading:</strong> Seifi &amp; Seyfi, &ldquo;Hallucination Rate of Peer-Reviewed Citations Generated by Large Language Models in Neurocritical Care&rdquo;, <em>Critical Care Explorations</em> 2026;8(9):e1474 (DOI <a href="https://doi.org/10.1097/CCE.0000000000001474" style="text-decoration:underline">10.1097/CCE.0000000000001474</a>); Aktaş &amp; Tunçekin, &ldquo;A comparative expert evaluation of ChatGPT and Gemini on urolithiasis: clinical accuracy versus citation reliability&rdquo;, <em>Scientific Reports</em> 2026 (DOI <a href="https://doi.org/10.1038/s41598-026-81085-w" style="text-decoration:underline">10.1038/s41598-026-81085-w</a>); &ldquo;Biomedical Reference Generation Remains Unreliable across 26 Large Language Models&rdquo; (<a href="https://arxiv.org/abs/2609.14988" style="text-decoration:underline">arXiv:2609.14988</a>); Oryx Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23731235" style="text-decoration:underline">10.5281/zenodo.23731235</a>); Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI <a href="https://doi.org/10.5281/zenodo.23718472" style="text-decoration:underline">10.5281/zenodo.23718472</a>); related Oryx guides: <a href="/how-to-check-citations-as-a-peer-reviewer.html" style="text-decoration:underline">How to check citations in a paper you are reviewing</a>, <a href="/who-is-behind-an-ai-agent.html" style="text-decoration:underline">Who is behind an AI agent &mdash; and how to verify what it did</a>, <a href="/audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a>.</p>
+      <p><strong>Oryx AI offers claim-level evidence audits for research drafts and vendor claims &mdash; &#8377;7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxcentre.dpdns.org" style="text-decoration:underline">amartya@oryxcentre.dpdns.org</a>).</strong></p>
+      <p><strong>Related:</strong> <a href="how-to-check-citations-as-a-peer-reviewer.html" style="text-decoration:underline">How to check citations in a paper you are reviewing</a> &mdash; triage first, a four-verdict check at review speed, and how to report a failed citation as evidence. <a href="how-to-check-ai-citations-in-your-paper.html" style="text-decoration:underline">How to check AI-generated citations in your own paper</a> &mdash; a paper-level pass before submission, with a 30-minute routine. <a href="audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a> &mdash; the audit this check comes from. <a href="who-is-behind-an-ai-agent.html" style="text-decoration:underline">Who is behind an AI agent &mdash; and how to verify what it did</a> &mdash; three questions for work an agent delivered: identity, authority, verification.</p>
+        </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:amartya@oryxai.in">amartya@oryxai.in &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
