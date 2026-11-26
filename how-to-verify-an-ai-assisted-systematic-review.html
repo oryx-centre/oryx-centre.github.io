@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QG5K306F0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9QG5K306F0');
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to verify an AI-assisted systematic review — Oryx</title>
+<link rel="canonical" href="https://oryxai.in/how-to-verify-an-ai-assisted-systematic-review.html">
+<link rel="icon" type="image/png" href="/favicon-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://oryxai.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oryx Centre for Strategic Futures — Research you can audit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="AI can now help at every stage of a systematic review — search, screening, extraction, synthesis. Verify it in layers: protocol, screening, extraction, then citations, each checked independently of the tool.">
+<meta property="og:title" content="How to verify an AI-assisted systematic review | Oryx Centre for Strategic Futures">
+<meta property="og:description" content="AI can now help at every stage of a systematic review — search, screening, extraction, synthesis. Verify it in layers: protocol, screening, extraction, then citations, each checked independently of the tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oryxai.in/how-to-verify-an-ai-assisted-systematic-review.html">
+<meta property="og:site_name" content="Oryx Centre for Strategic Futures">
+<meta name="twitter:title" content="How to verify an AI-assisted systematic review | Oryx Centre for Strategic Futures">
+<meta name="twitter:description" content="AI can now help at every stage of a systematic review — search, screening, extraction, synthesis. Verify it in layers: protocol, screening, extraction, then citations, each checked independently of the tool.">
+<meta name="twitter:image" content="https://oryxai.in/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+    :root{
+      --paper:#FAF8F2; --white:#FFFFFF; --navy:#0A2240; --navy2:#071A30; --navy3:#12325E;
+      --gold:#C9A227; --gold2:#8A6D10; --ink:#16233C; --mut:#52607A;
+      --line:rgba(10,34,64,.16); --line2:rgba(10,34,64,.10);
+      --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+      --sans:'Public Sans',Helvetica,Arial,sans-serif;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+    a{color:inherit;text-decoration:none}
+    .eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2)}
+    .eyebrow:before{content:"";display:inline-block;width:28px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+    .small{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+    .accent{color:var(--gold2);font-style:italic}
+    .rule-double{height:5px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+  
+    /* HEADER: navy utility strip + white masthead, White House style */
+    header.site{position:fixed;top:0;left:0;right:0;z-index:50}
+    .strip{background:var(--navy2);color:#C7D0DE;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .strip-in{display:flex;justify-content:space-between;gap:16px;align-items:center;height:36px}
+    .strip-in a:hover{color:#fff}
+    .masthead{background:rgba(250,248,242,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+    .brand{display:flex;align-items:center;gap:13px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.06em;color:var(--navy)}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:.30em;color:var(--gold2)}
+    .brand svg{display:block;flex:0 0 auto}
+    .nav-links{display:flex;gap:36px}
+    .nav-links a{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);position:relative;transition:color .3s}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s}
+    .nav-links a:hover{color:var(--gold2)}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .btn{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:1px solid var(--navy);transition:transform .3s,box-shadow .3s,background .3s}
+    .btn:hover{background:var(--navy3);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(10,34,64,.45)}
+    .btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+    .btn.ghost:hover{background:var(--navy);color:#fff}
+    .btn.gold{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .btn.gold:hover{background:#D9B83C}
+    @media(max-width:900px){.nav-links{display:none}.strip-in span:last-child{display:none}}
+  /* LAYOUT FIX 17 Nov 2026 — masthead stays on one line; long links may break */
+  .brand{flex-shrink:0}
+  .brand span{white-space:nowrap}
+  .nav-links{gap:16px}
+  .nav-links a{white-space:nowrap}
+  .nav-in .btn{white-space:nowrap;flex-shrink:0;padding:13px 18px}
+  a{overflow-wrap:anywhere}
+  @media(max-width:1280px){.brand{font-size:20px}.nav-links a{font-size:11px}}
+  @media(max-width:1150px){.nav-links{display:none}}
+  @media(max-width:560px){.brand{font-size:18px}.masthead .wrap{padding:0 12px}.nav-in .btn{padding:11px 12px;font-size:11px}}
+  @media(max-width:380px){.brand{font-size:16px}.brand svg{width:24px;height:24px}.nav-in .btn{padding:10px 10px;font-size:10px}}
+  @media(max-width:340px){.masthead .wrap{padding:0 8px}.brand{font-size:13px;letter-spacing:.02em;gap:8px}.nav-in .btn{padding:10px 8px}}
+  
+    /* HERO */
+    .hero{padding:48px 0 96px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;top:-20%;right:-10%;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.16),transparent 65%);filter:blur(60px);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-family:var(--serif);font-size:clamp(2.9rem,5.8vw,5rem);line-height:1.04;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
+    .hero p.sub{color:var(--mut);font-size:19px;max-width:540px;margin:30px 0 38px;line-height:1.7}
+    .hero-cta{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .textlink{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:3px;transition:color .3s}
+    .textlink:hover{color:var(--gold2)}
+    .orbit{position:relative;aspect-ratio:1/1;max-width:520px;margin:0 auto;width:100%}
+    .orbit .glow{position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(10,34,64,.10),rgba(201,162,39,.08) 55%,transparent 72%)}
+    .orbit svg{position:absolute;inset:0;width:100%;height:100%}
+    .orbit .tag{position:absolute;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--navy);text-transform:uppercase;line-height:1.7}
+    .orbit .tag span{color:var(--gold2)}
+    .hero-meta{margin-top:96px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:18px;align-items:center;position:relative}
+    .hero-meta .rule{flex:0 0 120px;height:1px;background:var(--gold)}
+  
+    /* BANDS + SECTIONS */
+    .band{background:var(--navy);color:#EDF0F5}
+    .band .eyebrow{color:var(--gold)}
+    .statement{padding:120px 0}
+    .statement h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.5rem);line-height:1.15;font-weight:600;max-width:980px}
+    section{padding:120px 0}
+    .sec-head{margin-bottom:60px}
+    .sec-head h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.08;font-weight:600;color:var(--navy);margin-top:18px}
+    .sec-head p{color:var(--mut);font-size:18px;max-width:660px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:900px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:36px 30px 42px;position:relative;transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .45s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28);border-color:rgba(10,34,64,.28)}
+    .card .num{font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--gold2);margin-bottom:52px}
+    .card h3{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+    .card p{color:var(--mut);font-size:16px}
+  
+    /* FRAMEWORK */
+    .sys-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    @media(max-width:900px){.sys-grid{grid-template-columns:1fr}}
+    .diagram{border:1px solid var(--line);background:var(--white);padding:34px;position:relative;transition:transform .45s,box-shadow .45s}
+    .diagram:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .diagram .cap{display:flex;justify-content:space-between;margin-top:18px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 18px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s,transform .3s}
+    .step:hover{transform:translateX(6px)}
+    .step .n{font-size:13px;font-weight:700;color:var(--gold2);letter-spacing:.1em}
+    .step h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);margin-bottom:6px}
+    .step p{color:var(--mut);font-size:15.5px}
+    .step.active{background:rgba(10,34,64,.05);border-left:3px solid var(--gold)}
+    .step.active .n{color:var(--gold2)}
+  
+    /* PAPER — official document frame */
+    .paper-panel{border:1px solid var(--line);background:var(--white);padding:52px;box-shadow:0 0 0 6px var(--paper),0 0 0 7px var(--line);transition:transform .45s,box-shadow .45s}
+    @media(max-width:700px){.paper-panel{padding:32px 24px}}
+    .paper-panel .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;font-weight:600;color:var(--navy);max-width:820px}
+    .paper-panel p{color:var(--mut);font-size:17px;max-width:780px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 36px}
+    .chip{font-size:11px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--navy);border:1px solid rgba(10,34,64,.30);border-radius:999px;padding:8px 14px;transition:transform .3s,border-color .3s,background .3s}
+    .chip:hover{transform:translateY(-2px);border-color:var(--gold);background:rgba(201,162,39,.08)}
+  
+    /* PHILOSOPHY */
+    .philosophy{position:relative;overflow:hidden}
+    .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:clamp(6rem,19vw,17rem);font-weight:700;letter-spacing:.02em;color:rgba(255,255,255,.05);white-space:nowrap;pointer-events:none;line-height:1}
+    .philosophy h2{font-family:var(--serif);font-size:clamp(2.2rem,4.4vw,3.5rem);line-height:1.1;font-weight:600;position:relative}
+    .philosophy p{color:#C7D0DE;font-size:18px;max-width:720px;margin-top:26px;position:relative}
+    .cols3{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;position:relative}
+    @media(max-width:900px){.cols3{grid-template-columns:1fr}}
+    .col3{padding:6px 34px 6px 30px;border-left:1px solid rgba(255,255,255,.18)}
+    .col3 h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:16px 0 12px}
+    .col3 p{color:#C7D0DE;font-size:16px;margin:0 0 18px}
+    .col3 .textlink{color:#fff}
+  
+    /* BOOK */
+    .book{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    @media(max-width:900px){.book{grid-template-columns:1fr}}
+    .book-cover{border:1px solid var(--line);border-top:3px solid var(--gold);background:var(--white);padding:52px 40px;position:relative;transition:transform .45s,box-shadow .45s}
+    .book-cover:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(10,34,64,.25)}
+    .book-cover .bt{font-family:var(--serif);font-size:30px;line-height:1.25;font-weight:600;color:var(--navy)}
+    .book h2{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;font-weight:600;color:var(--navy)}
+    .book p{color:var(--mut);font-size:17px;margin-top:20px}
+  
+    /* FOUNDERS */
+    .founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:900px){.founder-cards{grid-template-columns:1fr}}
+    .fcard{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--gold);padding:42px 38px 46px;position:relative;transition:transform .45s,box-shadow .45s}
+    .fcard:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(10,34,64,.28)}
+    .medallion{width:92px;height:92px;border-radius:50%;border:1px solid var(--navy);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:30px;background:radial-gradient(circle at 50% 42%,rgba(201,162,39,.18),rgba(10,34,64,.04) 68%)}
+    .medallion:after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1px solid var(--gold)}
+    .medallion span{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.05em;color:var(--navy)}
+    .fcard h3{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--navy)}
+    .fcard h3 span{color:var(--gold2)}
+    .fcard .role{margin:6px 0 14px}
+    .fcard p{color:var(--mut);font-size:16.5px}
+    .fcard .flink{margin-top:20px}
+  
+    /* CTA + FOOTER */
+    .cta{text-align:center;padding:140px 0 120px;position:relative}
+    .cta h2{font-family:var(--serif);font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.08;font-weight:600;margin:24px 0 44px}
+    footer{background:var(--navy2);color:#C7D0DE;position:relative;overflow:hidden}
+    .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 20px}
+    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
+    .foot-grid h3{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+    .foot-grid a{display:block;margin-bottom:10px;font-size:15px}
+    .foot-grid a:hover{color:#fff}
+    .foot-mark{font-family:var(--serif);font-size:clamp(4.6rem,15.5vw,13.5rem);font-weight:700;line-height:.95;color:rgba(255,255,255,.05);letter-spacing:.04em;white-space:nowrap;text-align:center;padding:10px 0 0}
+    .foot-bar{border-top:1px solid rgba(255,255,255,.14);padding:22px 0 30px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    .foot-bar .small{color:#8B96A9}
+  
+    /* ============ ANIMATION LAYER ============ */
+    .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:60;background:linear-gradient(90deg,#C9A227,#D9B83C,#C9A227);transform-origin:0 50%;transform:scaleX(0)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    .hero .eyebrow{animation:fadeUp .55s cubic-bezier(.22,.61,.36,1) both}
+    .hero h1{animation:fadeUp .55s .06s cubic-bezier(.22,.61,.36,1) both}
+    .hero p.sub{animation:fadeUp .55s .12s cubic-bezier(.22,.61,.36,1) both}
+    .hero-cta{animation:fadeUp .55s .18s cubic-bezier(.22,.61,.36,1) both}
+    .hero-meta{animation:fadeIn .7s .3s both}
+    .orbit{animation:fadeIn .7s .15s both}
+    @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-60px,40px) scale(1.12)}}
+    @keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .orbit svg{animation:orbitSpin 120s linear infinite}
+    @keyframes glowPulse{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    .orbit .glow{animation:glowPulse 7s ease-in-out infinite}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .orbit .tag{animation:floaty 6s ease-in-out infinite}
+    .orbit .tag:last-child{animation-delay:2.5s}
+    .js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+    .js .rv.in{opacity:1;transform:none}
+    @keyframes ruleDraw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    .hero-meta .rule{transform-origin:0 50%;animation:ruleDraw .8s .4s both}
+    @keyframes markBreathe{0%,100%{opacity:1}50%{opacity:.75}}
+    .watermark{animation:markBreathe 9s ease-in-out infinite}
+  
+  .skip{position:absolute;left:-9999px;top:0;background:var(--navy,#0A2240);color:#fff;padding:12px 18px;z-index:100;font-size:13px;font-weight:700}
+  .skip:focus{left:16px;top:16px}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #C9A227;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .rv{opacity:1;transform:none}
+      .progress{display:none}
+    }
+    /* ENQUIRY FORM */
+    .enquiry-form{max-width:720px}
+    .enquiry-form label{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px}
+    .enquiry-form input,.enquiry-form select,.enquiry-form textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--white);border:1px solid var(--line);padding:13px 16px}
+    .enquiry-form textarea{min-height:130px;resize:vertical}
+    .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+    .enquiry-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media(max-width:700px){.enquiry-form .form-row{grid-template-columns:1fr}}
+    .enquiry-form button{cursor:pointer;font-family:var(--sans)}
+    .enquiry-note{color:var(--mut);font-size:15px;margin-top:18px}
+    /* GUIDE ARTICLE */
+    .guide h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;font-weight:600;color:var(--navy);margin:54px 0 18px;max-width:820px}
+    .guide h2:first-child{margin-top:0}
+    .guide p{margin:0 0 20px}
+    .guide ul,.guide ol{margin:0 0 26px 26px;color:var(--mut);font-size:17px;max-width:780px}
+    .guide li{margin-bottom:10px;line-height:1.65}
+    .guide li::marker{color:var(--gold2);font-weight:700}
+    .guide strong{color:var(--ink)}
+    .guide hr{border:none;border-top:1px solid var(--line);margin:46px 0}
+    .guide p.fine{font-size:15px}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"How to verify an AI-assisted systematic review","url":"https://oryxai.in/how-to-verify-an-ai-assisted-systematic-review.html","isPartOf":{"@type":"WebSite","name":"Oryx Centre for Strategic Futures","url":"https://oryxai.in/"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://oryxai.in/"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"https://oryxai.in/guides.html"},
+{"@type":"ListItem","position":3,"name":"How to verify an AI-assisted systematic review"}
+]}
+</script>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Noida, India &middot; Est. 2026</span>
+      <span><a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a></span>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="Oryx Centre for Strategic Futures">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3.2" fill="#C9A227"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#0A2240" stroke-width="1.3" transform="rotate(-24 13 13)"/>
+          <ellipse cx="13" cy="13" rx="11" ry="4.6" stroke="#C9A227" stroke-width="1" opacity=".8" transform="rotate(38 13 13)"/>
+        </svg>
+        <span>ORYX CENTRE<small>Strategic Futures</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+      </nav>
+      <a class="btn" href="mailto:amartya@oryxai.in">Engage &#8599;</a>
+    </div>
+  </div>
+</header>
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:118px 24px 0;font-size:13px;color:#5a6b84"><a href="/" style="color:inherit">Home</a> &rsaquo; How to verify an AI-assisted systematic review</nav>
+
+
+<main id="main"><header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Guide &mdash; For researchers</div>
+    <h1 style="margin-top:24px">How to verify an AI-assisted systematic review</h1>
+    <p class="sub">AI can now help at every stage of a systematic review — search, screening, extraction, synthesis. Verify it in layers: protocol, screening, extraction, then citations, each checked independently of the tool.</p>
+  </div>
+</header>
+
+<div class="rule-double" aria-hidden="true"></div>
+
+<section>
+  <div class="wrap">
+    <div class="paper-panel guide">
+      <p style="border-left:4px solid #C9A227;background:#FFFFFF;padding:18px 22px;margin:0 0 34px;font-size:18px;line-height:1.65"><strong>In short:</strong> Verify an AI-assisted systematic review in layers — protocol, screening, extraction, then citations — each checked independently of the tool that produced it. This guide teaches verification of a review; it is not a guide to conducting one.</p>
+      <p>A systematic review is only as trustworthy as its weakest included study. One wrongly included study corrupts the synthesis; one wrongly extracted number corrupts the pooled result; one fabricated citation corrupts the evidence trail. And AI assistance now touches every stage of the work — drafting the search, screening thousands of records, extracting numbers from tables, writing the synthesis, assembling the reference list. Each stage can fail in its own way, so each stage needs its own check.</p>
+      <p>Existing citation guides check single references. They do not cover the systematic-review job as one piece: the protocol, the screening decisions, the extraction, and the citations together. This guide does. It verifies in layers, in the order the review was built — protocol, screening, extraction, citations — and every layer is checked independently of the AI that produced it. Do not ask the same tool to check its own work; that is not verification, it is a second opinion from the same source.</p>
+      <h2>Why the review, not just the citations</h2>
+      <p>A citation check asks whether a reference exists and supports its claim. A systematic review adds three more places for error that a citation check never reaches:</p>
+      <ul><li><strong>The protocol.</strong> The review's question, eligibility criteria and planned analyses were supposed to be fixed before screening began. If they drifted after the results were seen, the review is shaped by its findings, not by its question.</li><li><strong>The screening.</strong> Thousands of records were reduced to a handful of included studies. A study wrongly excluded is invisible — it never appears in the review, so no reader can see it is missing.</li><li><strong>The extraction.</strong> Numbers were lifted from source tables into the review's own tables. A transposed digit or a wrong denominator survives into the synthesis, where it looks like a finding.</li></ul>
+      <p>Oryx's own published audits show the shape of AI-generated failure in research writing. In the larger audit, 194 citations across 30 AI research briefs were checked claim by claim: 50 verified, 95 broken, 17 mismatched, 31 unverifiable, and 1 with no URL at all (Paper 2 v2, DOI 10.5281/zenodo.23731235 — a pilot, not a universal rate). In a smaller study of 66 AI-generated citations, 31 had broken links, 7 mismatched the claim, 11 could not be verified, and 17 both resolved and fully supported the claim (Working Paper v3, DOI 10.5281/zenodo.23718472). Most failures are caught by asking for the record. The dangerous ones survive it: a real record, correctly cited, that does not support the claim attached to it — or, in a review, a real study, correctly included, whose numbers were lifted wrong.</p>
+      <h2>Layer 1 — The protocol: was it registered, and did screening follow it?</h2>
+      <p>Before you open a single included study, check the review's foundations. The protocol is the review's pre-commitment: what question it asked, what counted as eligible, what it planned to do with the results.</p>
+      <ol><li><strong>Is the protocol registered?</strong> Look for a registration record — PROSPERO (the international prospective register of systematic reviews, run by the Centre for Reviews and Dissemination at the University of York) for health-related reviews, OSF Registries for other fields. PRISMA 2020 (Page et al., BMJ 2021;372:n71) asks reviews to report the register name and registration number, or to state that the review was not registered. No registration is not automatic failure — but it means there is no public record of what was planned before screening began, and the rest of this layer matters more.</li><li><strong>Does the registration date precede the screening?</strong> A protocol registered after screening started is a record of what was done, not a pre-commitment. Check the dates.</li><li><strong>Do the eligibility criteria in the review match the registered protocol?</strong> Compare the population, intervention or exposure, comparator, outcomes and study designs in the review against the registered record. Any change needs a stated reason and a date.</li><li><strong>Were the analyses pre-specified?</strong> Subgroup analyses and sensitivity analyses that appear in the results but not in the protocol are findings-shaped analysis until proven otherwise. Note them; they do not invalidate the review, but they lower what you can conclude from them.</li></ol>
+      <p>If the protocol is missing or the criteria drifted without explanation, say so in your verdict on the review — and check the later layers harder, because the drift may have shaped what got included.</p>
+      <h2>Layer 2 — Screening: spot-check what was included AND what was excluded</h2>
+      <p>Screening is where AI assistance is most heavily used and where its failures are hardest to see. A wrongly included study at least appears in the review, where a reader can challenge it. A wrongly excluded study disappears entirely. So check both directions.</p>
+      <ol><li><strong>Do the PRISMA flow numbers add up?</strong> The flow diagram reports records identified, records screened, records excluded, full texts assessed, and studies included, with reasons for full-text exclusions. Add them up. The arithmetic should reconcile exactly; a gap means records were lost or double-counted somewhere in the pipeline, and the screening cannot be retraced.</li><li><strong>Spot-check the included studies against the eligibility criteria.</strong> Take 5–10 included studies — all of them if the review included fewer than ten — and check each against the criteria yourself: population, intervention, outcomes, study design, date range. One included study that fails the criteria is evidence the screening was not applied as written.</li><li><strong>Spot-check the excluded studies the same way.</strong> This is the check most people skip, and it is the one that matters most. Take a sample of records excluded at title-and-abstract stage and at full-text stage, and apply the criteria yourself. If you find an eligible study among the excluded, the screening has a false-negative problem — and the synthesis is missing evidence it should contain.</li><li><strong>Check the full-text exclusion reasons.</strong> Every study excluded at full-text stage should carry a reason. Vague reasons ("not relevant") applied to many studies are a warning sign; check a sample of those yourself.</li><li><strong>Ask how the AI was used, and whether a human checked it.</strong> A review that says screening was AI-assisted should say what the AI did, what the human did, and how disagreements were resolved. A review that does not disclose AI use in screening, where the volume of records makes unaided screening implausible, is a reporting gap to note — not a verdict on the results, but a gap in the evidence trail.</li></ol>
+      <p>The practical rule: <strong>check exclusions as hard as inclusions.</strong> An included study you disagree with is visible and arguable. An excluded study you never see is a hole in the evidence that no reader can detect.</p>
+      <h2>Layer 3 — Extraction: re-check the numbers against the source tables</h2>
+      <p>Extraction is where a single wrong digit becomes a finding. The review's tables present numbers that were lifted from source papers; the synthesis pools them. Check the lift before you trust the pool.</p>
+      <ol><li><strong>Re-check the numbers that carry the conclusion.</strong> For the studies that drive the review's main result, open the source paper and compare the extracted figure against the source table: the effect size, the sample size, the numerator and denominator. Check the denominator first — a real number attached to the wrong denominator is as misleading as an invented one, and it passes a citation-existence check.</li><li><strong>Check units, time windows and populations.</strong> The same number means different things for different units, different follow-up periods, and different populations. A figure extracted from a subgroup, presented as the whole-study result, is a mis-extraction even when the digits are right.</li><li><strong>Spot-check the risk-of-bias judgements.</strong> The review rates each included study's risk of bias. Take two or three studies and check the judgement against the source: does the paper actually report randomisation, blinding, or complete follow-up as the review claims? A risk-of-bias table that does not match its sources undermines the review's own quality assessment.</li><li><strong>Check that the synthesis only pools comparable studies.</strong> A meta-analysis or narrative synthesis that combines studies with different populations, interventions or outcome measures is pooling unlike with unlike. The review should justify each pooling decision; if it does not, the pooled figure is not interpretable, whatever the extraction says.</li><li><strong>Look for transposed digits and stale numbers.</strong> The two commonest extraction failures: digits swapped between columns, and a number taken from an earlier version of a study (a preprint, a conference abstract) rather than the final publication. Both are caught by opening the source table and comparing, digit by digit, for the load-bearing figures.</li></ol>
+      <p>You cannot re-extract every number in a large review, and you do not need to. Re-extract the figures the conclusion rests on, spot-check the rest, and expand the check if a spot-check fails.</p>
+      <h2>Layer 4 — Citations: the four-verdict check</h2>
+      <p>Finally, check the review's own citations — the reference list and the in-text citations that tie claims to sources. This is the layer the citation guides already teach, applied here to a review's references.</p>
+      <p>For each citation you check, open the source yourself and give it one of four verdicts:</p>
+      <ul><li><strong>Verified.</strong> The record exists and supports the claim. Title, authors, year and venue match; the passage, table or figure the claim rests on says what the review claims it says.</li><li><strong>Broken.</strong> The record cannot be found. The link is dead, the DOI resolves nowhere or to a different paper, or the cited work cannot be located at all.</li><li><strong>Mismatch.</strong> The record exists but does not say what is claimed. The paper is real, the passage is real, and the claim is not in it — or the numbers, dates or attributions differ from what the review reports.</li><li><strong>Unverifiable.</strong> The record cannot be checked with the means available: behind a wall you cannot pass, in a language you cannot read, or a source whose existence you cannot confirm either way. Record it as unverifiable, not as verified and not as failed.</li></ul>
+      <p>Work in this order for each citation: <strong>resolve</strong> (does the DOI or link open to the cited work?), <strong>match</strong> (title, authors, year, venue — do they agree?), <strong>read</strong> (does the passage the claim rests on say what is claimed?), <strong>status</strong> (is the work what the review says it is — not retracted, not a different edition, not a preprint cited as a published paper?).</p>
+      <p>Check the citations that carry the review's conclusions first, then spot-check across the rest of the list — weighted toward obscure sources, where fabrication concentrates. A review whose load-bearing citations pass and whose spot-checks pass is a review you can provisionally trust; a review with a failed load-bearing citation needs the affected conclusion re-examined, not just the citation corrected.</p>
+      <h2>The AI-specific failures to watch for</h2>
+      <p>AI assistance changes the failure pattern at each layer, not just the citation layer:</p>
+      <ul><li><strong>Silent exclusion.</strong> An AI screener can drop an eligible study without leaving a trace — the study simply never reaches the included list. This is why layer 2 checks exclusions, not just inclusions. No flow diagram shows a study that was never screened in.</li><li><strong>Confident extraction errors.</strong> An AI extractor returns numbers in clean tables with no uncertainty markers. A transposed digit looks exactly like a correct one. This is why layer 3 re-checks load-bearing figures against source tables, digit by digit.</li><li><strong>Synthesis that outruns its sources.</strong> An AI-written synthesis can state a conclusion more strongly than the included studies support, and cite a real study for a claim the study does not make. This is the mismatch verdict at the scale of the whole review — caught by reading the cited passage, not by checking the citation resolves.</li><li><strong>Self-verification.</strong> The commonest trap: asking the same AI tool that produced the review to check it. A tool that hallucinated a citation will often confirm it. Every layer in this guide is checked by a human, against the primary source, independently of the tool that produced the review.</li></ul>
+      <h2>The check, step by step</h2>
+      <ol><li><strong>Read the protocol first.</strong> Find the registration record (PROSPERO, OSF, or a stated "not registered") and check the date precedes screening and the criteria match the review.</li><li><strong>Reconcile the PRISMA flow diagram.</strong> The numbers from identification to inclusion should add up exactly.</li><li><strong>Spot-check screening in both directions.</strong> 5–10 included studies and a sample of excluded records, each checked against the eligibility criteria yourself.</li><li><strong>Re-extract the load-bearing numbers.</strong> Open the source tables for the studies that drive the conclusion; check denominators, units, time windows and populations.</li><li><strong>Run the four-verdict citation check</strong> on the citations that carry the conclusions, then spot-check the rest, weighted toward obscure sources.</li><li><strong>Keep a one-line record per check</strong> — claim, source, verdict, evidence, date. It is your defence if anyone asks how you verified the review, and it is the record the review itself should have kept.</li></ol>
+      <h2>Red flags in an AI-assisted review</h2>
+      <ul><li><strong>Flow-diagram numbers that do not reconcile.</strong> Records lost or double-counted in the pipeline.</li><li><strong>No protocol registration and no explanation.</strong> Nothing was fixed before screening began.</li><li><strong>Eligibility criteria that drifted from the protocol without a stated reason.</strong> The review was shaped by its findings.</li><li><strong>Exclusion reasons that are vague or missing at full-text stage.</strong> "Not relevant" applied to dozens of studies, unchecked.</li><li><strong>Numbers in the review's tables that do not match the source tables.</strong> Wrong denominator, transposed digits, subgroup presented as whole-study.</li><li><strong>A synthesis stronger than its included studies support.</strong> The conclusion cites real studies for claims they do not make.</li><li><strong>No disclosure of how AI was used, where the volume makes unaided work implausible.</strong> A gap in the evidence trail.</li><li><strong>Retracted work cited as live.</strong> Check retraction status for load-bearing citations — a clean reference can be retracted while the review is still in revision.</li></ul>
+      <h2>A note on what this guide does not do</h2>
+      <p>This guide teaches the verification of a review, not how to conduct one. PRISMA 2020 is a reporting guideline — a 27-item checklist for what a finished review must report, not a method for conducting it; the rules for conducting a review live principally in the Cochrane Handbook for Systematic Reviews of Interventions. This guide also does not recommend screening or extraction tools: the check is the same whatever tool produced the review, and a tool recommendation would date faster than the method. A review that passes every layer of this check can still be weak in other ways — a narrow question, an outdated search, a synthesis that adds little. The check answers one question: was this review built as it claims, and do its numbers and citations trace to their sources? Everything else in the appraisal is still yours.</p>
+      <hr>
+      <p><strong>Sources and further reading:</strong> Oryx Paper 2 v2, <em>Trust, But Verify</em> (Zenodo DOI 10.5281/zenodo.23731235); Oryx Working Paper v3, <em>From Answers to Auditable Intelligence</em> (Zenodo DOI 10.5281/zenodo.23718472); Page MJ, McKenzie JE, Bossuyt PM, et al., "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews" (BMJ 2021;372:n71, DOI 10.1136/bmj.n71, https://doi.org/10.1136/bmj.n71); PROSPERO, international prospective register of systematic reviews (Centre for Reviews and Dissemination, University of York); related Oryx guides: <a href="reproducibility-checklist-ai-research.html" style="text-decoration:underline">Reproducibility checklist for AI research</a>, <a href="how-to-verify-ai-generated-research.html" style="text-decoration:underline">How to verify AI-generated research</a>, <a href="ai-hallucination-detection-for-research.html" style="text-decoration:underline">AI hallucination detection for research</a>, <a href="audit-194-citations.html" style="text-decoration:underline">194 citations, checked claim by claim</a>.</p>
+      <hr>
+      <p>Oryx AI offers claim-level evidence audits for research drafts and vendor claims — ₹7,500 per pilot report, payable only on acceptance, currently invite-only beta (contact: <a href="mailto:amartya@oryxcentre.dpdns.org" style="text-decoration:underline">amartya@oryxcentre.dpdns.org</a>).</p>
+      <p class="fine"><em>Oryx Centre for Strategic Futures is a two-person research initiative (Udyam-registered micro enterprise) working on auditable AI.</em></p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap cta">
+    <div class="eyebrow">Start a conversation</div>
+    <h2>What should rigorous<br><span class="accent">research</span> be<br>working on?</h2>
+    <a class="btn gold" href="mailto:amartya@oryxai.in">amartya@oryxai.in &#8599;</a>
+  </div>
+</div>
+
+</main><footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h3>Oryx Centre for Strategic Futures</h3>
+        <p style="font-size:15px;max-width:340px">Independent research initiative working on AI governance, geopolitics, emerging technologies and strategic foresight, from the Global South.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#framework">Framework</a>
+        <a href="index.html#paper">Working Paper</a>
+        <a href="index.html#about">About</a>
+        <a href="oryx-ai.html">Evidence Audit</a>
+        <a href="oryx-ai-sample-report.html">Sample Report</a>
+        <a href="how-to-check-ai-vendor-claims.html">Vendor-claims guide</a>
+        <a href="how-to-check-ai-citations.html">Citations guide</a>
+        <a href="broken-links-ai-citations.html">Broken-links guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:amartya@oryxai.in">amartya@oryxai.in</a>
+        <a href="mailto:riya@oryxcentre.dpdns.org">riya@oryxcentre.dpdns.org</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-mark">ORYX</div>
+  <div class="wrap foot-bar">
+    <span class="small">&copy; 2026 Oryx Centre for Strategic Futures &middot; Noida, India</span>
+    <span class="small">Auditable intelligence, human direction.</span>
+  </div>
+</footer>
+
+<div class="progress" aria-hidden="true"></div>
+<script>
+(function(){
+  var targets=document.querySelectorAll('.card,.fcard,.step,.col3,.paper-panel,.diagram,.book-cover,.book>div,.foot-grid>*,.sec-head,.sec-head>*,.statement>*,.philosophy .wrap>*,.cta>*,footer');
+  targets.forEach(function(el){el.classList.add('rv')});
+  ['.cards','.founder-cards','.cols3','.steps','.sec-head','.statement','.philosophy .wrap','.cta','.foot-grid','.book'].forEach(function(sel){
+    document.querySelectorAll(sel+' > *').forEach(function(el,i){el.style.transitionDelay=(i*70)+'ms'});
+  });
+  function revealAll(){targets.forEach(function(el){el.classList.add('in')})}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el)});
+    setTimeout(revealAll,3500);
+  } else { revealAll(); }
+  var bar=document.querySelector('.progress');
+  function onScroll(){
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    bar.style.transform='scaleX('+(max>0?h.scrollTop/max:0)+')';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
